@@ -5,6 +5,8 @@ import { CiMail } from "react-icons/ci";
 import { FcGoogle } from "react-icons/fc";
 import { FiEyeOff } from "react-icons/fi";
 import { SiFacebook } from "react-icons/si";
+import Input from "../../components/common/Input";
+import LableForm from "../../components/common/LableForm";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -17,26 +19,21 @@ const Login = () => {
                     <div className="w-16 h-16 bg-linear-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <BiShield size={32} className="text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold text-text-heading mb-2">مرحباً بعودتك</h2>
-                    <p className="text-text-body">سجل دخولك للوصول إلى لوحة التحكم</p>
+                    <h2 className="text-3xl font-bold text-text-heading mb-2 font-heading">مرحباً بعودتك</h2>
+                    <p className="text-text-body font-main">سجل دخولك للوصول إلى لوحة التحكم</p>
                 </div>
-                <form className="space-y-5">
+                <form className="space-y-5 font-main">
                     <div>
-                        <label className="block text-sm font-bold text-text-body mb-2">البريد الإلكتروني</label>
-                        <div className="relative">
-                            <CiMail className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                            <input type="email" placeholder="أدخل بريدك الإلكتروني" className="w-full pr-12 pl-4 py-4 border-2 border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
-                        </div>
+                        <LableForm text="البريد الإلكتروني"/>
+                        <Input type="email" name="email" pl="pl-4" placeholder="أدخل بريدك الإلكتروني" icon={<CiMail size={20}/>}/>
                     </div>
                     <div>
-                        <label className="block text-sm font-bold text-text-body mb-2">كلمة المرور</label>
-                        <div className="relative">
-                            <BiLock className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                            <input type={showPassword ? "text" : "password"} placeholder="أدخل كلمة المرور" className="w-full pr-12 pl-12 py-4 border-2 outline-none border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
+                        <LableForm text="كلمة المرور"/>
+                        <Input type={showPassword ? "text" : "password"} name="password" pl="pl-12" placeholder="أدخل كلمة المرور" icon={<BiLock />} cheldreen={
                             <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-all">
                                 {showPassword ? <FiEyeOff size={20} /> : <BsEye size={20} />}
                             </button>
-                        </div>
+                        }/>
                     </div>
 
                     <div className="flex items-center justify-between">
@@ -60,7 +57,8 @@ const Login = () => {
                             </button>
                         </p>
                     </div>
-                    <div className="mt-8 pt-8 border-t border-gray-200">
+                </form>
+                <div className="mt-8 pt-8 border-t border-gray-200 font-main">
                         <p className="text-center text-sm text-gray-500 mb-4">أو سجل دخولك باستخدام</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <button className="flex items-center justify-center gap-2 px-4 py-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-all font-medium">
@@ -72,8 +70,7 @@ const Login = () => {
                                 <span>Facebook</span>
                             </button>
                         </div>
-                    </div>
-                </form>
+                </div>
                 <p className="text-center text-sm text-gray-500 mt-6">
                     بالمتابعة، أنت توافق على{' '}
                     <a href="#" className="text-primary font-medium hover:underline">شروط الخدمة</a>
