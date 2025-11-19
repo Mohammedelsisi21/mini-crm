@@ -1,5 +1,8 @@
 @import "tailwindcss";
-
+@font-face {
+    font-family: "heading";
+    src: url("./fonts/cairo/Cairo-VariableFont_slnt\,wght.ttf");
+}
 @theme {
     --color-primary-50: #eff6ff;
     --color-primary-100: #dbeafe;
@@ -42,10 +45,8 @@
     --color-background-alt: #f8fafc;
 
 
-    --font-main: "Tajawal", sans-serif;
-    --font-heading: "Cairo", sans-serif;
+    --font-main: "Cairo", sans-serif;
 }
-
 
 .bg-gradient-primary {
     background: var(--gradient-primary);
