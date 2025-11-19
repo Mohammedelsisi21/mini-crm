@@ -45,3 +45,11 @@
     --font-main: "Tajawal", sans-serif;
     --font-heading: "Cairo", sans-serif;
 }
+
+
+.bg-gradient-primary {
+    background: var(--gradient-primary);
+}
+.bg-gradient-denger {
+    background: var(--gradient-error);
+}

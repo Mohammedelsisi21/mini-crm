@@ -11,6 +11,7 @@ import FormTitle from "../../components/form/FormTitle";
 import PasswordInput from "../../components/common/PasswordInput";
 import Checkbox from "../../components/common/Checkbox";
 import AuthLink from "../../components/common/AuthLink";
+import Button from "../../components/common/Button";
 
 const Login = () => {
 return (<>
@@ -32,16 +33,14 @@ return (<>
                 <Checkbox text="تذكرني"/>
                 <AuthLink text="نسيت كلمة المرور؟"/>
             </div>
-            <button type="submit" style={{background: 'var(--gradient-primary)'}} className="w-full cursor-pointer text-white py-4 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group">
+            <Button type="submit">
                 <span>تسجيل الدخول</span>
                 <BsArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Button>
             <div className="mt-8 text-center">
                 <p className="text-text-body">
                     ليس لديك حساب؟{' '}
-                    <button className="text-primary-500 font-bold cursor-pointer hover:text-primary-500-dark transition-all">
-                        سجل الآن
-                    </button>
+                    <AuthLink text="سجل الآن"/>
                 </p>
             </div>
         </form>

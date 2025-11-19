@@ -1,8 +1,26 @@
+import { type ReactNode } from "react";
+import { cn } from "../../lib/utils";
 
-const Button = () => {
-return (<>
-    
-</>)
+interface IProps {
+    children: ReactNode;
+    onClick?: () => void;
+    variant?: "default" | "danger";
+    type?: "submit" | "button" | "reset";
+    isLoading?: boolean
 }
 
-export default Button
+const Button = ({ children, onClick, variant = "default", type, isLoading }: IProps) => {
+    const baseStyles = "px-3 py-2 rounded-md font-medium duration-300";
+    const variantStyles = {
+        default: "bg-gradient-primary w-full cursor-pointer text-white py-4 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group",
+        danger: "bg-gradient-denger w-full cursor-pointer text-white py-4 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group"
+    };
+
+return (
+    <button type={type} disabled={isLoading} onClick={onClick} className={cn(baseStyles, variantStyles[variant])}>
+        {children}
+    </button>
+  );
+};
+
+export default Button;
