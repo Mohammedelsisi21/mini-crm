@@ -5,7 +5,6 @@ import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
 import Input from "../../components/common/Input";
 import Label  from "../../components/common/Label";
-import SocialButton from "../../components/common/SocialButton";
 import AuthLayout from "../../layouts/AuthLayout";
 import FormTitle from "../../components/form/FormTitle";
 import PasswordInput from "../../components/common/PasswordInput";
@@ -45,10 +44,16 @@ return (<>
             </div>
         </form>
         <div className="mt-8 pt-8 border-t border-gray-200 font-main">
-                <p className="text-center text-sm text-gray-500 mb-4">أو سجل دخولك باستخدام</p>
+                <Label center="text-center" text="أو سجل دخولك باستخدام"/>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <SocialButton name="Google" icon={<FcGoogle size={20}/>}/>
-                    <SocialButton name="Facebook" icon={<SiFacebook size={20} className="text-primary-500"/>}/>
+                    <Button variant="outline" type="button">
+                        <FcGoogle size={20}/>
+                        <span>Google</span>
+                    </Button>
+                    <Button variant="outline" type="button">
+                        <SiFacebook size={20} className="text-primary-500"/>
+                        <span>Facebook</span>
+                    </Button>
                 </div>
         </div>
         <p className="text-center text-sm text-gray-500 mt-6">

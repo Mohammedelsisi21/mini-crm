@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 interface IProps {
     children: ReactNode;
     onClick?: () => void;
-    variant?: "default" | "danger";
+    variant?: "default" | "danger" | "outline";
     type?: "submit" | "button" | "reset";
     isLoading?: boolean
 }
@@ -13,7 +13,8 @@ const Button = ({ children, onClick, variant = "default", type, isLoading }: IPr
     const baseStyles = "px-3 py-2 rounded-md font-medium duration-300";
     const variantStyles = {
         default: "bg-gradient-primary w-full cursor-pointer text-white py-4 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group",
-        danger: "bg-gradient-denger w-full cursor-pointer text-white py-4 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group"
+        danger: "bg-gradient-denger w-full cursor-pointer text-white py-4 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group",
+        outline: "flex items-center justify-center gap-2 px-4 py-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-all font-medium"
     };
 
 return (
