@@ -1,48 +1,36 @@
-import { useState } from "react";
-import { BiLock, BiShield } from "react-icons/bi"
-import { BsArrowRight, BsEye } from "react-icons/bs"
+import { BiShield } from "react-icons/bi"
+import { BsArrowRight } from "react-icons/bs"
 import { CiMail } from "react-icons/ci";
 import { FcGoogle } from "react-icons/fc";
-import { FiEyeOff } from "react-icons/fi";
 import { SiFacebook } from "react-icons/si";
 import Input from "../../components/common/Input";
-import LableForm from "../../components/common/LableForm";
+import Label  from "../../components/common/Label";
 import SocialButton from "../../components/common/SocialButton";
 import AuthLayout from "../../layouts/AuthLayout";
+import FormTitle from "../../components/form/FormTitle";
+import PasswordInput from "../../components/common/PasswordInput";
+import Checkbox from "../../components/common/Checkbox";
+import AuthLink from "../../components/common/AuthLink";
 
 const Login = () => {
-    const [showPassword, setShowPassword] = useState(false);
-    const [rememberMe, setRememberMe] = useState(false);
-    return (<>
+return (<>
     <AuthLayout>
-        <div className="text-center mb-8">
-            <div style={{background: 'var(--gradient-primary)'}} className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <BiShield size={32} className="text-white" />
-            </div>
-            <h2 className="text-3xl font-bold text-text-heading mb-2 font-heading">مرحباً بعودتك</h2>
-            <p className="text-text-body font-main">سجل دخولك للوصول إلى لوحة التحكم</p>
-        </div>
+        <FormTitle
+        icon={<BiShield size={32} className="text-white"/>}
+        title="مرحباً بعودتك"
+        des="سجل دخولك للوصول إلى لوحة التحكم"/>
         <form className="space-y-5 font-main">
             <div>
-                <LableForm text="البريد الإلكتروني"/>
+                <Label  text="البريد الإلكتروني"/>
                 <Input type="email" name="email" pl="pl-4" placeholder="أدخل بريدك الإلكتروني" icon={<CiMail size={20}/>}/>
             </div>
             <div>
-                <LableForm text="كلمة المرور"/>
-                <Input type={showPassword ? "text" : "password"} name="password" pl="pl-12" placeholder="أدخل كلمة المرور" icon={<BiLock />} cheldreen={
-                    <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-all">
-                        {showPassword ? <FiEyeOff size={20} /> : <BsEye size={20} />}
-                    </button>
-                }/>
+                <Label  text="كلمة المرور"/>
+                <PasswordInput />
             </div>
-            <div className="flex items-center justify-between">
-                <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} className="w-5 h-5 rounded border-gray-300 text-primary-500 focus:ring-primary-500"/>
-                    <span className="text-sm text-gray-700 font-medium">تذكرني</span>
-                </label>
-                <button type="button" className="cursor-pointer text-sm font-semibold text-primary-500 hover:text-primary-500-dark transition-all" >
-                    نسيت كلمة المرور؟
-                </button>
+            <div className="flex items-center justify-between font-main">
+                <Checkbox text="تذكرني"/>
+                <AuthLink text="نسيت كلمة المرور؟"/>
             </div>
             <button type="submit" style={{background: 'var(--gradient-primary)'}} className="w-full cursor-pointer text-white py-4 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group">
                 <span>تسجيل الدخول</span>
