@@ -10,21 +10,42 @@ import { ArrowRight, Mail, Shield } from "lucide-react";
 import GoogleIcon from "../../icons/GoogleIcon";
 import FacebookIcon from "../../icons/FacebookIcon";
 import SocialButton from "../../components/common/SocialButton";
+import { useForm } from "react-hook-form";
+import { LoginSchema } from "../../validation";
+import { yupResolver } from "@hookform/resolvers/yup"
+
+
+type FormData = {
+    email: string
+    password: string
+}
 const Login = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        } = useForm<FormData>({
+            resolver: yupResolver(LoginSchema),
+        })
+
+
+    const onSubmit = handleSubmit((data) => console.log(data))
+
 return (<>
     <AuthLayout>
         <FormTitle
         icon={<Shield size={32} className="text-white"/>}
         title="مرحباً بعودتك"
         des="سجل دخولك للوصول إلى لوحة التحكم"/>
-        <form className="space-y-5 font-main">
+        <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div>
                 <Label  text="البريد الإلكتروني"/>
-                <Input type="email" name="email" pl="pl-4" placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={20}/>}/>
+                <Input {...register("email")} type="email" name="email" pl="pl-4" placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={20}/>}/>
+                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
             </div>
             <div>
                 <Label  text="كلمة المرور"/>
-                <PasswordInput />
+                <PasswordInput/>
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>
