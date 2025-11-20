@@ -34,7 +34,8 @@ const Login = () => {
 return (<>
     <AuthLayout>
         <FormTitle
-        icon={<Shield size={48} className="text-white"/>}
+        background = "gradient-primary"
+        icon={<Shield size={40} className="text-white"/>}
         title="مرحباً بعودتك"
         des="سجل دخولك للوصول إلى لوحة التحكم"/>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>

@@ -89,6 +89,13 @@
 .bg-gradient-primary {
     background: var(--gradient-primary);
 }
+.bg-gradient-secondary {
+    background: var(--gradient-secondary);
+}
+.bg-gradient-pink {
+    background: var(--gradient-pink);
+}
+
 .bg-gradient-denger {
     background: var(--gradient-error);
 }
