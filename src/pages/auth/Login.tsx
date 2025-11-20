@@ -2,11 +2,10 @@ import Input from "../../components/common/Input";
 import Label  from "../../components/common/Label";
 import AuthLayout from "../../layouts/AuthLayout";
 import FormTitle from "../../components/form/FormTitle";
-import PasswordInput from "../../components/common/PasswordInput";
 import Checkbox from "../../components/common/Checkbox";
 import AuthLink from "../../components/common/AuthLink";
 import Button from "../../components/common/Button";
-import { ArrowRight, Mail, Shield } from "lucide-react";
+import { ArrowLeft, Lock, Mail, Shield } from "lucide-react";
 import GoogleIcon from "../../icons/GoogleIcon";
 import FacebookIcon from "../../icons/FacebookIcon";
 import SocialButton from "../../components/common/SocialButton";
@@ -45,7 +44,8 @@ return (<>
             </div>
             <div>
                 <Label  text="كلمة المرور"/>
-                <PasswordInput/>
+                <Input {...register("password")} type="password" name="password" pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={20}/>}/>
+                {errors.password && <p className="text-red-500">{errors.password.message}</p>}
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>
@@ -53,7 +53,7 @@ return (<>
             </div>
             <Button type="submit">
                 <span>تسجيل الدخول</span>
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowLeft size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <div className="mt-8 text-center">
                 <p className="text-text-body">
