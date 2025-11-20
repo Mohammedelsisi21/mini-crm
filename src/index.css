@@ -3,7 +3,9 @@
     font-family: "heading";
     src: url("./fonts/cairo/Cairo-VariableFont_slnt\,wght.ttf");
 }
+
 @theme {
+    /* ** Primary Colors */
     --color-primary-50: #eff6ff;
     --color-primary-100: #dbeafe;
     --color-primary-200: #bfdbfe;
@@ -14,7 +16,7 @@
     --color-primary-700: #1d4ed8;
     --color-primary-800: #1e40af;
     --color-primary-900: #1e3a8a;
-
+    /* ** Secondary Colors  */
     --color-secondary-50: #faf5ff;
     --color-secondary-100: #f3e8ff;
     --color-secondary-200: #e9d5ff;
@@ -25,6 +27,41 @@
     --color-secondary-700: #7e22ce;
     --color-secondary-800: #6b21a8;
     --color-secondary-900: #581c87;
+    /* ** Error Colors  */
+    --color-error-50: #fef2f2;
+    --color-error-100: #fee2e2;
+    --color-error-200: #fecaca;
+    --color-error-300: #fca5a5;
+    --color-error-400: #f87171;
+    --color-error-500: #ef4444;
+    --color-error-600: #dc2626;
+    --color-error-700: #b91c1c;
+    --color-error-800: #991b1b;
+    --color-error-900: #7f1d1d;
+    /* ** Success Colors */
+    --color-success-50:  #ecfdf5;
+    --color-success-100: #d1fae5;
+    --color-success-200: #a7f3d0;
+    --color-success-300: #6ee7b7;
+    --color-success-400: #34d399;
+    --color-success-500: #10b981;
+    --color-success-600: #059669;
+    --color-success-700: #047857;
+    --color-success-800: #065f46;
+    --color-success-900: #064e3b;
+    /* ** Warning Colors */
+    --color-warning-50:  #fffbeb;
+    --color-warning-100: #fef3c7;
+    --color-warning-200: #fde68a;
+    --color-warning-300: #fcd34d;
+    --color-warning-400: #fbbf24;
+    --color-warning-500: #f59e0b;
+    --color-warning-600: #d97706;
+    --color-warning-700: #b45309;
+    --color-warning-800: #92400e;
+    --color-warning-900: #78350f;
+
+
     /* ** Background => Liner */
     --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     --gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
@@ -37,14 +74,15 @@
     --gradient-orange: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     --gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 100%);
 
+    /* ** Text Colors */
     --color-text-heading: #0f172a;
     --color-text-body: #334155;
 
-
+    /* ** background Main */
     --color-background: #ffffff;
     --color-background-alt: #f8fafc;
 
-
+    /* ** Font Main*/
     --font-main: "Cairo", sans-serif;
 }
 

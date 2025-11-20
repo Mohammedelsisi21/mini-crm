@@ -12,6 +12,7 @@ import SocialButton from "../../components/common/SocialButton";
 import { useForm } from "react-hook-form";
 import { LoginSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup"
+import MsgError from "../../components/common/MsgError";
 
 
 type FormData = {
@@ -33,25 +34,25 @@ const Login = () => {
 return (<>
     <AuthLayout>
         <FormTitle
-        icon={<Shield size={32} className="text-white"/>}
+        icon={<Shield size={48} className="text-white"/>}
         title="مرحباً بعودتك"
         des="سجل دخولك للوصول إلى لوحة التحكم"/>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div>
                 <Label  text="البريد الإلكتروني"/>
-                <Input {...register("email")} type="email" name="email" pl="pl-4" placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={20}/>}/>
-                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                <Input {...register("email")} type="email" name="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
+                <MsgError error={errors.email?.message}/>
             </div>
             <div>
                 <Label  text="كلمة المرور"/>
-                <Input {...register("password")} type="password" name="password" pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={20}/>}/>
-                {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+                <Input {...register("password")} type="password" name="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
+                <MsgError error={errors.password?.message}/>
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>
                 <AuthLink text="نسيت كلمة المرور؟"/>
             </div>
-            <Button type="submit">
+            <Button ariaLabel="login-btn" type="submit">
                 <span>تسجيل الدخول</span>
                 <ArrowLeft size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -71,9 +72,9 @@ return (<>
         </div>
         <p className="text-center text-sm text-gray-500 mt-6">
             بالمتابعة، أنت توافق على{' '}
-            <a href="#" className="text-primary-500 font-medium hover:underline">شروط الخدمة</a>
+            <a href="#" className="text-primary-600 font-medium hover:underline">شروط الخدمة</a>
             {' '}و{' '}
-            <a href="#" className="text-primary-500 font-medium hover:underline">سياسة الخصوصية</a>
+            <a href="#" className="text-primary-600 font-medium hover:underline">سياسة الخصوصية</a>
         </p>
     </AuthLayout>
 </>)
