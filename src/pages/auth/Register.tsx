@@ -5,19 +5,24 @@ import FormTitle from "../../components/form/FormTitle";
 import Checkbox from "../../components/common/Checkbox";
 import AuthLink from "../../components/common/AuthLink";
 import Button from "../../components/common/Button";
-import { ArrowLeft, Award, Lock, Mail } from "lucide-react";
+import {ArrowRight, Award, Lock, Mail, User } from "lucide-react";
 import GoogleIcon from "../../icons/GoogleIcon";
 import FacebookIcon from "../../icons/FacebookIcon";
 import SocialButton from "../../components/common/SocialButton";
 import { useForm } from "react-hook-form";
-import { LoginSchema } from "../../validation";
+import { RegisterSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup"
 import MsgError from "../../components/common/MsgError";
 
 
 type FormData = {
+    fristName: string
+    lastName: string
     email: string
+    phone: string
+    companyName: string
     password: string
+    confirmPassword: string
 }
 const Register = () => {
     const {
@@ -25,7 +30,7 @@ const Register = () => {
         handleSubmit,
         formState: { errors },
         } = useForm<FormData>({
-            resolver: yupResolver(LoginSchema),
+            resolver: yupResolver(RegisterSchema),
         })
 
 
@@ -39,15 +44,27 @@ return (<>
         title="إنشاء حساب جديد"
         des="ابدأ رحلتك مع أفضل نظام CRM"/>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
-            <div>
-                <Label  text="البريد الإلكتروني"/>
-                <Input {...register("email")} type="email" name="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
-                <MsgError error={errors.email?.message}/>
-            </div>
-            <div>
-                <Label  text="كلمة المرور"/>
-                <Input {...register("password")} type="password" name="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
-                <MsgError error={errors.password?.message}/>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div>
+                    <Label  text="البريد الإلكتروني"/>
+                    <Input {...register("fristName")} type="text" name="fristName" pl="pl-4" error={!!errors.fristName} placeholder="أحمد" icon={<User size={24}/>}/>
+                    <MsgError error={errors.fristName?.message}/>
+                </div>
+                <div>
+                    <Label  text="البريد الإلكتروني"/>
+                    <Input {...register("email")} type="email" name="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
+                    <MsgError error={errors.email?.message}/>
+                </div>
+                <div>
+                    <Label  text="البريد الإلكتروني"/>
+                    <Input {...register("email")} type="email" name="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
+                    <MsgError error={errors.email?.message}/>
+                </div>
+                <div>
+                    <Label  text="كلمة المرور"/>
+                    <Input {...register("password")} type="password" name="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
+                    <MsgError error={errors.password?.message}/>
+                </div>
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>
@@ -55,7 +72,7 @@ return (<>
             </div>
             <Button variant="secondary" ariaLabel="login-btn" type="submit">
                 <span>إنشاء الحساب</span>
-                <ArrowLeft size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <div className="mt-8 text-center">
                 <p className="text-text-body">
