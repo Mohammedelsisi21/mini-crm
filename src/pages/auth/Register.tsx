@@ -15,20 +15,12 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import MsgError from "../../components/common/MsgError";
 import { useEffect, useState } from "react";
 import PasswordRules from "../../components/form/PasswordRules";
+import type { IDataRegister } from "../../interfaces";
 
 
-type FormData = {
-    fristName: string
-    email: string
-    phone: string
-    companyName: string
-    password: string
-    confirmPassword: string
-    acceptTerms: boolean
-}
 const Register = () => {
     const [password, setPassword] = useState("")
-    const { register, handleSubmit, watch, formState: { errors }} = useForm<FormData>({
+    const { register, handleSubmit, watch, formState: { errors }} = useForm<IDataRegister>({
             resolver: yupResolver(RegisterSchema),
         })
     useEffect(() => {

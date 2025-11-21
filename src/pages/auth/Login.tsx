@@ -13,18 +13,15 @@ import { useForm } from "react-hook-form";
 import { LoginSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup"
 import MsgError from "../../components/common/MsgError";
+import type { IDataLogin } from "../../interfaces";
 
 
-type FormData = {
-    email: string
-    password: string
-}
 const Login = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-        } = useForm<FormData>({
+        } = useForm<IDataLogin>({
             resolver: yupResolver(LoginSchema),
         })
 
