@@ -13,6 +13,9 @@ import { useForm } from "react-hook-form";
 import { RegisterSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup"
 import MsgError from "../../components/common/MsgError";
+import { useEffect, useState } from "react";
+import PasswordRules from "../../components/form/PasswordRules";
+// import PasswordRules from "../../components/form/PasswordRules";
 
 
 type FormData = {
@@ -24,14 +27,23 @@ type FormData = {
     confirmPassword: string
 }
 const Register = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        } = useForm<FormData>({
+    const [password, setPassword] = useState("")
+    const { register, handleSubmit, watch, formState: { errors }} = useForm<FormData>({
             resolver: yupResolver(RegisterSchema),
         })
+    useEffect(() => {
+        const subscription = watch((value) => {
+            setPassword(value.password || "");
+        });
+        return () => subscription.unsubscribe();
+    }, [watch]);
 
+    const rules = {
+        length: password.length >= 8,
+        upper: /[A-Z]/.test(password),
+        number: /[0-9]/.test(password),
+        special: /[!@#$%^&*]/.test(password),
+    };
 
     const onSubmit = handleSubmit((data) => console.log(data))
 
@@ -45,7 +57,7 @@ return (<>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
-                    <Label  text="الاسم الأول"/>
+                    <Label  text="الاسم الأول" />
                     <Input {...register("fristName")} type="text" name="fristName" pl="pl-4" error={!!errors.fristName} placeholder="أحمد" icon={<User size={24}/>}/>
                     <MsgError error={errors.fristName?.message}/>
                 </div>
@@ -68,6 +80,7 @@ return (<>
                     <Label  text="كلمة المرور"/>
                     <Input {...register("password")} type="password" name="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
                     <MsgError error={errors.password?.message}/>
+                    <PasswordRules length={rules.length} upper={rules.upper} number={rules.number} special={rules.special}/>
                 </div>
                 <div>
                     <Label  text="تأكيد كلمه المرور"/>
@@ -90,7 +103,7 @@ return (<>
             <div className="mt-8 text-center">
                 <p className="text-text-body">
                     لديك حساب بالفعل؟ {' '}
-                    <AuthLink text="سجل دخولك"/>
+                    <AuthLink text="سجل دخولك" color="text-secondary-700" hover="hover:text-secondary-800"/>
                 </p>
             </div>
         </form>

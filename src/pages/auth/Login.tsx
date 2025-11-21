@@ -51,7 +51,7 @@ return (<>
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>
-                <AuthLink text="نسيت كلمة المرور؟"/>
+                <AuthLink text="نسيت كلمة المرور؟" color="text-primary-500" hover="hover:primary-700"/>
             </div>
             <Button ariaLabel="login-btn" type="submit">
                 <span>تسجيل الدخول</span>
@@ -60,7 +60,7 @@ return (<>
             <div className="mt-8 text-center">
                 <p className="text-text-body">
                     ليس لديك حساب؟{' '}
-                    <AuthLink text="سجل الآن"/>
+                    <AuthLink text="سجل الآن" color="text-primary-500" hover="hover:primary-700"/>
                 </p>
             </div>
         </form>

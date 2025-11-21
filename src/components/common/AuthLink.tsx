@@ -1,11 +1,12 @@
 
 interface IProps {
     text: string
-    
+    color: string
+    hover: string
 }
-const AuthLink = ({text} : IProps) => {
+const AuthLink = ({text, color, hover} : IProps) => {
 return (<>
-    <button type="button" className="cursor-pointer text-sm font-semibold text-primary-500 hover:text-primary-700 transition-all" >
+    <button type="button" className={`cursor-pointer text-sm font-semibold ${color} ${hover} transition-all`} >
         {text}
     </button>
 </>)
