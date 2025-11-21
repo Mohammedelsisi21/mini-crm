@@ -5,7 +5,7 @@ import FormTitle from "../../components/form/FormTitle";
 import Checkbox from "../../components/common/Checkbox";
 import AuthLink from "../../components/common/AuthLink";
 import Button from "../../components/common/Button";
-import {ArrowRight, Award, Lock, Mail, User } from "lucide-react";
+import {ArrowRight, Award, Building2, Lock, Mail, Phone, User } from "lucide-react";
 import GoogleIcon from "../../icons/GoogleIcon";
 import FacebookIcon from "../../icons/FacebookIcon";
 import SocialButton from "../../components/common/SocialButton";
@@ -17,7 +17,6 @@ import MsgError from "../../components/common/MsgError";
 
 type FormData = {
     fristName: string
-    lastName: string
     email: string
     phone: string
     companyName: string
@@ -46,7 +45,7 @@ return (<>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
-                    <Label  text="البريد الإلكتروني"/>
+                    <Label  text="الاسم الأول"/>
                     <Input {...register("fristName")} type="text" name="fristName" pl="pl-4" error={!!errors.fristName} placeholder="أحمد" icon={<User size={24}/>}/>
                     <MsgError error={errors.fristName?.message}/>
                 </div>
@@ -56,19 +55,33 @@ return (<>
                     <MsgError error={errors.email?.message}/>
                 </div>
                 <div>
-                    <Label  text="البريد الإلكتروني"/>
-                    <Input {...register("email")} type="email" name="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
-                    <MsgError error={errors.email?.message}/>
+                    <Label  text="رقم الهاتف"/>
+                    <Input {...register("phone")} type="tel" name="phone" pl="pl-4" error={!!errors.phone} placeholder="010 | 011 | 012 | 015" icon={<Phone size={24}/>}/>
+                    <MsgError error={errors.phone?.message}/>
+                </div>
+                <div>
+                    <Label  text="اسم الشركة"/>
+                    <Input {...register("companyName")} type="text" name="companyName" pl="pl-4" error={!!errors.companyName} placeholder="اسم شركتك" icon={<Building2 size={24}/>}/>
+                    <MsgError error={errors.companyName?.message}/>
                 </div>
                 <div>
                     <Label  text="كلمة المرور"/>
                     <Input {...register("password")} type="password" name="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
                     <MsgError error={errors.password?.message}/>
                 </div>
+                <div>
+                    <Label  text="تأكيد كلمه المرور"/>
+                    <Input {...register("confirmPassword")} type="password" name="confirmPassword" pl="pl-12" error={!!errors.confirmPassword} pass placeholder="تأكيد كلمه المرور" icon={<Lock size={24}/>}/>
+                    <MsgError error={errors.confirmPassword?.message}/>
+                </div>
             </div>
-            <div className="flex items-center justify-between font-main">
-                <Checkbox text="تذكرني"/>
-                <AuthLink text="نسيت كلمة المرور؟"/>
+            <div className="flex items-center space-x-1 font-main">
+                <Checkbox text="أوافق على "/>
+                <p className="text-center text-sm text-gray-500">
+                    <a href="#" className="text-secondary-600 font-medium hover:underline">الشروط والأحكام</a>
+                    {' '}و{' '}
+                    <a href="#" className="text-secondary-600 font-medium hover:underline">سياسة الخصوصية</a>
+                </p>
             </div>
             <Button variant="secondary" ariaLabel="login-btn" type="submit">
                 <span>إنشاء الحساب</span>
@@ -76,8 +89,8 @@ return (<>
             </Button>
             <div className="mt-8 text-center">
                 <p className="text-text-body">
-                    ليس لديك حساب؟{' '}
-                    <AuthLink text="سجل الآن"/>
+                    لديك حساب بالفعل؟ {' '}
+                    <AuthLink text="سجل دخولك"/>
                 </p>
             </div>
         </form>
@@ -88,12 +101,6 @@ return (<>
                     <SocialButton name="Facebook" icon={<FacebookIcon/>}/>
                 </div>
         </div>
-        <p className="text-center text-sm text-gray-500 mt-6">
-            بالمتابعة، أنت توافق على{' '}
-            <a href="#" className="text-primary-600 font-medium hover:underline">شروط الخدمة</a>
-            {' '}و{' '}
-            <a href="#" className="text-primary-600 font-medium hover:underline">سياسة الخصوصية</a>
-        </p>
     </AuthLayout>
 </>)
 }

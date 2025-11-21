@@ -1,6 +1,7 @@
 
 interface IProps {
     text: string
+    
 }
 const AuthLink = ({text} : IProps) => {
 return (<>
