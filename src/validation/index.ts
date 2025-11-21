@@ -38,8 +38,13 @@ export const RegisterSchema = yup.object().shape({
     confirmPassword: yup
     .string()
     .required("تأكيد كلمة المرور مطلوبة")
-    .oneOf([yup.ref("password")], "كلمتا المرور غير متطابقتين")
-    
+    .oneOf([yup.ref("password")], "كلمتا المرور غير متطابقتين"),
+
+    acceptTerms: yup
+    .boolean()
+    .required("يجب الموافقة على الشروط والأحكام")
+    .oneOf([true], "يجب الموافقة على الشروط والأحكام")
+
 });
 
 // ** LoginSchema

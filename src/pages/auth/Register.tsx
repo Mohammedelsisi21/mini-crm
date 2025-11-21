@@ -24,6 +24,7 @@ type FormData = {
     companyName: string
     password: string
     confirmPassword: string
+    acceptTerms: boolean
 }
 const Register = () => {
     const [password, setPassword] = useState("")
@@ -87,13 +88,16 @@ return (<>
                     <MsgError error={errors.confirmPassword?.message}/>
                 </div>
             </div>
-            <div className="flex items-center space-x-1 font-main">
-                <Checkbox text="أوافق على "/>
-                <p className="text-center text-sm text-gray-500">
-                    <a href="#" className="text-secondary-600 font-medium hover:underline">الشروط والأحكام</a>
-                    {' '}و{' '}
-                    <a href="#" className="text-secondary-600 font-medium hover:underline">سياسة الخصوصية</a>
-                </p>
+            <div>
+                <div className="flex items-center space-x-1 font-main">
+                    <Checkbox {...register("acceptTerms")} text="أوافق على "/>
+                    <p className="text-center text-sm text-gray-500">
+                        <a href="#" className="text-secondary-600 font-medium hover:underline">الشروط والأحكام</a>
+                        {' '}و{' '}
+                        <a href="#" className="text-secondary-600 font-medium hover:underline">سياسة الخصوصية</a>
+                    </p>
+                </div>
+                <MsgError error={errors.acceptTerms?.message}/>
             </div>
             <Button variant="secondary" ariaLabel="login-btn" type="submit">
                 <span>إنشاء الحساب</span>
