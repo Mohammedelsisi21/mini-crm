@@ -1,9 +1,10 @@
-import Register from "./pages/auth/Register"
+import { RouterProvider } from "react-router-dom"
+import { router } from "./router/inedsx"
 
 const App = () => {
-  return (
-    <div><Register /></div>
-  )
+  return (<>
+    <RouterProvider router={router} />
+  </>)
 }
 
 export default App

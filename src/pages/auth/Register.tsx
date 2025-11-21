@@ -15,7 +15,6 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import MsgError from "../../components/common/MsgError";
 import { useEffect, useState } from "react";
 import PasswordRules from "../../components/form/PasswordRules";
-// import PasswordRules from "../../components/form/PasswordRules";
 
 
 type FormData = {
@@ -103,7 +102,7 @@ return (<>
             <div className="mt-8 text-center">
                 <p className="text-text-body">
                     لديك حساب بالفعل؟ {' '}
-                    <AuthLink text="سجل دخولك" color="text-secondary-700" hover="hover:text-secondary-800"/>
+                    <AuthLink url="/login" text="سجل دخولك" color="text-secondary-700" hover="hover:text-secondary-800"/>
                 </p>
             </div>
         </form>

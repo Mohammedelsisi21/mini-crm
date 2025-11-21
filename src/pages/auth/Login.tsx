@@ -5,7 +5,7 @@ import FormTitle from "../../components/form/FormTitle";
 import Checkbox from "../../components/common/Checkbox";
 import AuthLink from "../../components/common/AuthLink";
 import Button from "../../components/common/Button";
-import { ArrowLeft, Lock, Mail, Shield } from "lucide-react";
+import { ArrowRight, Lock, Mail, Shield } from "lucide-react";
 import GoogleIcon from "../../icons/GoogleIcon";
 import FacebookIcon from "../../icons/FacebookIcon";
 import SocialButton from "../../components/common/SocialButton";
@@ -55,12 +55,12 @@ return (<>
             </div>
             <Button ariaLabel="login-btn" type="submit">
                 <span>تسجيل الدخول</span>
-                <ArrowLeft size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <div className="mt-8 text-center">
                 <p className="text-text-body">
                     ليس لديك حساب؟{' '}
-                    <AuthLink text="سجل الآن" color="text-primary-500" hover="hover:primary-700"/>
+                    <AuthLink url="/register" text="سجل الآن" color="text-primary-500" hover="hover:primary-700"/>
                 </p>
             </div>
         </form>
