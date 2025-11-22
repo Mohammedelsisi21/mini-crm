@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
 
-// ** LoginSchema
+// ** RegisterSchema
 export const RegisterSchema = yup.object().shape({
     fristName: yup
     .string()
@@ -63,4 +63,14 @@ export const LoginSchema = yup.object().shape({
     .min(8, "يجب أن تحتوي كلمة السر على 8 أحرف على الأقل"),
 });
 
-
+// ** ForgetPasswordSchema
+export const ForgetPasswordSchema = yup.object().shape({
+    email: yup
+    .string()
+    .email("البريد الإلكتروني غير صالح")
+    .required("البريد الإلكتروني مطلوب")
+    .matches(
+        /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
+        "البريد الإلكتروني غير صالح"
+    ),
+})

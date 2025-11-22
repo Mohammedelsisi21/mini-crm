@@ -15,3 +15,9 @@ export interface IDataLogin  {
     email: string
     password: string
 }
+
+// * ConformPass */
+
+export interface IDataForgetPassword {
+    email: string
+}

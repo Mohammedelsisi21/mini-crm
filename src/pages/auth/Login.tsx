@@ -29,7 +29,7 @@ const Login = () => {
     const onSubmit = handleSubmit((data) => console.log(data))
 
 return (<>
-    <AuthLayout>
+    <AuthLayout w="lg:min-w-5xl">
         <FormTitle
         background = "gradient-primary"
         icon={<Shield size={40} className="text-white"/>}
@@ -48,14 +48,14 @@ return (<>
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>
-                <AuthLink text="نسيت كلمة المرور؟" color="text-primary-500" hover="hover:primary-700"/>
+                <AuthLink url="/forgetPassword" text="نسيت كلمة المرور؟" color="text-primary-500" hover="hover:primary-700"/>
             </div>
             <Button ariaLabel="login-btn" type="submit">
                 <span>تسجيل الدخول</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <div className="mt-8 text-center">
-                <p className="text-text-body">
+                <p className="text-text-body flex justify-center space-x-1">
                     ليس لديك حساب؟{' '}
                     <AuthLink url="/register" text="سجل الآن" color="text-primary-500" hover="hover:primary-700"/>
                 </p>

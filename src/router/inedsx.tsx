@@ -9,7 +9,7 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} /> 
+            <Route path="/login" element={<Login />} />
             <Route path="/forgetPassword" element={<ForgetPassword />} />
             <Route path="/resetPassword" element={<ResetPassword />} />
         </>

@@ -40,7 +40,7 @@ const Register = () => {
     const onSubmit = handleSubmit((data) => console.log(data))
 
 return (<>
-    <AuthLayout>
+    <AuthLayout w="lg:min-w-5xl">
         <FormTitle
         background = "gradient-secondary"
         icon={<Award size={40} className="text-white"/>}
