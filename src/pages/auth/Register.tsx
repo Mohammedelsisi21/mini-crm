@@ -49,7 +49,7 @@ return (<>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
-                    <Label  text="الاسم الأول" />
+                    <Label  text="الاسم" />
                     <Input {...register("fristName")} type="text" name="fristName" pl="pl-4" error={!!errors.fristName} placeholder="أحمد" icon={<User size={24}/>}/>
                     <MsgError error={errors.fristName?.message}/>
                 </div>

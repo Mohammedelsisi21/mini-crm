@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router-dom"
-import { router } from "./router/inedsx"
+import router from "./router/inedsx"
 
 const App = () => {
   return (<>
