@@ -83,7 +83,7 @@ return (<>
             <div>
                 <div className="flex items-center space-x-1 font-main">
                     <Checkbox {...register("acceptTerms")} text="أوافق على "/>
-                    <p className="text-center text-sm text-gray-500">
+                    <p className="text-center text-sm text-gray-500 ">
                         <a href="#" className="text-secondary-600 font-medium hover:underline">الشروط والأحكام</a>
                         {' '}و{' '}
                         <a href="#" className="text-secondary-600 font-medium hover:underline">سياسة الخصوصية</a>
@@ -96,7 +96,7 @@ return (<>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <div className="mt-8 text-center">
-                <p className="text-text-body">
+                <p className="text-text-body flex justify-center space-x-1">
                     لديك حساب بالفعل؟ {' '}
                     <AuthLink url="/login" text="سجل دخولك" color="text-secondary-700" hover="hover:text-secondary-800"/>
                 </p>
