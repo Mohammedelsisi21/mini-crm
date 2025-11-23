@@ -48,7 +48,7 @@ return (<>
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>
-                <AuthLink url="/forgetPassword" text="نسيت كلمة المرور؟" color="text-primary-500" hover="hover:primary-700"/>
+                <AuthLink url="/forgot-password" text="نسيت كلمة المرور؟" color="text-primary-500" hover="hover:primary-700"/>
             </div>
             <Button ariaLabel="login-btn" type="submit">
                 <span>تسجيل الدخول</span>

@@ -11,6 +11,7 @@ import { ForgetPasswordSchema } from "../../validation"
 import { yupResolver } from "@hookform/resolvers/yup"
 import AuthLink from "../../components/common/AuthLink"
 import CardAuth from "../../components/common/CardAuth"
+import { Link } from "react-router-dom"
 
 const ForgetPassword = () => {
     const {
@@ -37,13 +38,13 @@ return (<>
                 <MsgError error={errors.email?.message}/>
             </div>
             <Button ariaLabel="login-btn" type="submit">
-                <span>إرسال رابط إعاده التعيين</span>
+                <Link to={'/forgot-password/verify'}>إرسال رابط إعاده التعيين</Link>
             </Button>
-            <AuthLink textSize="text-md" url="/login" icon={<ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform"/>} text={"العوده لتسجيل الدخول"} algin={"text-center"} color="text-primary-500" hover="hover:text-primary-700"/>
+            <AuthLink textSize="text-md" url="/login" icon={<ArrowLeft size={18} className="group-hover:translate-x-1 transition-transform"/>} text={"العوده لتسجيل الدخول"} algin={"text-center"} color="text-primary-500" hover="hover:text-primary-700"/>
         </form>
         <CardAuth
         bg="bg-primary-100"
-        icon={<Shield className="text-white"/>}
+        icon={<Shield size={16} className="text-white"/>}
         backgroundIcon="gradient-primary"
         title="نصيحة أمنية"
         des="سنرسل رابط إعادة التعيين إلى بريدك الإلكتروني. الرابط صالح لمدة 24 ساعة فقط."/>
