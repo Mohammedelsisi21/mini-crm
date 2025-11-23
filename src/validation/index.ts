@@ -3,7 +3,7 @@ import * as yup from "yup";
 
 // ** RegisterSchema
 export const RegisterSchema = yup.object().shape({
-    fristName: yup
+    username: yup
     .string()
     .required("الاسم مطلوب")
     .matches(/^[a-zA-Z\u0600-\u06FF\s]{3,}$/, "يجيب ان يكون الاسم اكثر من 3 حروف عل الاقل"),

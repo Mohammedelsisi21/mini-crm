@@ -49,34 +49,34 @@ return (<>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
-                    <Label  text="الاسم" />
-                    <Input {...register("fristName")} type="text" name="fristName" pl="pl-4" error={!!errors.fristName} placeholder="أحمد" icon={<User size={24}/>}/>
-                    <MsgError error={errors.fristName?.message}/>
+                    <Label htmlFor="username" text="الاسم" />
+                    <Input {...register("username")} type="text" name="username" id="username" pl="pl-4" error={!!errors.username} placeholder="أحمد" autoFocus icon={<User size={24}/>}/>
+                    <MsgError error={errors.username?.message}/>
                 </div>
                 <div>
-                    <Label  text="البريد الإلكتروني"/>
-                    <Input {...register("email")} type="email" name="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
+                    <Label htmlFor="email" text="البريد الإلكتروني"/>
+                    <Input {...register("email")} type="email" name="email" id="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
                     <MsgError error={errors.email?.message}/>
                 </div>
                 <div>
-                    <Label  text="رقم الهاتف"/>
-                    <Input {...register("phone")} type="tel" name="phone" pl="pl-4" error={!!errors.phone} placeholder="010 | 011 | 012 | 015" icon={<Phone size={24}/>}/>
+                    <Label htmlFor="phone" text="رقم الهاتف"/>
+                    <Input {...register("phone")} type="tel" name="phone" id="phone" pl="pl-4" error={!!errors.phone} placeholder="010 | 011 | 012 | 015" icon={<Phone size={24}/>}/>
                     <MsgError error={errors.phone?.message}/>
                 </div>
                 <div>
-                    <Label  text="اسم الشركة"/>
-                    <Input {...register("companyName")} type="text" name="companyName" pl="pl-4" error={!!errors.companyName} placeholder="اسم شركتك" icon={<Building2 size={24}/>}/>
+                    <Label htmlFor="companyName" text="اسم الشركة"/>
+                    <Input {...register("companyName")} type="text" name="companyName" id="companyName" pl="pl-4" error={!!errors.companyName} placeholder="اسم شركتك" icon={<Building2 size={24}/>}/>
                     <MsgError error={errors.companyName?.message}/>
                 </div>
                 <div>
-                    <Label  text="كلمة المرور"/>
-                    <Input {...register("password")} type="password" name="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
+                    <Label htmlFor="password" text="كلمة المرور"/>
+                    <Input {...register("password")} type="password" name="password" id="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
                     <MsgError error={errors.password?.message}/>
                     <PasswordRules length={rules.length} upper={rules.upper} number={rules.number} special={rules.special}/>
                 </div>
                 <div>
-                    <Label  text="تأكيد كلمه المرور"/>
-                    <Input {...register("confirmPassword")} type="password" name="confirmPassword" pl="pl-12" error={!!errors.confirmPassword} pass placeholder="تأكيد كلمه المرور" icon={<Lock size={24}/>}/>
+                    <Label htmlFor="confirmPassword" text="تأكيد كلمه المرور"/>
+                    <Input {...register("confirmPassword")} type="password" name="confirmPassword" id="confirmPassword" pl="pl-12" error={!!errors.confirmPassword} pass placeholder="تأكيد كلمه المرور" icon={<Lock size={24}/>}/>
                     <MsgError error={errors.confirmPassword?.message}/>
                 </div>
             </div>

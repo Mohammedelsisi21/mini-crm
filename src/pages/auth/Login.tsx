@@ -37,13 +37,13 @@ return (<>
         des="سجل دخولك للوصول إلى لوحة التحكم"/>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div>
-                <Label  text="البريد الإلكتروني"/>
-                <Input {...register("email")} type="email" name="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
+                <Label htmlFor="email" text="البريد الإلكتروني"/>
+                <Input {...register("email")} type="email" name="email" id="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" autoFocus icon={<Mail size={24}/>}/>
                 <MsgError error={errors.email?.message}/>
             </div>
             <div>
-                <Label  text="كلمة المرور"/>
-                <Input {...register("password")} type="password" name="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
+                <Label htmlFor="password" text="كلمة المرور"/>
+                <Input {...register("password")} type="password" name="password" id="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
                 <MsgError error={errors.password?.message}/>
             </div>
             <div className="flex items-center justify-between font-main">

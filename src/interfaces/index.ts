@@ -1,7 +1,7 @@
 
 //** Register */
 export interface IDataRegister {
-    fristName: string
+    username: string
     email: string
     phone: string
     companyName: string
