@@ -5,7 +5,7 @@ import FormTitle from "../../components/form/FormTitle";
 import Checkbox from "../../components/common/Checkbox";
 import AuthLink from "../../components/common/AuthLink";
 import Button from "../../components/common/Button";
-import { ArrowLeft, Lock, Mail, Shield } from "lucide-react";
+import { ArrowRight, Lock, Mail, Shield } from "lucide-react";
 import GoogleIcon from "../../icons/GoogleIcon";
 import FacebookIcon from "../../icons/FacebookIcon";
 import SocialButton from "../../components/common/SocialButton";
@@ -13,18 +13,15 @@ import { useForm } from "react-hook-form";
 import { LoginSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup"
 import MsgError from "../../components/common/MsgError";
+import type { IDataLogin } from "../../interfaces";
 
 
-type FormData = {
-    email: string
-    password: string
-}
 const Login = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-        } = useForm<FormData>({
+        } = useForm<IDataLogin>({
             resolver: yupResolver(LoginSchema),
         })
 
@@ -32,7 +29,7 @@ const Login = () => {
     const onSubmit = handleSubmit((data) => console.log(data))
 
 return (<>
-    <AuthLayout>
+    <AuthLayout w="lg:min-w-5xl">
         <FormTitle
         background = "gradient-primary"
         icon={<Shield size={40} className="text-white"/>}
@@ -51,16 +48,16 @@ return (<>
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>
-                <AuthLink text="نسيت كلمة المرور؟"/>
+                <AuthLink url="/forgetPassword" text="نسيت كلمة المرور؟" color="text-primary-500" hover="hover:primary-700"/>
             </div>
             <Button ariaLabel="login-btn" type="submit">
                 <span>تسجيل الدخول</span>
-                <ArrowLeft size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <div className="mt-8 text-center">
-                <p className="text-text-body">
+                <p className="text-text-body flex justify-center space-x-1">
                     ليس لديك حساب؟{' '}
-                    <AuthLink text="سجل الآن"/>
+                    <AuthLink url="/register" text="سجل الآن" color="text-primary-500" hover="hover:primary-700"/>
                 </p>
             </div>
         </form>

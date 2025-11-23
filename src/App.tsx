@@ -1,18 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Register from "./pages/auth/Register"
-import Login from "./pages/auth/Login"
-import Dashboard from "./pages/dashoboard/Dashboard"
+import { RouterProvider } from "react-router-dom"
+import router from "./router/inedsx"
 
-function App() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Register />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-            </Routes>
-        </BrowserRouter>
-    )
+const App = () => {
+  return (<>
+    <RouterProvider router={router} />
+  </>)
 }
 
 export default App

@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
 
-// ** LoginSchema
+// ** RegisterSchema
 export const RegisterSchema = yup.object().shape({
     fristName: yup
     .string()
@@ -38,8 +38,13 @@ export const RegisterSchema = yup.object().shape({
     confirmPassword: yup
     .string()
     .required("تأكيد كلمة المرور مطلوبة")
-    .oneOf([yup.ref("password")], "كلمتا المرور غير متطابقتين")
-    
+    .oneOf([yup.ref("password")], "كلمتا المرور غير متطابقتين"),
+
+    acceptTerms: yup
+    .boolean()
+    .required("يجب الموافقة على الشروط والأحكام")
+    .oneOf([true], "يجب الموافقة على الشروط والأحكام")
+
 });
 
 // ** LoginSchema
@@ -58,4 +63,14 @@ export const LoginSchema = yup.object().shape({
     .min(8, "يجب أن تحتوي كلمة السر على 8 أحرف على الأقل"),
 });
 
-
+// ** ForgetPasswordSchema
+export const ForgetPasswordSchema = yup.object().shape({
+    email: yup
+    .string()
+    .email("البريد الإلكتروني غير صالح")
+    .required("البريد الإلكتروني مطلوب")
+    .matches(
+        /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
+        "البريد الإلكتروني غير صالح"
+    ),
+})

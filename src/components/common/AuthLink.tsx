@@ -1,13 +1,21 @@
+import type { ReactNode } from "react"
+import { Link } from "react-router-dom"
 
 interface IProps {
     text: string
-    
+    icon?: ReactNode
+    color: string
+    hover: string
+    url?: string
+    algin?: string
+    textSize?: "text-md" | "text-sm" | "text-lg"
 }
-const AuthLink = ({text} : IProps) => {
+const AuthLink = ({text, icon, color, hover, algin, textSize ="text-sm", url= ""} : IProps) => {
 return (<>
-    <button type="button" className="cursor-pointer text-sm font-semibold text-primary-500 hover:text-primary-700 transition-all" >
+    <Link to={url} type="button" className={`cursor-pointer block ${algin} ${textSize} font-semibold ${color} ${hover} transition-all flex justify-center items-center group`} >
         {text}
-    </button>
+        {icon}
+    </Link>
 </>)
 }
 

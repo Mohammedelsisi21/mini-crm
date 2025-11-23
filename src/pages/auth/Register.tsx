@@ -14,36 +14,34 @@ import { useForm } from "react-hook-form";
 import { RegisterSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup"
 import MsgError from "../../components/common/MsgError";
+import { useEffect, useState } from "react";
+import PasswordRules from "../../components/form/PasswordRules";
+import type { IDataRegister } from "../../interfaces";
 
 
-type FormData = {
-    fristName: string
-    email: string
-    phone: string
-    companyName: string
-    password: string
-    confirmPassword: string
-}
 const Register = () => {
-     const navigate = useNavigate()
+    const [password, setPassword] = useState("")
+    const { register, handleSubmit, watch, formState: { errors }} = useForm<IDataRegister>({
+            resolver: yupResolver(RegisterSchema),
+        })
+    useEffect(() => {
+        const subscription = watch((value) => {
+            setPassword(value.password || "");
+        });
+        return () => subscription.unsubscribe();
+    }, [watch]);
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm<FormData>({
-        resolver: yupResolver(RegisterSchema),
-    })
-
-    const onSubmit = handleSubmit((data) => {
-        console.log(data)
-        navigate("/dashboard")
-    })
+    const rules = {
+        length: password.length >= 8,
+        upper: /[A-Z]/.test(password),
+        number: /[0-9]/.test(password),
+        special: /[!@#$%^&*]/.test(password),
+    };
 
     
 
 return (<>
-    <AuthLayout>
+    <AuthLayout w="lg:min-w-5xl">
         <FormTitle
         background = "gradient-secondary"
         icon={<Award size={40} className="text-white"/>}
@@ -52,7 +50,7 @@ return (<>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
-                    <Label  text="الاسم الأول"/>
+                    <Label  text="الاسم" />
                     <Input {...register("fristName")} type="text" name="fristName" pl="pl-4" error={!!errors.fristName} placeholder="أحمد" icon={<User size={24}/>}/>
                     <MsgError error={errors.fristName?.message}/>
                 </div>
@@ -75,6 +73,7 @@ return (<>
                     <Label  text="كلمة المرور"/>
                     <Input {...register("password")} type="password" name="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
                     <MsgError error={errors.password?.message}/>
+                    <PasswordRules length={rules.length} upper={rules.upper} number={rules.number} special={rules.special}/>
                 </div>
                 <div>
                     <Label  text="تأكيد كلمه المرور"/>
@@ -82,22 +81,25 @@ return (<>
                     <MsgError error={errors.confirmPassword?.message}/>
                 </div>
             </div>
-            <div className="flex items-center space-x-1 font-main">
-                <Checkbox text="أوافق على "/>
-                <p className="text-center text-sm text-gray-500">
-                    <a href="#" className="text-secondary-600 font-medium hover:underline">الشروط والأحكام</a>
-                    {' '}و{' '}
-                    <a href="#" className="text-secondary-600 font-medium hover:underline">سياسة الخصوصية</a>
-                </p>
+            <div>
+                <div className="flex items-center space-x-1 font-main">
+                    <Checkbox {...register("acceptTerms")} text="أوافق على "/>
+                    <p className="text-center text-sm text-gray-500 ">
+                        <a href="#" className="text-secondary-600 font-medium hover:underline">الشروط والأحكام</a>
+                        {' '}و{' '}
+                        <a href="#" className="text-secondary-600 font-medium hover:underline">سياسة الخصوصية</a>
+                    </p>
+                </div>
+                <MsgError error={errors.acceptTerms?.message}/>
             </div>
             <Button variant="secondary" ariaLabel="login-btn" type="submit">
                 <span>إنشاء الحساب</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <div className="mt-8 text-center">
-                <p className="text-text-body">
+                <p className="text-text-body flex justify-center space-x-1">
                     لديك حساب بالفعل؟ {' '}
-                    <AuthLink text="سجل دخولك"/>
+                    <AuthLink url="/login" text="سجل دخولك" color="text-secondary-700" hover="hover:text-secondary-800"/>
                 </p>
             </div>
         </form>
