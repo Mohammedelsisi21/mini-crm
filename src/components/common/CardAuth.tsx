@@ -15,7 +15,7 @@ return (
                 <div style={{background: `var(--${backgroundIcon})`}} className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0">
                 {icon}
                 </div>
-                <h4 className="font-bold text-text-heading text-sm mb-1">{title}</h4>
+                <h3 className="font-bold text-text-heading text-sm mb-1">{title}</h3>
             </div>
             <div>
                 <p className="text-xs text-text-body leading-relaxed">

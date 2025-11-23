@@ -99,3 +99,8 @@
 .bg-gradient-denger {
     background: var(--gradient-error);
 }
+
+
+.ltr {
+    direction: ltr;
+}
