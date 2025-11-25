@@ -27,12 +27,12 @@ return (<>
           <div className="mt-6">
             <Label text="كود التحقق" center="text-center"/>
             <div className="flex gap-3 justify-center ltr">
-              <InputCode aria-label="Digit 1" autoFocus/>
-              <InputCode aria-label="Digit 2"/>
-              <InputCode aria-label="Digit 3"/>
-              <InputCode aria-label="Digit 4"/>
-              <InputCode aria-label="Digit 5"/>
-              <InputCode aria-label="Digit 6"/>
+              <InputCode key={1} aria-label="Digit 1" autoFocus/>
+              <InputCode key={2} aria-label="Digit 2"/>
+              <InputCode key={3} aria-label="Digit 3"/>
+              <InputCode key={4} aria-label="Digit 4"/>
+              <InputCode key={5} aria-label="Digit 5"/>
+              <InputCode key={6} aria-label="Digit 6"/>
             </div>
           </div>
 

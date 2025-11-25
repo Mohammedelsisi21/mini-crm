@@ -13,7 +13,7 @@ const InputCode = ({...rest}: InputCodeProps) => {
       pattern="[0-9]"
       onInput={handleInput}
       inputMode="numeric"
-      className="w-14 h-15 text-center text-2xl font-semibold border-2 border-gray-400 rounded-xl transition-all duration-300 ease-in focus:border-primary-500 shadow-sm outline-none"/>
+      className="w-14 h-15 text-center text-2xl font-semibold border-3 border-gray-400 rounded-xl transition-all duration-300 ease-in focus:border-primary-500 shadow-sm outline-none"/>
   </>)
 }
 
