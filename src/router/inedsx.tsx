@@ -17,7 +17,7 @@ const router = createBrowserRouter(
             <Route path="/forgot-password/verify" element={<ForgetPasswordVerify />} errorElement={<ErrorBoundary />}/>
             <Route path="/resetPassword" element={<ResetPassword />} errorElement={<ErrorBoundary />}/>
 
-            <Route path="*" element={<ErrorBoundary />} />
+            <Route path="*" element={<NotFoundPage />} />
         </>
     )
 )
