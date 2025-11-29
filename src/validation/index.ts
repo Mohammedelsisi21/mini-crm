@@ -74,3 +74,19 @@ export const ForgetPasswordSchema = yup.object().shape({
         "البريد الإلكتروني غير صالح"
     ),
 })
+
+
+export const ResetPasswordSchema = yup.object().shape({
+    password: yup
+    .string()
+    .required("كلمة المرور مطلوبة")
+    .matches(/^(?=.*[A-Z])/, "يجب أن تحتوي على حرف كبير واحد")
+    .matches(/^(?=.*[0-9])/, "يجب أن تحتوي على رقم واحد")
+    .matches(/^(?=.*[!@#$^&_/-/,<>?])/, "يجب أن تحتوي على رمز خاص واحد")
+    .min(8, "يجب أن تكون 8 أحرف على الأقل"),
+
+    confirmPassword: yup
+    .string()
+    .required("تأكيد كلمة المرور مطلوبة")
+    .oneOf([yup.ref("password")], "كلمتا المرور غير متطابقتين"),
+});

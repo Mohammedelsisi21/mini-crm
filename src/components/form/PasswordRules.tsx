@@ -9,7 +9,7 @@ type RulesProps = {
 
 const RuleItem = ({ label, valid }: { label: string; valid: boolean }) => {
 return (
-    <div className="flex items-center gap-2 text-sm">
+    <div className="flex items-center gap-2 text-sm font-bold">
         {valid ? (
             <CheckCircle className="text-success-500" size={18} />
         ) : (

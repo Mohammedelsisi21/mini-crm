@@ -7,8 +7,10 @@ import { useEffect, useRef, useState } from "react"
 import InputCode from "../../components/form/InputCode"
 import AuthLink from "../../components/common/AuthLink"
 import toast from "react-hot-toast"
+import { useNavigate } from "react-router-dom"
 
 const ForgetPassword = () => {
+  const navigate = useNavigate()
   const [timer, setTimer] = useState<number>(60);
   const [isComplete, setIsComplete] = useState(false)
   const c1 = useRef<HTMLInputElement>(null);
@@ -51,6 +53,7 @@ const ForgetPassword = () => {
         (c6.current?.value || "");
     if(code === "123456") {
       toast.success("كود صحيح")
+      navigate("/resetPassword")
     }
     else{
       toast.error("كود غير صحيح")

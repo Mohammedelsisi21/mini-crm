@@ -21,3 +21,7 @@ export interface IDataLogin  {
 export interface IDataForgetPassword {
     email: string
 }
+export interface IDataResetPassword {
+    password: string
+    confirmPassword: string
+}
