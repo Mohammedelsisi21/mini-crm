@@ -6,11 +6,11 @@ import Label from "../../components/common/Label"
 import { useEffect, useRef, useState } from "react"
 import InputCode from "../../components/form/InputCode"
 import AuthLink from "../../components/common/AuthLink"
+import toast from "react-hot-toast"
 
 const ForgetPassword = () => {
   const [timer, setTimer] = useState<number>(60);
   const [isComplete, setIsComplete] = useState(false)
-  
   const c1 = useRef<HTMLInputElement>(null);
   const c2 = useRef<HTMLInputElement>(null);
   const c3 = useRef<HTMLInputElement>(null);
@@ -39,7 +39,23 @@ const ForgetPassword = () => {
     ]
     setIsComplete(values.every((v) => v && v.trim() !== ""))
   }
-  
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+      const code =
+        (c1.current?.value || "") +
+        (c2.current?.value || "") +
+        (c3.current?.value || "") +
+        (c4.current?.value || "") +
+        (c5.current?.value || "") +
+        (c6.current?.value || "");
+    if(code === "123456") {
+      toast.success("كود صحيح")
+    }
+    else{
+      toast.error("كود غير صحيح")
+    }
+  }
 return (<>
     <AuthLayout w="md:min-w-sm">
         <FormTitle
@@ -48,7 +64,7 @@ return (<>
         title="تحقق من بريدك الإلكتروني"
         des="أدخل الكود المكون من 6 أرقام الذي أرسلناه إلى:"/>
         <p className="text-center text-primary-500">example@email.com</p>
-        <form className="space-y-5 font-main">
+        <form className="space-y-5 font-main" onSubmit={onSubmit}>
           <div className="mt-6">
             <Label text="كود التحقق"/>
             <div className="flex gap-3 justify-center ltr">
@@ -60,7 +76,7 @@ return (<>
               <InputCode ref={c6} prev={c5} onKeyUp={checkComplete}/>
             </div>
           </div>
-          <button type="button"
+          <button
             disabled={!isComplete}
             className={`mt-4 px-6 w-full py-2 rounded-xl text-white font-semibold transition 
             ${isComplete ? "bg-primary-600 hover:bg-primary-700" : "bg-gray-400 cursor-not-allowed"}`}>
@@ -71,7 +87,7 @@ return (<>
           <p className="text-center text-text-heading text-sm">لم تستلم الكود؟</p>
           <button type="button"
           disabled={timer > 0}
-          className={`${timer > 0 ? "text-gray-400 cursor-not-allowed" : "text-primary-600 hover:underline"}`}
+          className={`text-sm ${timer > 0 ? "text-gray-400 cursor-not-allowed" : "text-primary-600 hover:underline"}`}
           onClick={()=> setTimer(60)}>
             إعادة إرسال الكود
           </button>
