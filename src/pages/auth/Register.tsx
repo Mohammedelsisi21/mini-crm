@@ -3,6 +3,7 @@ import Label  from "../../components/common/Label";
 import AuthLayout from "../../layouts/AuthLayout";
 import FormTitle from "../../components/form/FormTitle";
 import Checkbox from "../../components/common/Checkbox";
+import { useNavigate } from "react-router-dom"
 import AuthLink from "../../components/common/AuthLink";
 import Button from "../../components/common/Button";
 import {ArrowRight, Award, Building2, Lock, Mail, Phone, User } from "lucide-react";
@@ -37,7 +38,7 @@ const Register = () => {
         special: /[!@#$%^&*]/.test(password),
     };
 
-    const onSubmit = handleSubmit((data) => console.log(data))
+    
 
 return (<>
     <AuthLayout w="lg:min-w-5xl">
