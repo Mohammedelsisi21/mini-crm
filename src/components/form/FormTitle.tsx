@@ -4,7 +4,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
     icon: ReactNode
     title: string
     des: string
-    background: "gradient-primary" | "gradient-secondary" | "gradient-pink"
+    background: "gradient-primary" | "gradient-secondary" | "gradient-pink" | "gradient-success"
 }
 
 const FormTitle = ({icon, title, des , background}: IProps) => {

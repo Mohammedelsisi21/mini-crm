@@ -62,11 +62,11 @@ return (<>
             </div>
         </form>
         <div className="mt-8 pt-8 border-t border-gray-200 font-main">
-                <Label center="text-center" text="أو سجل دخولك باستخدام"/>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <SocialButton name="Google" icon={<GoogleIcon/>}/>
-                    <SocialButton name="Facebook" icon={<FacebookIcon/>}/>
-                </div>
+            <Label center="text-center" text="أو سجل دخولك باستخدام"/>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <SocialButton name="Google" icon={<GoogleIcon/>}/>
+                <SocialButton name="Facebook" icon={<FacebookIcon/>}/>
+            </div>
         </div>
         <p className="text-center text-sm text-gray-500 mt-6">
             بالمتابعة، أنت توافق على{' '}

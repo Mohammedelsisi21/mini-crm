@@ -51,10 +51,10 @@ return (<>
         des="اختر كلمة مرور قوية لحماية حسابك"/>
         <form className="space-y-5 font-main" onSubmit={onSubmit}>
             <div>
-              <Label htmlFor="password" text="كلمة المرور الجديدة"/>
-              <Input {...register("password")} type="password" name="password" id="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل كلمة المرور الجديدة" icon={<Lock size={24}/>}/>
-              <MsgError error={errors.password?.message}/>
-              <CardAuth
+                <Label htmlFor="password" text="كلمة المرور الجديدة"/>
+                <Input {...register("password")} type="password" name="password" id="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل كلمة المرور الجديدة" icon={<Lock size={24}/>}/>
+                <MsgError error={errors.password?.message}/>
+                <CardAuth
                 bg="bg-primary-50"
                 backgroundIcon="gradient-primary"
                 icon={<Info size={16} className="text-white"/>}
@@ -64,12 +64,12 @@ return (<>
                 }/>
             </div>
             <div>
-              <Label htmlFor="confirmPassword" text="تأكيد كلمه المرور"/>
-              <Input {...register("confirmPassword")} type="password" name="confirmPassword" id="confirmPassword" pl="pl-12" error={!!errors.confirmPassword} pass placeholder="تأكيد كلمه المرور" icon={<Lock size={24}/>}/>
-              <MsgError error={errors.confirmPassword?.message}/>
+                <Label htmlFor="confirmPassword" text="تأكيد كلمه المرور"/>
+                <Input {...register("confirmPassword")} type="password" name="confirmPassword" id="confirmPassword" pl="pl-12" error={!!errors.confirmPassword} pass placeholder="تأكيد كلمه المرور" icon={<Lock size={24}/>}/>
+                <MsgError error={errors.confirmPassword?.message}/>
             </div>
             <Button ariaLabel="login-btn" type="submit">
-                <Link to={'/resetsuccess'}>إعاده تعيين كلمة المرور</Link>
+                <Link to={'/login'}>إعاده تعيين كلمة المرور</Link>
             </Button>
         </form>
     </AuthLayout>

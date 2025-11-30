@@ -95,7 +95,9 @@
 .bg-gradient-pink {
     background: var(--gradient-pink);
 }
-
+.bg-gradient-success {
+    background: var(--gradient-success);
+}
 .bg-gradient-denger {
     background: var(--gradient-error);
 }
