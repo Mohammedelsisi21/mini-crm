@@ -16,7 +16,7 @@ const Navbar = ({sidebarOpen} : IProps) => {
     { id: 'reports', icon: BarChart3, label: 'التقارير', badge: null }
   ];
 return (
-    <nav className="flex-1 p-4 space-y-2">
+    <nav aria-label="Primary-Nav" className="flex-1 p-4 space-y-2">
         {navItems.map(item => {
             const Icon = item.icon
             return<NavLink key={item.id} to={item.id}
@@ -24,7 +24,7 @@ return (
                 sidebarOpen ? <>
                     <Icon size={20}/>
                     <span className="flex-1 text-right">{item.label}</span>
-                        {item.badge && <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        {item.badge && <span className="bg-error-600 text-white text-sm font-bold px-2 py-1 rounded-full">
                         {item.badge}
                     </span>
                     }</> :

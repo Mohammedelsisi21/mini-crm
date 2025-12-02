@@ -1,6 +1,7 @@
 import { ChevronDown, LogOut, Menu, Settings, X } from "lucide-react"
 import { useState } from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 interface IProps {
   sidebarOpen: boolean
@@ -14,11 +15,11 @@ const SideRightBar = ({sidebarOpen, onClickMenu} : IProps) => {
         <div className="flex items-center justify-between">
           {sidebarOpen && (
             <div>
-              <h2 className="text-2xl font-bold bg-linear-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">نظام CRM</h2>
+              <Link to={"/"} className="text-2xl font-bold bg-linear-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">نظام CRM</Link>
                 <p className="text-gray-400 text-xs mt-1">إدارة علاقات العملاء</p>
               </div>
             )}
-            <button onClick={onClickMenu} className="p-2.5 hover:bg-gray-700 rounded-xl transition-all">
+            <button aria-label="Closed" onClick={onClickMenu} className="p-2.5 hover:bg-gray-700 rounded-xl transition-all">
               {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
         </div>

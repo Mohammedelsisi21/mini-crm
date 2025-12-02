@@ -10,7 +10,7 @@ const TopBar = () => {
           <Input type="text" placeholder="بحث سريع في النظام..." name="search" icon={<Search size={20}/>} pl="pl-4"/>
         </div>
         <div className="flex items-center gap-4">
-          <button className="p-3 hover:bg-gray-100 rounded-xl transition-all">
+          <button aria-label="Calendar" className="p-3 hover:bg-gray-100 rounded-xl transition-all">
             <Calendar size={22} className="text-gray-600" />
           </button>
           <div className="h-8 w-px bg-gray-300 mx-2"></div>
