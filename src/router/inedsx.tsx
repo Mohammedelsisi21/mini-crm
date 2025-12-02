@@ -7,14 +7,28 @@ import ForgetPasswordVerify from "../pages/auth/ForgetPasswordVerify";
 import ErrorBoundary from "../pages/error/ErrorBoundary";
 import NotFoundPage from "../pages/error/NotFoundPage";
 import MainLayout from "../layouts/DashboardLayout";
+import HomePage from "../pages/dashboard";
+import CustomersPage from "../pages/customers";
+import CommunicationsPage from "../pages/communications";
+import CategoriesPage from "../pages/categories";
+import ProductsPage from "../pages/products";
+import ComplaintsPage from "../pages/complaints";
+import ReportsPage from "../pages/reports";
 
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route index={true} path="/" element={<MainLayout />} errorElement={<ErrorBoundary />}>
-
+            <Route path="/" element={<MainLayout />} errorElement={<ErrorBoundary />}>
+                <Route index element={<HomePage />} />
+                <Route path="customers" element={<CustomersPage />} />
+                <Route path="communications" element={<CommunicationsPage />} />
+                <Route path="categories" element={<CategoriesPage />} />
+                <Route path="products" element={<ProductsPage />} />
+                <Route path="complaints" element={<ComplaintsPage />} />
+                <Route path="reports" element={<ReportsPage />} />
             </Route>
+
             <Route path="/register" element={<Register />} errorElement={<ErrorBoundary />}/>
             <Route path="/login" element={<Login />} />
             <Route path="/forgot-password" element={<ForgetPassword />} errorElement={<ErrorBoundary />}/>
