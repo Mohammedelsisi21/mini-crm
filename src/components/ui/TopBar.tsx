@@ -1,5 +1,6 @@
 import { Calendar, Search } from "lucide-react"
 import Input from "../common/Input"
+import MyDate from "./MyDate"
 
 const TopBar = () => {
   return (
@@ -13,11 +14,8 @@ const TopBar = () => {
             <Calendar size={22} className="text-gray-600" />
           </button>
           <div className="h-8 w-px bg-gray-300 mx-2"></div>
-          <div className="text-right">
-            <p className="text-sm font-bold text-gray-800">الجمعة</p>
-            <p className="text-xs text-gray-500">14 نوفمبر 2025</p>
+            <MyDate />
           </div>
-        </div>
       </div>
     </div>
   )
