@@ -1,8 +1,7 @@
 import { useMemo } from "react"
 
-const MyDate = () => {
-
-    const { dayName, formatedDate } = useMemo(() => {
+const useCurrentDate  = () => {
+    return useMemo(() => {
         const date = new Date()
         const dayName = date.toLocaleDateString("ar-EG", {weekday: "long"});
         const formatedDate = date.toLocaleDateString("ar-EG", {
@@ -12,12 +11,6 @@ const MyDate = () => {
         });
         return {dayName, formatedDate}
     }, [])
-    return (
-        <div className="text-right">
-            <p className="text-sm font-bold text-gray-800">{dayName}</p>
-            <p className="text-xs text-gray-500">{formatedDate}</p>
-        </div>
-        )
 }
 
-export default MyDate
+export default useCurrentDate

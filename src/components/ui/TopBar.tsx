@@ -1,8 +1,9 @@
 import { Calendar, Search } from "lucide-react"
 import Input from "../common/Input"
-import MyDate from "./MyDate"
+import useCurrentDate from "./MyDate"
 
 const TopBar = () => {
+  const {dayName, formatedDate} = useCurrentDate()
   return (
     <div className="bg-white shadow-md border-b border-gray-200 px-8 py-5 sticky top-0 z-10 backdrop-blur-sm bg-opacity-95">
       <div className="flex justify-between items-center space-x-40">
@@ -14,7 +15,10 @@ const TopBar = () => {
             <Calendar size={22} className="text-gray-600" />
           </button>
           <div className="h-8 w-px bg-gray-300 mx-2"></div>
-            <MyDate />
+            <div className="text-right">
+              <p className="text-sm font-bold text-gray-800">{dayName}</p>
+              <p className="text-xs text-gray-500">{formatedDate}</p>
+            </div>
           </div>
       </div>
     </div>
