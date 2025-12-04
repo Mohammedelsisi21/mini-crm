@@ -1,6 +1,7 @@
 import { AlertCircle, DollarSign, TrendingUp, User } from "lucide-react"
 import HomeCard from "../../components/cards/HomeCard"
 import WelcomeCard from "../../components/cards/WelcomeCard"
+import RevenueAreaChart from "../../components/Charts/RevenueAreaChart"
 
 const HomePage = () => {
   return (
@@ -41,13 +42,9 @@ const HomePage = () => {
           title="شكاوى قيد المعالجة"
           des="+5 تتطلب إجراء فوري"/>
       </div>
-      <div className="gird grid-cols-1 md:grid-cols-2">
-        <div className="">
-          
-        </div>
-        <div className="">
-          
-        </div>
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 shadow">
+        <RevenueAreaChart />
+        <RevenueAreaChart />
       </div>
       <div className=""></div>
     </div>

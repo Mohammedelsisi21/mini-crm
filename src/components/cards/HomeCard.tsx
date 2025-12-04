@@ -15,7 +15,7 @@ const HomeCard = ({ bg, color, icon, title, des, num, up, warning = false} : IPr
 return (
     <div style={{borderRight: `4px solid ${color}`}} className={`bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all group`}>
         <div className="flex justify-between items-start mb-4">
-            <div style={{background: `var(--gradient-${bg})`}} className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <div style={{background: `var(--gradient-${bg})`}} className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
                 {icon}
             </div>
             <div className={`flex items-center gap-1 ${warning ? "bg-error-50" : "bg-success-50"} px-3 py-1 rounded-full`}>
