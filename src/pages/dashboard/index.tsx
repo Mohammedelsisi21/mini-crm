@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col justify-center items-center space-y-5">
       <WelcomeCard />
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
         <HomeCard
           bg="blue"
           color="#2563eb"
@@ -41,7 +41,14 @@ const HomePage = () => {
           title="شكاوى قيد المعالجة"
           des="+5 تتطلب إجراء فوري"/>
       </div>
-      <div className=""></div>
+      <div className="gird grid-cols-1 md:grid-cols-2">
+        <div className="">
+          
+        </div>
+        <div className="">
+          
+        </div>
+      </div>
       <div className=""></div>
     </div>
   )

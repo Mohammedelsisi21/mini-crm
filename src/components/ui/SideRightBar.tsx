@@ -1,4 +1,4 @@
-import { ChevronDown, LogOut, Menu, Settings, X } from "lucide-react"
+import { ChevronDown, LogOut, Menu, X } from "lucide-react"
 import { useState } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
@@ -26,7 +26,7 @@ const SideRightBar = ({sidebarOpen, onClickMenu} : IProps) => {
       </div>
       <Navbar sidebarOpen={sidebarOpen}/>
       <div className="p-4 border-t border-gray-700 relative">
-          <button onClick={() => setShowUserMenu(prev => !prev)} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-800 rounded-xl transition-all">
+          <button onClick={() => setShowUserMenu(prev => !prev)} className="w-full flex items-center gap-3 px-2 py-1 hover:bg-gray-800 rounded-xl transition-all">
               <div style={{background: "var(--gradient-primary)"}} className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="font-bold">م</span>
               </div>
@@ -41,11 +41,7 @@ const SideRightBar = ({sidebarOpen, onClickMenu} : IProps) => {
               )}
             </button>
             {showUserMenu && sidebarOpen && (
-              <div className="absolute bottom-full left-0 right-0 mb-2 bg-gray-800 rounded-xl shadow-xl border border-gray-700 overflow-hidden">
-                <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-700 transition-all">
-                  <Settings size={18} />
-                  <span className="text-sm">الإعدادات</span>
-                </button>
+              <div className="absolute bottom-full left-5 right-5 mb-2 bg-gray-800 rounded-xl shadow-xl border border-gray-700 overflow-hidden">
                 <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-700 transition-all text-red-400">
                   <LogOut size={18} />
                   <span className="text-sm">تسجيل الخروج</span>
