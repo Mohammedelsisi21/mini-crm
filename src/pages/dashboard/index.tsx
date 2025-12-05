@@ -2,6 +2,7 @@ import { AlertCircle, DollarSign, TrendingUp, User } from "lucide-react"
 import HomeCard from "../../components/cards/HomeCard"
 import WelcomeCard from "../../components/cards/WelcomeCard"
 import RevenueAreaChart from "../../components/Charts/RevenueAreaChart"
+import ComplaintsDonutChart from "../../components/Charts/ComplaintsDonutChart "
 
 const HomePage = () => {
   return (
@@ -44,7 +45,7 @@ const HomePage = () => {
       </div>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 shadow">
         <RevenueAreaChart />
-        <RevenueAreaChart />
+        <ComplaintsDonutChart />
       </div>
       <div className=""></div>
     </div>
