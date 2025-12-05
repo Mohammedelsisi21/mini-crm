@@ -13,7 +13,7 @@ const data = [
 
 const RevenueAreaChart = () => {
     return (
-    <div className="bg-white p-4 rounded-xl h-76 font-main">
+    <div className="bg-white p-4 rounded-xl h-96 font-main">
         <div className="mb-3">
             <div className="flex items-center gap-2 mb-2">
                 <div className="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center">

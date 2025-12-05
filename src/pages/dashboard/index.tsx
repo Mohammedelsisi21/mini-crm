@@ -38,8 +38,8 @@ const HomePage = () => {
           warning
           color="#ea580c"
           icon={<AlertCircle size={28} className="text-white"/>}
-          up={12}
-          num={1055}
+          up={6}
+          num={12}
           title="شكاوى قيد المعالجة"
           des="+5 تتطلب إجراء فوري"/>
       </div>
