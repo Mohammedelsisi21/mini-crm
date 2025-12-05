@@ -1,12 +1,12 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import Register from "../pages/auth/Register";
 import Login from "../pages/auth/Login";
-import ForgetPassword from "../pages/auth/ForgetPassword";
+import ForgetPassword from "../pages/auth/ForgotPassword";
 import ResetPassword from "../pages/auth/ResetPassword";
-import ForgetPasswordVerify from "../pages/auth/ForgetPasswordVerify";
+import ForgetPasswordVerify from "../pages/auth/VerifyCode";
 import ErrorBoundary from "../pages/error/ErrorBoundary";
 import NotFoundPage from "../pages/error/NotFoundPage";
-import MainLayout from "../layouts/DashboardLayout";
+import MainLayout from "../layout/DashboardLayout";
 import HomePage from "../pages/dashboard";
 import CustomersPage from "../pages/customers";
 import CommunicationsPage from "../pages/communications";

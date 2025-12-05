@@ -1,21 +1,21 @@
-import Input from "../../components/common/Input";
-import Label  from "../../components/common/Label";
-import AuthLayout from "../../layouts/AuthLayout";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import type { IDataRegister } from "../../interfaces";
+import { RegisterSchema } from "../../validation";
+import { yupResolver } from "@hookform/resolvers/yup";
+import AuthLayout from "../../layout/AuthLayout";
 import FormTitle from "../../components/form/FormTitle";
+import { ArrowRight, Award, Building2, Lock, Mail, Phone, User } from "lucide-react";
+import Label from "../../components/common/Label";
+import Input from "../../components/common/Input";
+import ErrorMessage from "../../components/common/ErrorMessage";
+import PasswordRules from "../../components/form/PasswordRules";
 import Checkbox from "../../components/common/Checkbox";
-import AuthLink from "../../components/common/AuthLink";
 import Button from "../../components/common/Button";
-import {ArrowRight, Award, Building2, Lock, Mail, Phone, User } from "lucide-react";
+import AuthLink from "../../components/auth/AuthLink";
+import SocialButton from "../../components/auth/SocialButton";
 import GoogleIcon from "../../icons/GoogleIcon";
 import FacebookIcon from "../../icons/FacebookIcon";
-import SocialButton from "../../components/common/SocialButton";
-import { useForm } from "react-hook-form";
-import { RegisterSchema } from "../../validation";
-import { yupResolver } from "@hookform/resolvers/yup"
-import MsgError from "../../components/common/MsgError";
-import { useEffect, useState } from "react";
-import PasswordRules from "../../components/form/PasswordRules";
-import type { IDataRegister } from "../../interfaces";
 
 
 const Register = () => {
@@ -51,33 +51,33 @@ return (<>
                 <div>
                     <Label htmlFor="username" text="الاسم" />
                     <Input {...register("username")} type="text" name="username" id="username" pl="pl-4" error={!!errors.username} placeholder="أحمد" autoFocus icon={<User size={24}/>}/>
-                    <MsgError error={errors.username?.message}/>
+                    <ErrorMessage error={errors.username?.message}/>
                 </div>
                 <div>
                     <Label htmlFor="email" text="البريد الإلكتروني"/>
                     <Input {...register("email")} type="email" name="email" id="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
-                    <MsgError error={errors.email?.message}/>
+                    <ErrorMessage error={errors.email?.message}/>
                 </div>
                 <div>
                     <Label htmlFor="phone" text="رقم الهاتف"/>
                     <Input {...register("phone")} type="tel" name="phone" id="phone" pl="pl-4" error={!!errors.phone} placeholder="010 | 011 | 012 | 015" icon={<Phone size={24}/>}/>
-                    <MsgError error={errors.phone?.message}/>
+                    <ErrorMessage error={errors.phone?.message}/>
                 </div>
                 <div>
                     <Label htmlFor="companyName" text="اسم الشركة"/>
                     <Input {...register("companyName")} type="text" name="companyName" id="companyName" pl="pl-4" error={!!errors.companyName} placeholder="اسم شركتك" icon={<Building2 size={24}/>}/>
-                    <MsgError error={errors.companyName?.message}/>
+                    <ErrorMessage error={errors.companyName?.message}/>
                 </div>
                 <div>
                     <Label htmlFor="password" text="كلمة المرور"/>
                     <Input {...register("password")} type="password" name="password" id="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
-                    <MsgError error={errors.password?.message}/>
+                    <ErrorMessage error={errors.password?.message}/>
                     <PasswordRules length={rules.length} upper={rules.upper} number={rules.number} special={rules.special}/>
                 </div>
                 <div>
                     <Label htmlFor="confirmPassword" text="تأكيد كلمه المرور"/>
                     <Input {...register("confirmPassword")} type="password" name="confirmPassword" id="confirmPassword" pl="pl-12" error={!!errors.confirmPassword} pass placeholder="تأكيد كلمه المرور" icon={<Lock size={24}/>}/>
-                    <MsgError error={errors.confirmPassword?.message}/>
+                    <ErrorMessage error={errors.confirmPassword?.message}/>
                 </div>
             </div>
             <div>
@@ -89,7 +89,7 @@ return (<>
                         <a href="#" className="text-secondary-600 font-medium hover:underline">سياسة الخصوصية</a>
                     </p>
                 </div>
-                <MsgError error={errors.acceptTerms?.message}/>
+                <ErrorMessage error={errors.acceptTerms?.message}/>
             </div>
             <Button variant="secondary" ariaLabel="login-btn" type="submit">
                 <span>إنشاء الحساب</span>

@@ -1,20 +1,19 @@
-import Input from "../../components/common/Input";
-import Label  from "../../components/common/Label";
-import AuthLayout from "../../layouts/AuthLayout";
-import FormTitle from "../../components/form/FormTitle";
-import Checkbox from "../../components/common/Checkbox";
-import AuthLink from "../../components/common/AuthLink";
-import Button from "../../components/common/Button";
-import { ArrowRight, Lock, Mail, Shield } from "lucide-react";
-import GoogleIcon from "../../icons/GoogleIcon";
-import FacebookIcon from "../../icons/FacebookIcon";
-import SocialButton from "../../components/common/SocialButton";
-import { useForm } from "react-hook-form";
-import { LoginSchema } from "../../validation";
 import { yupResolver } from "@hookform/resolvers/yup"
-import MsgError from "../../components/common/MsgError";
-import type { IDataLogin } from "../../interfaces";
-
+import { useForm } from "react-hook-form"
+import type { IDataLogin } from "../../interfaces"
+import { LoginSchema } from "../../validation"
+import FormTitle from "../../components/form/FormTitle"
+import AuthLayout from "../../layout/AuthLayout"
+import { ArrowRight, Lock, Mail, Shield } from "lucide-react"
+import Label from "../../components/common/Label"
+import Input from "../../components/common/Input"
+import ErrorMessage from "../../components/common/ErrorMessage"
+import Checkbox from "../../components/common/Checkbox"
+import AuthLink from "../../components/auth/AuthLink"
+import Button from "../../components/common/Button"
+import SocialButton from "../../components/auth/SocialButton"
+import GoogleIcon from "../../icons/GoogleIcon"
+import FacebookIcon from "../../icons/FacebookIcon"
 
 const Login = () => {
     const {
@@ -39,12 +38,12 @@ return (<>
             <div>
                 <Label htmlFor="email" text="البريد الإلكتروني"/>
                 <Input {...register("email")} type="email" name="email" id="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" autoFocus icon={<Mail size={24}/>}/>
-                <MsgError error={errors.email?.message}/>
+                <ErrorMessage error={errors.email?.message}/>
             </div>
             <div>
                 <Label htmlFor="password" text="كلمة المرور"/>
                 <Input {...register("password")} type="password" name="password" id="password" error={!!errors.password} pl="pl-12" pass placeholder="أدخل أدخل كلمة المرور" icon={<Lock size={24}/>}/>
-                <MsgError error={errors.password?.message}/>
+                <ErrorMessage error={errors.password?.message}/>
             </div>
             <div className="flex items-center justify-between font-main">
                 <Checkbox text="تذكرني"/>

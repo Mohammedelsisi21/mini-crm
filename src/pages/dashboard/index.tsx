@@ -1,8 +1,10 @@
 import { AlertCircle, DollarSign, TrendingUp, User } from "lucide-react"
-import HomeCard from "../../components/cards/HomeCard"
 import WelcomeCard from "../../components/cards/WelcomeCard"
-import RevenueAreaChart from "../../components/Charts/RevenueAreaChart"
-import ComplaintsDonutChart from "../../components/Charts/ComplaintsDonutChart "
+import HomeCard from "../../components/cards/HomeCard"
+import AreaChart from "../../components/Charts/AreaChart"
+import ComplaintsChart from "../../components/Charts/ComplaintsChart"
+import RecentActivities from "../../components/cards/RecentActivities"
+
 
 const HomePage = () => {
   return (
@@ -43,11 +45,14 @@ const HomePage = () => {
           title="شكاوى قيد المعالجة"
           des="+5 تتطلب إجراء فوري"/>
       </div>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 shadow">
-        <RevenueAreaChart />
-        <ComplaintsDonutChart />
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <AreaChart />
+        <ComplaintsChart />
+        <RecentActivities />
       </div>
-      <div className=""></div>
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+      </div>
     </div>
   )
 }

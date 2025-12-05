@@ -6,9 +6,9 @@ interface IProps {
   redirectPath: string
   children: ReactNode
 }
-const Productedroute = ({isAllowed, redirectPath, children} : IProps) => {
+const ProtectedRoute = ({isAllowed, redirectPath, children} : IProps) => {
     if (!isAllowed) return <Navigate to={redirectPath} replace/>
     return children
 }
 
-export default Productedroute
+export default ProtectedRoute

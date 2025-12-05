@@ -1,5 +1,5 @@
 import { Calendar, Clock, Plus } from "lucide-react"
-import useCurrentDate from "../ui/MyDate"
+import useCurrentDate from "../common/DatePicker"
 
 const WelcomeCard = () => {
     const {dayName, formatedDate} = useCurrentDate()

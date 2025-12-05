@@ -2,7 +2,7 @@ interface IProps {
     error?: string;
 }
 
-const MsgError = ({ error }: IProps) => {
+const ErrorMessage = ({ error }: IProps) => {
     if (!error) return null;
     return (
     <p className="text-error-500 text-sm mt-1 mr-3">
@@ -11,4 +11,4 @@ const MsgError = ({ error }: IProps) => {
 );
 };
 
-export default MsgError;
+export default ErrorMessage;

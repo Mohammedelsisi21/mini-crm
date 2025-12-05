@@ -1,13 +1,14 @@
-import { ArrowLeft, Info, Mail } from "lucide-react"
-import FormTitle from "../../components/form/FormTitle"
-import AuthLayout from "../../layouts/AuthLayout"
-import CardAuth from "../../components/common/CardAuth"
-import Label from "../../components/common/Label"
-import { useEffect, useRef, useState } from "react"
-import InputCode from "../../components/form/InputCode"
-import AuthLink from "../../components/common/AuthLink"
-import toast from "react-hot-toast"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useRef, useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import AuthLayout from "../../layout/AuthLayout";
+import FormTitle from "../../components/form/FormTitle";
+import { ArrowLeft, Info, Mail } from "lucide-react";
+import Label from "../../components/common/Label";
+import InputCode from "../../components/form/InputCode";
+import AuthLink from "../../components/auth/AuthLink";
+import CardAuth from "../../components/auth/CardAuth";
+
 
 const ForgetPassword = () => {
   const navigate = useNavigate()
@@ -81,7 +82,7 @@ return (<>
           </div>
           <button
             disabled={!isComplete}
-            className={`mt-4 px-6 w-full py-2 rounded-xl text-white font-semibold transition 
+            className={`mt-4 px-6 w-full py-2 rounded-xl text-white font-semibold transition
             ${isComplete ? "bg-primary-600 hover:bg-primary-700" : "bg-gray-400 cursor-not-allowed"}`}>
               التحقق من الكود
           </button>

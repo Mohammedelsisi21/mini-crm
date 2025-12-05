@@ -12,9 +12,9 @@ const MyPie = () => (
     <Pie data={data} dataKey="value" nameKey="name" outerRadius="80%" innerRadius="60%" isAnimationActive={false} />
 );
 
-const ComplaintsDonutChart = () => {
+const ComplaintsChart = () => {
     return (
-    <div className="bg-white p-4 rounded-xl h-96 font-main">
+    <div className="bg-white p-4 rounded-xl h-96 font-main shadow">
         <div className="mb-3">
             <div className="flex items-center gap-2 mb-2">
                 <div className="w-10 h-10 bg-warning-100 rounded-xl flex items-center justify-center">
@@ -26,8 +26,8 @@ const ComplaintsDonutChart = () => {
         </div>
         <div className="flex space-x-2 justify-between">
             <ul className="flex-1">
-                {data.map((item) => (
-                    <li className="flex justify-between items-center px-3 py-2 bg-gray-100 font-main mb-2 rounded-lg hover:scale-105">
+                {data.map((item, idx) => (
+                    <li key={idx} className="flex justify-between items-center px-3 py-2 bg-gray-100 font-main mb-2 rounded-lg hover:scale-105">
                         <div className="flex items-center space-x-2">
                             <span style={{background: item.fill}} className={`block h-3 w-3 rounded-full`}></span>
                             <span className="text-md ">{item.name}</span>
@@ -52,4 +52,4 @@ const ComplaintsDonutChart = () => {
     </div>
 )}
 
-export default ComplaintsDonutChart 
+export default ComplaintsChart 

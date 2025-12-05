@@ -1,17 +1,17 @@
+import { yupResolver } from "@hookform/resolvers/yup"
 import { ArrowLeft, Lock, Mail, Shield } from "lucide-react"
-import FormTitle from "../../components/form/FormTitle"
-import AuthLayout from "../../layouts/AuthLayout"
-import Label from "../../components/common/Label"
-import Input from "../../components/common/Input"
-import MsgError from "../../components/common/MsgError"
 import { useForm } from "react-hook-form"
 import type { IDataForgetPassword } from "../../interfaces"
-import Button from "../../components/common/Button"
 import { ForgetPasswordSchema } from "../../validation"
-import { yupResolver } from "@hookform/resolvers/yup"
-import AuthLink from "../../components/common/AuthLink"
-import CardAuth from "../../components/common/CardAuth"
+import AuthLayout from "../../layout/AuthLayout"
+import FormTitle from "../../components/form/FormTitle"
+import Label from "../../components/common/Label"
+import Input from "../../components/common/Input"
+import ErrorMessage from "../../components/common/ErrorMessage"
+import Button from "../../components/common/Button"
 import { Link } from "react-router-dom"
+import AuthLink from "../../components/auth/AuthLink"
+import CardAuth from "../../components/auth/CardAuth"
 
 const ForgetPassword = () => {
     const {
@@ -35,7 +35,7 @@ return (<>
             <div>
                 <Label  text="البريد الإلكتروني"/>
                 <Input {...register("email")} type="email" name="email" pl="pl-4" error={!!errors.email} placeholder="أدخل بريدك الإلكتروني" icon={<Mail size={24}/>}/>
-                <MsgError error={errors.email?.message}/>
+                <ErrorMessage error={errors.email?.message}/>
             </div>
             <Button ariaLabel="login-btn" type="submit">
                 <Link to={'/forgot-password/verify'}>إرسال رابط إعاده التعيين</Link>

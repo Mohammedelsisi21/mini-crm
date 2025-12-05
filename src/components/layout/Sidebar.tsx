@@ -7,7 +7,7 @@ interface IProps {
   sidebarOpen: boolean
   onClickMenu: () => void
 }
-const SideRightBar = ({sidebarOpen, onClickMenu} : IProps) => {
+const Sidebar = ({sidebarOpen, onClickMenu} : IProps) => {
   const [showUserMenu, setShowUserMenu] = useState(false)
   return (
     <aside className="h-full flex flex-col">
@@ -53,4 +53,4 @@ const SideRightBar = ({sidebarOpen, onClickMenu} : IProps) => {
   )
 }
 
-export default SideRightBar
+export default Sidebar

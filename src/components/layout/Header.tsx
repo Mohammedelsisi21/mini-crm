@@ -1,11 +1,11 @@
 import { Calendar, Search } from "lucide-react"
 import Input from "../common/Input"
-import useCurrentDate from "./MyDate"
+import useCurrentDate from "../common/DatePicker"
 
-const TopBar = () => {
+const Header = () => {
   const {dayName, formatedDate} = useCurrentDate()
   return (
-    <div className="bg-white shadow-md border-b border-gray-200 px-8 py-5 sticky top-0 z-10 backdrop-blur-sm bg-opacity-95">
+    <header className="bg-white shadow-md border-b border-gray-200 px-8 py-5 sticky top-0 z-10 backdrop-blur-sm bg-opacity-95">
       <div className="flex justify-between items-center space-x-40">
         <div className=" flex-1">
           <Input type="text" placeholder="بحث سريع في النظام..." name="search" icon={<Search size={20}/>} pl="pl-4"/>
@@ -21,8 +21,8 @@ const TopBar = () => {
             </div>
           </div>
       </div>
-    </div>
+    </header>
   )
 }
 
-export default TopBar
+export default Header
