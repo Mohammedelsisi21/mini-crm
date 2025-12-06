@@ -1,5 +1,6 @@
 import { ArrowUp, Bell } from "lucide-react"
 import type { ReactNode } from "react"
+import FeatureIcon from "../common/FeatureIcon"
 
 interface IProps {
     bg: string
@@ -18,17 +19,19 @@ return (
             <div style={{background: `var(--gradient-${bg})`}} className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
                 {icon}
             </div>
-            <div className={`flex items-center gap-1 ${warning ? "bg-error-100" : "bg-success-100"} px-3 py-1 rounded-full`}>
-                {warning ?
-                <>
-                    <Bell size={14} className="text-red-800" />
-                    <span className="text-red-800 text-sm font-bold">عاجل</span>
-                </> :
-                <>
-                    <ArrowUp size={14} className="text-success-800" />
-                    <span className="text-success-800 text-sm font-bold">%{up.toLocaleString("en-US")}</span>
-                </>}
-            </div>
+            {warning ? <>
+                <FeatureIcon
+                    color="error"
+                    text={"عاجل"}
+                    Icon={<Bell size={12} className="text-red-800" />}
+                    />
+            </> : <>
+                <FeatureIcon
+                    color="success"
+                    text={up.toLocaleString("en-US")}
+                    Icon={<ArrowUp size={12} className="text-success-800" />}
+                    />
+            </>}
         </div>
         <h3 className="text-3xl font-bold text-gray-800 mb-1">{num.toLocaleString("en-US")}</h3>
         <p className="text-gray-600 font-medium">{title}</p>

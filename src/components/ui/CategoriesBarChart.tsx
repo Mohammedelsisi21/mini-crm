@@ -37,8 +37,8 @@ return (
                 <YAxis width="auto" />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="فعلي" fill="#3b82f6" activeBar={<Rectangle fill="#2563eb" stroke="blue" />} />
-                <Bar dataKey="المتوقع" fill="#ea580c" activeBar={<Rectangle fill="#f59e0b" stroke="purple" />} />
+                <Bar dataKey="فعلي" fill="#3b82f6" activeBar={<Rectangle fill="#93c5fd" stroke="blue" />} />
+                <Bar dataKey="المتوقع" fill="#ea580c" activeBar={<Rectangle fill="#fde68a" stroke="purple" />} />
         </BarChart>
 
 

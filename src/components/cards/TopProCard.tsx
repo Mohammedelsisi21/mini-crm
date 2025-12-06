@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUp } from "lucide-react"
+import FeatureIcon from "../common/FeatureIcon"
 
 interface IProps {
     name: string
@@ -15,15 +16,15 @@ return (
             <div className="flex items-center gap-2 mb-1">
                 <span className="font-bold text-gray-800">{name}</span>
                 {sales >= 50 ? (
-                    <div className="flex items-center gap-1 bg-success-100 px-2 py-0.5 rounded-full">
-                        <ArrowUp size={12} className="text-success-800" />
-                        <span className="text-xs text-success-800 font-bold">{change}%</span>
-                    </div>
+                    <FeatureIcon
+                    text={change}
+                    Icon={<ArrowUp size={12} className="text-success-800" />}
+                    color="success"/>
                 ) : (
-                    <div className="flex items-center gap-1 bg-error-100 px-2 py-0.5 rounded-full">
-                        <ArrowDown size={12} className="text-error-800" />
-                        <span className="text-xs text-error-800 font-bold">{Math.abs(change)}%</span>
-                    </div>
+                    <FeatureIcon
+                    text={Math.abs(change)}
+                    Icon={<ArrowDown size={12} className="text-error-800" />}
+                    color="error"/>
                 )}
             </div>
             <span className="text-sm text-gray-600">{sales} طلب</span>
