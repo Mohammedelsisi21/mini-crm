@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @font-face {
     font-family: "heading";
-    src: url("./fonts/cairo/Cairo-VariableFont_slnt\,wght.ttf");
+    src: url("./fonts/cairo/Cairo-Regular.ttf");
 }
 
 @theme {

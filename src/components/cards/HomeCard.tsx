@@ -18,15 +18,15 @@ return (
             <div style={{background: `var(--gradient-${bg})`}} className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
                 {icon}
             </div>
-            <div className={`flex items-center gap-1 ${warning ? "bg-error-50" : "bg-success-50"} px-3 py-1 rounded-full`}>
+            <div className={`flex items-center gap-1 ${warning ? "bg-error-100" : "bg-success-100"} px-3 py-1 rounded-full`}>
                 {warning ?
                 <>
-                    <Bell size={14} className="text-red-600" />
-                    <span className="text-red-600 text-sm font-bold">عاجل</span>
+                    <Bell size={14} className="text-red-800" />
+                    <span className="text-red-800 text-sm font-bold">عاجل</span>
                 </> :
                 <>
-                    <ArrowUp size={14} className="text-success-600" />
-                    <span className="text-success-600 text-sm font-bold">%{up.toLocaleString("en-US")}</span>
+                    <ArrowUp size={14} className="text-success-800" />
+                    <span className="text-success-800 text-sm font-bold">%{up.toLocaleString("en-US")}</span>
                 </>}
             </div>
         </div>
