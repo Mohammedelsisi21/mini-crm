@@ -5,6 +5,7 @@ import AreaChart from "../../components/Charts/AreaChart"
 import ComplaintsChart from "../../components/Charts/ComplaintsChart"
 import RecentActivities from "../../components/ui/RecentActivities"
 import TopProduct from "../../components/ui/TopProduct"
+import CategoriesBarChart from "../../components/ui/CategoriesBarChart"
 
 
 const HomePage = () => {
@@ -52,8 +53,8 @@ const HomePage = () => {
         <RecentActivities />
         <TopProduct />
       </div>
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5">
-        
+      <div className="grid grid-cols-1">
+        <CategoriesBarChart />
       </div>
     </div>
   )
