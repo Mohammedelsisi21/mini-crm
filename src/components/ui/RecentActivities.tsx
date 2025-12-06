@@ -21,7 +21,7 @@ const RecentActivities = () => {
         : recentActivities.slice(0, 3);
 
 return (
-    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 p-6 ${showAll ? "h-[780px]" : "h-[400px]"}`}>
+    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 p-6 h-auto ${showAll ? "h-[780px]" : "h-[400px]"}`}>
         <div className="flex justify-between items-center mb-6">
             <div>
                 <h2 className="text-2xl font-bold text-gray-800">الأنشطة الأخيرة</h2>

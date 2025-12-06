@@ -10,7 +10,7 @@ import AuthLink from "../../components/auth/AuthLink";
 import CardAuth from "../../components/auth/CardAuth";
 
 
-const ForgetPassword = () => {
+const VerifyCode = () => {
   const navigate = useNavigate()
   const [timer, setTimer] = useState<number>(60);
   const [isComplete, setIsComplete] = useState(false)
@@ -113,4 +113,4 @@ return (<>
 </>)
 }
 
-export default ForgetPassword
+export default VerifyCode

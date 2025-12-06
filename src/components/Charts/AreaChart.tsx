@@ -1,19 +1,39 @@
-import { TrendingUp } from "lucide-react";
-import { AreaChart as AAreaChart ,Area, XAxis, YAxis, Tooltip, ResponsiveContainer} from "recharts";
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, Legend, type ChartOptions} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 
-const data = [
-    { day: "الثلاثاء", revenue: 2000 },
-    { day: "الإربعاء", revenue: 7000 },
-    { day: "الخميس", revenue: 2500 },
-    { day: "الجمعة", revenue: 3000 },
-    { day: "السبت", revenue: 7500 },
-    { day: "الأحد", revenue: 2200 },
-    { day: "الإثنين", revenue: 4500 },
-];
+import { TrendingUp } from 'lucide-react';
+
+ChartJS.register( CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler, Legend);
+
+const options: ChartOptions<'line'> = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+    legend: {
+        display: false,
+        },
+    title: {
+        display: false,
+    },
+    },
+};
+
+const data = {
+    labels: ['الثلاثاء', 'الإربعاء', 'الخميس', 'الجمعة', 'السبت', 'الأحد', 'الإثنين'],
+    datasets: [
+        {
+        fill: true,
+        data: [2000, 7000, 2500, 7500, 2200, 4500, 3000],
+        borderColor: '#3b82f6',
+        backgroundColor: '#93c5fd',
+        borderWidth: 2,
+        tension: 0.4,
+    }
+]};
 
 const AreaChart = () => {
     return (
-    <div className="bg-white p-4 rounded-xl h-96 font-main shadow">
+    <div className="bg-white p-4 rounded-xl font-main shadow">
         <div className="mb-3">
             <div className="flex items-center gap-2 mb-2">
                 <div className="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center">
@@ -23,14 +43,9 @@ const AreaChart = () => {
             </div>
             <p className="text-gray-500 text-sm font-medium">أداء آخر 7 أيام</p>
         </div>
-        <ResponsiveContainer width="100%" height="80%">
-            <AAreaChart data={data}>
-                <XAxis dataKey="day" />
-                <YAxis />
-                <Tooltip />
-                <Area type="monotone" dataKey="revenue" fill="#93c5fd" stroke="#3b82f6" />
-            </AAreaChart>
-        </ResponsiveContainer>
+        <div className='w-full h-64'>
+            <Line options={options} data={data} />
+        </div>
     </div>
 )}
 

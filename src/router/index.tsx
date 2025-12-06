@@ -1,19 +1,25 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import Register from "../pages/auth/Register";
-import Login from "../pages/auth/Login";
-import ForgetPassword from "../pages/auth/ForgotPassword";
-import ResetPassword from "../pages/auth/ResetPassword";
-import ForgetPasswordVerify from "../pages/auth/VerifyCode";
-import ErrorBoundary from "../pages/error/ErrorBoundary";
-import NotFoundPage from "../pages/error/NotFoundPage";
-import MainLayout from "../layout/DashboardLayout";
-import HomePage from "../pages/dashboard";
-import CustomersPage from "../pages/customers";
-import CommunicationsPage from "../pages/communications";
-import CategoriesPage from "../pages/categories";
-import ProductsPage from "../pages/products";
-import ComplaintsPage from "../pages/complaints";
-import ReportsPage from "../pages/reports";
+import { lazy } from "react";
+
+const MainLayout = lazy(() => import('../layout/DashboardLayout'))
+const HomePage = lazy(() => import('../pages/dashboard'))
+const CustomersPage = lazy(() => import('../pages/customers'))
+const CommunicationsPage = lazy(() => import('../pages/communications'))
+const CategoriesPage = lazy(() => import('../pages/categories'))
+const ProductsPage = lazy(() => import('../pages/products'))
+const ComplaintsPage = lazy(() => import('../pages/complaints'))
+const ReportsPage = lazy(() => import('../pages/reports'))
+
+//** Error Page */
+const ErrorBoundary = lazy(() => import('../pages/error/ErrorBoundary'))
+const NotFoundPage = lazy(() => import('../pages/error/NotFoundPage'))
+
+//** Auth Page */
+const Register = lazy(() => import('../pages/auth/Register'))
+const Login = lazy(() => import('../pages/auth/Login'))
+const ForgotPassword = lazy(() => import('../pages/auth/ForgotPassword'))
+const ResetPassword = lazy(() => import('../pages/auth/ResetPassword'))
+const VerifyCode = lazy(() => import('../pages/auth/VerifyCode'))
 
 
 const router = createBrowserRouter(
@@ -31,8 +37,8 @@ const router = createBrowserRouter(
 
             <Route path="/register" element={<Register />} errorElement={<ErrorBoundary />}/>
             <Route path="/login" element={<Login />} />
-            <Route path="/forgot-password" element={<ForgetPassword />} errorElement={<ErrorBoundary />}/>
-            <Route path="/forgot-password/verify" element={<ForgetPasswordVerify />} errorElement={<ErrorBoundary />}/>
+            <Route path="/forgot-password" element={<ForgotPassword />} errorElement={<ErrorBoundary />}/>
+            <Route path="/forgot-password/verify" element={<VerifyCode />} errorElement={<ErrorBoundary />}/>
             <Route path="/resetPassword" element={<ResetPassword />} errorElement={<ErrorBoundary />}/>
             <Route path="*" element={<NotFoundPage />} />
         </>

@@ -13,7 +13,7 @@ import { Link } from "react-router-dom"
 import AuthLink from "../../components/auth/AuthLink"
 import CardAuth from "../../components/auth/CardAuth"
 
-const ForgetPassword = () => {
+const ForgotPassword = () => {
     const {
         register,
         handleSubmit,
@@ -52,4 +52,4 @@ return (<>
 </>)
 }
 
-export default ForgetPassword
+export default ForgotPassword

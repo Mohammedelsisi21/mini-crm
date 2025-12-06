@@ -1,11 +1,11 @@
 import { AlertCircle, DollarSign, TrendingUp, User } from "lucide-react"
 import WelcomeCard from "../../components/cards/WelcomeCard"
 import HomeCard from "../../components/cards/HomeCard"
-import AreaChart from "../../components/Charts/AreaChart"
-import ComplaintsChart from "../../components/Charts/ComplaintsChart"
 import RecentActivities from "../../components/ui/RecentActivities"
 import TopProduct from "../../components/ui/TopProduct"
-import CategoriesBarChart from "../../components/ui/CategoriesBarChart"
+import CategoriesBarChart from "../../components/Charts/CategoriesBarChart"
+import ComplaintsChart from "../../components/Charts/ComplaintsChart"
+import AreaChart from "../../components/Charts/AreaChart"
 
 
 const HomePage = () => {
