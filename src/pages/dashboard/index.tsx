@@ -10,7 +10,7 @@ import AreaChart from "../../components/Charts/AreaChart"
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col justify-center items-center space-y-5">
+    <div className="space-y-5">
       <WelcomeCard />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
         <HomeCard

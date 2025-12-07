@@ -33,7 +33,7 @@ return (
                     />
             </>}
         </div>
-        <h3 className="text-3xl font-bold text-gray-800 mb-1">{num.toLocaleString("en-US")}</h3>
+        <h2 className="text-3xl font-bold text-gray-800 mb-1">{num.toLocaleString("en-US")}</h2>
         <p className="text-gray-600 font-medium">{title}</p>
         <div className="mt-4 pt-4 border-t border-gray-100">
             <p className="text-sm text-gray-500">{des}</p>
