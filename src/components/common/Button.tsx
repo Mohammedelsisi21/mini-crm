@@ -1,7 +1,7 @@
-import { type ReactNode } from "react";
+import { type ButtonHTMLAttributes, type ReactNode } from "react";
 import { cn } from "../../lib/utils";
 
-interface IProps {
+interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     onClick?: () => void;
     variant?: "default" | "secondary" | "danger" | "success" | "outline";
@@ -11,7 +11,7 @@ interface IProps {
     w?: "w-full" | "w-fit"
 }
 
-const Button = ({ children, onClick, variant = "default", type, isLoading ,ariaLabel, w = "w-full"}: IProps) => {
+const Button = ({ children, onClick, variant = "default", type, isLoading ,ariaLabel, w = "w-full", ...rest}: IProps) => {
     const baseStyles = "px-3 py-2 rounded-md font-medium duration-300";
     const variantStyles = {
         default: `bg-gradient-primary ${w} cursor-pointer text-white py-3 rounded-xl hover:shadow-xl transition-all font-bold text-md flex items-center justify-center gap-2 group`,
@@ -22,7 +22,7 @@ const Button = ({ children, onClick, variant = "default", type, isLoading ,ariaL
     };
 
 return (
-    <button aria-label={ariaLabel} type={type} disabled={isLoading} onClick={onClick} className={cn(baseStyles, variantStyles[variant])}>
+    <button aria-label={ariaLabel} type={type} disabled={isLoading} onClick={onClick} className={cn(baseStyles, variantStyles[variant])} {...rest}>
         {children}
     </button>
   );

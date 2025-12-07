@@ -1,11 +1,17 @@
 import { Edit2, Eye, Trash2 } from "lucide-react"
+import TextHead from "./TextHead"
 
 const data = [
         { name: 'أحمد محمد علي', phone: '01234567891', email: 'ahmed@example.com', category: 'VIP', status: 'نشط', days: 1 },
         { name: 'فاطمة حسن', phone: '01234567892', email: 'fatima@example.com', category: 'عادي', status: 'نشط', days: 3 },
         { name: 'عمر خالد', phone: '01234567893', email: 'omar@example.com', category: 'جديد', status: 'غير نشط', days: 5 },
         { name: 'منى سعيد', phone: '01234567894', email: 'mona@example.com', category: 'VIP', status: 'نشط', days: 2 },
-        { name: 'علي كمال', phone: '01234567895', email: 'ali@example.com', category: 'عادي', status: 'غير نشط', days: 15 }
+        { name: 'علي كمال', phone: '01234445495', email: 'ali@example.com', category: 'VIP', status: 'غير نشط', days: 15 },
+        { name: 'هنا محمد', phone: '01557575595', email: 'hana@example.com', category: 'عادي', status: 'نشط', days: 6 },
+        { name: 'مروج محمد', phone: '01055454545', email: 'morog@example.com', category: 'VIP', status: 'نشط', days: 7 },
+        { name: 'محمد احمد', phone: '01011707632', email: 'mohamed@example.com', category: 'VIP', status: 'غير نشط', days: 11 },
+        { name: 'عبدالرافع محمد', phone: '01510445005', email: 'abdo@example.com', category: 'عادي', status: 'نشط', days: 9 },
+        { name: 'عبدالرحمن محمد', phone: '01350450574', email: 'abdo@example.com', category: 'VIP', status: 'نشط', days: 8 },
     ]
 const CustomersTable = () => {
 return (
@@ -13,16 +19,16 @@ return (
         <table className="w-full">
             <thead className="bg-linear-to-r from-background to-background-alt">
                 <tr>
-                    <th className="px-6 py-4 text-right text-sm font-bold text-gray-700">العميل</th>
-                    <th className="px-6 py-4 text-right text-sm font-bold text-gray-700">التواصل</th>
-                    <th className="px-6 py-4 text-right text-sm font-bold text-gray-700">التصنيف</th>
-                    <th className="px-6 py-4 text-right text-sm font-bold text-gray-700">الحالة</th>
-                    <th className="px-6 py-4 text-right text-sm font-bold text-gray-700">آخر تواصل</th>
-                    <th className="px-6 py-4 text-right text-sm font-bold text-gray-700">الإجراءات</th>
+                    <TextHead text="العميل" />
+                    <TextHead text="التواصل" />
+                    <TextHead text="التصنيف" />
+                    <TextHead text="الحالة" />
+                    <TextHead text="آخر تواصل" />
+                    <TextHead text="الإجراءات" />
                 </tr>
-                </thead>
+            </thead>
             <tbody className="divide-y divide-gray-100">
-                    {data.map((customer, i) => (
+            {data.map((customer, i) => (
                 <tr key={i} className="hover:bg-primary-50 transition-all group">
                     <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
@@ -61,7 +67,7 @@ return (
                     </td>
                     <td className="px-6 py-4">
                         <div className="flex gap-2">
-                            <button className="p-2.5 text-primary-600 hover:bg-primary-50 rounded-lg transition-all" title="عرض">
+                            <button className="p-2.5 cursor-pointer text-primary-600 hover:bg-primary-50 rounded-lg transition-all" title="عرض">
                                 <Eye size={18} />
                             </button>
                             <button className="p-2.5 text-success-600 hover:bg-success-50 rounded-lg transition-all" title="تعديل">

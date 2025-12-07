@@ -43,7 +43,7 @@ const HomePage = () => {
         <RecentActivities />
         <TopProduct />
       </div>
-      <div className="grid grid-cols-1 w-full md:w-[600px] m-auto">
+      <div className="grid grid-cols-1 w-full lg:w-[800px] m-auto">
         <CategoriesBarChart />
       </div>
     </div>

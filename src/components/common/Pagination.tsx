@@ -1,17 +1,34 @@
-
+import Button from "./Button";
+import { useState } from "react"
 const Pagination = () => {
-return (
+    const totalPages = 4
+    const [currentPage, setCurrentPage] = useState(1);
+    return (
     <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
-        <p className="text-sm text-gray-600">عرض 1-5 من 1,247 عميل</p>
+        <p className="text-sm text-gray-600">
+        صفحة {currentPage} من {totalPages}
+        </p>
         <div className="flex gap-2">
-            <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-white transition-all text-sm font-medium">السابق</button>
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all text-sm font-medium">1</button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-white transition-all text-sm font-medium">2</button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-white transition-all text-sm font-medium">3</button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-white transition-all text-sm font-medium">التالي</button>
-        </div>
+        <Button ariaLabel="next-btn" variant="outline" w="w-fit" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+            السابق
+        </Button>
+        {[...Array(totalPages)].map((_, i) => (
+            <Button
+                ariaLabel={``}
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`px-5 py-2 rounded-lg transition-all text-sm font-medium 
+                ${currentPage === i + 1 ? "bg-blue-600 text-white" : "border border-gray-300 hover:bg-white"}
+            `}>
+                {i + 1}
+            </Button>
+        ))}
+        <Button ariaLabel="prev-btn" variant="outline" w="w-fit" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+            السابق
+        </Button>
     </div>
-  )
-}
+    </div>
+    );
+};
 
-export default Pagination
+export default Pagination;
