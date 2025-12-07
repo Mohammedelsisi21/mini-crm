@@ -100,6 +100,11 @@
 .bg-gradient-success {
     background: var(--gradient-success);
 }
+.bg-gradient-success:hover {
+    background: var(--gradient-success);
+    opacity: .9;
+}
+
 .bg-gradient-error {
     background: var(--gradient-error);
 }

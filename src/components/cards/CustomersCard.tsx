@@ -10,25 +10,25 @@ const colorVariants = {
         bg: "bg-primary-100 border-primary-200",
         title: "text-primary-700",
         number: "text-primary-800",
-        icon: <Users className="text-primary-800" size={32}/>
+        icon: <Users className="text-primary-500" size={32}/>
     },
     secondary: {
         bg: "bg-secondary-100 border-secondary-200",
         title: "text-secondary-700",
         number: "text-secondary-800",
-        icon: <CheckCircle className="text-secondary-800" size={32}/>
+        icon: <Star className="text-secondary-500" size={32}/>
     },
     warning: {
         bg: "bg-warning-100 border-warning-200",
         title: "text-warning-700",
         number: "text-warning-800",
-        icon: <Star className="text-warning-800" size={32}/>
+        icon: <UserPlus className="text-warning-500" size={32}/>
     },
     success: {
         bg: "bg-success-100 border-success-200",
         title: "text-success-700",
         number: "text-success-800",
-        icon: <UserPlus className="text-success-800" size={32}/>
+        icon: <CheckCircle className="text-success-500" size={32}/>
     },
 }
 const CustomersCard = ({variant, number, title} : IProps) => {
