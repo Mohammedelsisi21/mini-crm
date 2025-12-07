@@ -4,6 +4,7 @@ import MainCardPage from "../../components/cards/MainCardPage"
 import Input from "../../components/common/Input"
 import Button from "../../components/common/Button"
 import CustomersTable from "../../components/tables/CustomersTable"
+import Pagination from "../../components/common/Pagination"
 
 const CustomersPage = () => {
   return (
@@ -37,8 +38,8 @@ const CustomersPage = () => {
       </div>
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
         <CustomersTable />
+        <Pagination />
       </div>
-      
     </div>
   )
 }
