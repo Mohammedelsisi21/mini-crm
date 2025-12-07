@@ -1,36 +1,58 @@
-import { ArrowUp, Bell } from "lucide-react"
-import type { ReactNode } from "react"
+import { AlertCircle, ArrowUp, Bell, DollarSign, TrendingUp, User } from "lucide-react"
 import FeatureIcon from "../common/FeatureIcon"
 
+
+const colorVariants = {
+    primary: {
+        bg: "var(--gradient-blue)",
+        borderColor: "border-r-primary-600",
+        mainIcon: User,
+        featureIcon: "up"
+    },
+    secondary: {
+        bg: "var(--gradient-purple)",
+        borderColor: "border-r-secondary-600",
+        mainIcon: TrendingUp,
+        featureIcon: "up"
+    },
+    warning: {
+        bg: "var(--gradient-warning)",
+        borderColor: "border-r-warning-600",
+        mainIcon: DollarSign,
+        featureIcon: "alet"
+    },
+    success: {
+        bg: "var(--gradient-success)",
+        borderColor: "border-r-success-600",
+        mainIcon: AlertCircle,
+        featureIcon: "up"
+    },
+}
 interface IProps {
-    bg: string
-    color: string
-    icon: ReactNode
+    variant: "primary" | "secondary" | "warning" | "success"
     title: string
     des: string
     num: number
     up: number
-    warning?: boolean
 }
-const HomeCard = ({ bg, color, icon, title, des, num, up, warning = false} : IProps) => {
+const HomeCard = ({ variant, title, des, num, up} : IProps) => {
+
+    const styles = colorVariants[variant]
+    const Icon = styles.mainIcon
+
+
 return (
-    <div style={{borderRight: `4px solid ${color}`}} className={`bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all group`}>
+    <div className={`bg-white rounded-2xl p-6 shadow-lg border border-gray-100 border-r-4 ${styles.borderColor} hover:shadow-xl transition-all group`}>
         <div className="flex justify-between items-start mb-4">
-            <div style={{background: `var(--gradient-${bg})`}} className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                {icon}
+            <div style={{background: `${styles.bg}`}} className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                <Icon className="text-white" size={28} />
             </div>
-            {warning ? <>
-                <FeatureIcon
-                    color="error"
-                    text={"عاجل"}
-                    Icon={<Bell size={12} className="text-red-800" />}
-                    />
-            </> : <>
-                <FeatureIcon
-                    color="success"
-                    text={up.toLocaleString("en-US")}
-                    Icon={<ArrowUp size={12} className="text-success-800" />}
-                    />
+            {styles.featureIcon === "up" ?
+            <>
+                <FeatureIcon color="success"  text={up.toLocaleString("en-US")} Icon={<ArrowUp size={12} className="text-success-800" />}/>
+            </> :
+            <>
+                <FeatureIcon color="error"  text={"عاجل"} Icon={<Bell size={12} className="text-error-800" />} />
             </>}
         </div>
         <h2 className="text-3xl font-bold text-gray-800 mb-1">{num.toLocaleString("en-US")}</h2>

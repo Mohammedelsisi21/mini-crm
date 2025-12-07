@@ -7,7 +7,6 @@ interface IProps {
 }
 const FeatureIcon = ({Icon, color, text} : IProps) => {
 
-    
     return (<>
         <div className={`flex items-center gap-1
             ${color === "primary" ? "bg-primary-100" :
