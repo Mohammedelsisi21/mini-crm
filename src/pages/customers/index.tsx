@@ -3,6 +3,7 @@ import CustomersCard from "../../components/cards/CustomersCard"
 import MainCardPage from "../../components/cards/MainCardPage"
 import Input from "../../components/common/Input"
 import Button from "../../components/common/Button"
+import CustomersTable from "../../components/tables/CustomersTable"
 
 const CustomersPage = () => {
   return (
@@ -34,9 +35,10 @@ const CustomersPage = () => {
           </Button>
         </div>
       </div>
-      <div>
-        
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+        <CustomersTable />
       </div>
+      
     </div>
   )
 }
