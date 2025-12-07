@@ -4,7 +4,7 @@ import Button from "../common/Button"
 interface IProps {
     title: string
     des: string
-    textBtn: string
+    textBtn?: string
 }
 const MainCardPage = ({title, des, textBtn} : IProps) => {
     return (
@@ -13,10 +13,10 @@ const MainCardPage = ({title, des, textBtn} : IProps) => {
                 <h1 className="text-3xl font-bold text-gray-800">{title}</h1>
                 <p className="text-gray-500 mt-1">{des}</p>
             </div>
-            <Button ariaLabel="add-user" w="w-fit">
+            {textBtn && <Button ariaLabel="add-user" w="w-fit">
                 <Plus size={20} />
                 <span>{textBtn}</span>
-            </Button>
+            </Button>}
     </div>
 )
 }
