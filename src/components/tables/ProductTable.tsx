@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUp, Edit2, Eye, Package, Trash2 } from "lucide-react"
 import MainTable from "./MainTable"
+import FeatureIcon from "../common/FeatureIcon"
 
 const data = [
         { name: 'خدمة الخياطة', type: 'خدمة', price: 500, sales: 89, revenue: 44500, trend: 'up', change: 15, status: 'نشط' },
@@ -26,13 +27,14 @@ return (
                     </div>
                 </td>
                 <td className="px-6 py-4">
-                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${
-                        product.type === 'خدمة' ? 'bg-success-100 text-success-700 border border-success-200' :
-                        product.type === 'منتج' ? 'bg-primary-100 text-primary-700 border border-primary-200' :
-                        'bg-gray-100 text-gray-700 border border-gray-200'
-                    }`}>
-                        {product.type}
-                    </span>
+                    {product.type === 'خدمة' ?
+                        <FeatureIcon color="success" text={product.type}/>
+                    :
+                    product.type === "منتج" ?
+                        <FeatureIcon color="primary" text={product.type}/>
+                    :
+                        <FeatureIcon color="default" text={product.type}/>
+                    }
                 </td>
                 <td className="px-6 py-4">
                     <span className="font-bold text-gray-800">{product.price} <span className="text-sm text-gray-600">ج.م</span></span>
@@ -41,29 +43,23 @@ return (
                     <span className="text-gray-700 font-medium">{product.sales}</span>
                 </td>
                 <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">{product.revenue.toLocaleString()} ج.م</span>
+                    <span className="font-bold text-gray-700">{product.revenue.toLocaleString()} ج.م</span>
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex items-center gap-2">
                         {product.trend === 'up' ? (
-                            <div className="flex items-center gap-1 bg-green-50 px-2 py-1 rounded-full">
-                                <ArrowUp size={14} className="text-green-600" />
-                                <span className="text-xs text-green-600 font-bold">{product.change}%</span>
-                            </div>
+                            <FeatureIcon Icon={<ArrowUp size={14} className="text-success-800"/>} color="success" text={product.trend}/>
                         ) : (
-                            <div className="flex items-center gap-1 bg-red-50 px-2 py-1 rounded-full">
-                                <ArrowDown size={14} className="text-red-600" />
-                                <span className="text-xs text-red-600 font-bold">{Math.abs(product.change)}%</span>
-                            </div>
+                            <FeatureIcon Icon={<ArrowDown size={14} className="text-error-800"/>} color="error" text={product.trend}/>
                         )}
                     </div>
                 </td>
                 <td className="px-6 py-4">
-                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${
-                        product.status === 'نشط' ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-gray-100 text-gray-700 border border-gray-200'
-                    }`}>
-                        {product.status}
-                    </span>
+                    {product.status === 'نشط' ?
+                        <FeatureIcon color="success" text={product.status}/>
+                    :
+                        <FeatureIcon color="default" text={product.status}/>
+                    }
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">

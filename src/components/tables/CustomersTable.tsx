@@ -1,5 +1,6 @@
 import { Edit2, Eye, Trash2 } from "lucide-react"
 import MainTable from "./MainTable"
+import FeatureIcon from "../common/FeatureIcon"
 
 const data = [
         { name: 'أحمد محمد علي', phone: '01234567891', email: 'ahmed@example.com', category: 'VIP', status: 'نشط', days: 1 },
@@ -35,22 +36,24 @@ return (
                     <p className="text-gray-700 font-medium">{customer.phone}</p>
                 </td>
                 <td className="px-6 py-4">
-                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${
-                        customer.category === 'VIP' ? 'bg-purple-100 text-purple-700 border border-purple-200' :
-                        customer.category === 'جديد' ? 'bg-primary-100 text-primary-700 border border-primary-200' :
-                        'bg-gray-100 text-gray-700 border border-gray-200'
-                    }`}>
-                        {customer.category}
-                    </span>
+                    {customer.category === 'VIP' ?
+                        <FeatureIcon color="secondary" text={customer.category}/>
+                    :
+                    customer.category === "جديد" ?
+                        <FeatureIcon color="primary" text={customer.category}/>
+                    :
+                        <FeatureIcon color="default" text={customer.category}/>
+                    }
                 </td>
                 <td className="px-6 py-4">
-                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${
-                        customer.status === 'نشط' ? 'bg-success-100 text-success-700 border border-success-200' :
-                        customer.status === 'جديد' ? 'bg-primary-100 text-primary-700 border border-primary-200' :
-                        'bg-gray-100 text-gray-700 border border-gray-200'
-                    }`}>
-                        {customer.status}
-                    </span>
+                    {customer.status === 'نشط' ?
+                        <FeatureIcon color="success" text={customer.status}/>
+                    :
+                    customer.status === "جديد" ?
+                        <FeatureIcon color="primary" text={customer.status}/>
+                    :
+                        <FeatureIcon color="default" text={customer.status}/>
+                    }
                 </td>
                 <td className="px-6 py-4">
                     <p className="text-gray-600 text-sm">منذ {customer.days} {customer.days === 1 ? 'يوم' : 'أيام'}</p>
