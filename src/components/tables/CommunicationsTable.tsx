@@ -48,13 +48,13 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        <button className="p-2.5 cursor-pointer text-primary-600 hover:bg-primary-50 rounded-lg transition-all" title="عرض">
+                        <button className="p-2.5 cursor-pointer text-primary-600 hover:bg-primary-100 rounded-lg transition-all" title="عرض">
                             <Eye size={18} />
                         </button>
-                        <button className="p-2.5 text-success-600 hover:bg-success-50 rounded-lg transition-all" title="تعديل">
+                        <button className="p-2.5 text-success-600 hover:bg-success-100 rounded-lg transition-all" title="تعديل">
                             <Edit2 size={18} />
                         </button>
-                        <button className="p-2.5 text-error-600 hover:bg-error-50 rounded-lg transition-all" title="حذف">
+                        <button className="p-2.5 text-error-600 hover:bg-error-100 rounded-lg transition-all" title="حذف">
                             <Trash2 size={18} />
                         </button>
                     </div>
