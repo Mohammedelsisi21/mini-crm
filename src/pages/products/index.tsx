@@ -3,8 +3,8 @@ import CusProCard from "../../components/cards/CusProCard"
 import MainCardPage from "../../components/cards/MainCardPage"
 import Input from "../../components/common/Input"
 import Button from "../../components/common/Button"
-import CustomersTable from "../../components/tables/CustomersTable"
 import Pagination from "../../components/common/Pagination"
+import ProductTable from "../../components/tables/ProductTable"
 
 const ProductsPage = () => {
   return (
@@ -37,7 +37,7 @@ const ProductsPage = () => {
         </div>
       </div>
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-        <CustomersTable />
+        <ProductTable />
         <Pagination />
       </div>
     </div>

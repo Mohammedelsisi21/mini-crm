@@ -18,7 +18,7 @@ return (
                 <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
                         <div style={{background: 'var(--gradient-secondary)'}} className="w-11 h-11 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                            <Package size={22}/>
+                            <Package size={24} className="text-white"/>
                         </div>
                         <div>
                             <p className="font-bold text-gray-800">{product.name}</p>
@@ -27,7 +27,7 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${
-                        product.type === 'خدمة' ? 'bg-purple-100 text-success-700 border border-success-200' :
+                        product.type === 'خدمة' ? 'bg-success-100 text-success-700 border border-success-200' :
                         product.type === 'منتج' ? 'bg-primary-100 text-primary-700 border border-primary-200' :
                         'bg-gray-100 text-gray-700 border border-gray-200'
                     }`}>
