@@ -1,5 +1,5 @@
 import Input from '../common/Input'
-import { Download, Filter, Search } from 'lucide-react'
+import { Filter, Search } from 'lucide-react'
 import Button from '../common/Button'
 
 interface IProps {
@@ -20,10 +20,6 @@ return (
             <Button ariaLabel="filter-btn" variant="outline" w="w-fit">
                 <Filter size={20} />
                 <span>تصفية متقدمة</span>
-            </Button>
-            <Button ariaLabel="Download-btn" variant="success" w="w-fit">
-                <Download size={20} />
-                <span>تصدير</span>
             </Button>
         </div>
     </div>
