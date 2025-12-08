@@ -32,19 +32,19 @@ const colorVariants = {
         colorNumber: "text-success-800",
     },
 }
-const CusProCard = ({variant, number, title, Icon} : IProps) => {
+const ShearCard = ({variant, number, title, Icon} : IProps) => {
     const {bg, colorIcon, colorNumber, colorTitle} = colorVariants[variant]
 return (
     <div className={`rounded-xl p-4 border ${bg}`}>
         <div className="flex items-center justify-between">
             <div>
-                <p className={`${colorTitle} text-sm font-medium mb-1`}>{title}</p>
+                <p className={`${colorTitle} text-md font-medium mb-1`}>{title}</p>
                 <p className={`text-2xl font-bold ${colorNumber}`}>{number.toLocaleString()}</p>
             </div>
-            {<Icon className={`${colorIcon}`} size={32} />}
+            {<Icon className={`${colorIcon}`} size={28} />}
         </div>
     </div>
     )
 }
 
-export default CusProCard
+export default ShearCard
