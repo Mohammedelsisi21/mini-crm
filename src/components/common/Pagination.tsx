@@ -17,14 +17,14 @@ const Pagination = () => {
                 ariaLabel={``}
                 key={i}
                 onClick={() => setCurrentPage(i + 1)}
-                className={`px-5 py-2 rounded-lg transition-all text-sm font-medium 
+                className={`px-5 py-2 rounded-lg transition-all text-sm font-medium
                 ${currentPage === i + 1 ? "bg-blue-600 text-white" : "border border-gray-300 hover:bg-white"}
             `}>
                 {i + 1}
             </Button>
         ))}
         <Button ariaLabel="prev-btn" variant="outline" w="w-fit" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
-            السابق
+            التالي
         </Button>
     </div>
     </div>
