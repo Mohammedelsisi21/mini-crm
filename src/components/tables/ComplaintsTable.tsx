@@ -1,6 +1,6 @@
-import { Edit2, Eye, Trash2 } from "lucide-react"
 import MainTable from "./MainTable"
 import FeatureIcon from "../common/FeatureIcon"
+import CrudActions from "../common/CrudActions"
 
 const data = [
     { name: "أحمد محمد", issueType: "تأخر في التوصيل", description: "العميل يشتكي من تأخر كبير في توصيل الطلب.", priority: "عاجل", status: "جديدة", since: 4, assignedTo: "سارة أحمد",},
@@ -58,15 +58,9 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        <button className="p-2.5 cursor-pointer text-primary-600 hover:bg-primary-100 rounded-lg transition-all" title="عرض">
-                            <Eye size={18} />
-                        </button>
-                        <button className="p-2.5 text-success-600 hover:bg-success-100 rounded-lg transition-all" title="تعديل">
-                            <Edit2 size={18} />
-                        </button>
-                        <button className="p-2.5 text-error-600 hover:bg-error-100 rounded-lg transition-all" title="حذف">
-                            <Trash2 size={18} />
-                        </button>
+                        <CrudActions variant="view"/>
+                        <CrudActions variant="edit"/>
+                        <CrudActions variant="delete"/>
                     </div>
                 </td>
             </tr>
