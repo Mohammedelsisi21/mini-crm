@@ -1,14 +1,18 @@
 
 import MainTable from "./MainTable"
 import FeatureIcon from "../common/FeatureIcon"
-import CrudActions from "../common/CrudActions"
+import type { ReactNode } from "react"
 
 const data = [
         { name: "أحمد محمد", contactType: "مكالمة هاتفية", employee: "سارة أحمد", status: "عاجل", description: "العميل مهتم بالخدمة ويريد معرفة الأسعار والمواعيد.", since: 4},
         { name: "فاطمة علي", contactType: "بريد إلكتروني", employee: "محمد حسن", status: "متوسط", description: "تم إرسال عرض سعر والعميلة تفاوض على السعر.", since: 3},
         { name: "عمر خالد", contactType: "اجتماع", employee: "نور الدين", status: "عادي", description: "تم الاتفاق على مشروع جديد.", since: 1},
     ]
-const CommunicationsTable = () => {
+
+interface IProps {
+    children: ReactNode
+}
+const CommunicationsTable = ({children}: IProps) => {
     const textHead = [ "العميل", "وسيلة التواصل", "الموظف", "الحالة", "الوصف", "منذ", "الإجراءات"]
 return (<>
     <MainTable
@@ -49,9 +53,7 @@ return (<>
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        <CrudActions variant="view"/>
-                        <CrudActions variant="update"/>
-                        <CrudActions variant="delete"/>
+                    {children}
                     </div>
                 </td>
             </tr>

@@ -4,11 +4,17 @@ import ShearCard from "../../components/cards/ShearCard"
 import TableToolbar from "../../components/tables/TableToolbar"
 import CommunicationsTable from "../../components/tables/CommunicationsTable"
 import Pagination from "../../components/common/Pagination"
+import CreateCommunication from "../../components/crud/CommunicationCrud/CreateCommunication"
+import UpdateCommunication from "../../components/crud/CommunicationCrud/UpdateCommunication"
+import DeleteCommunication from "../../components/crud/CommunicationCrud/DeleteCommunication"
+import ViewCommunication from "../../components/crud/CommunicationCrud/ViewCommunication"
 
 const CommunicationsPage = () => {
   return (
     <div className="space-y-5">
-      <MainCardPage title="سجل التواصلات" des="تتبع جميع المكالمات والرسائل مع العملاء" textBtn="إضافة تواصل"/>
+      <MainCardPage title="سجل التواصلات" des="تتبع جميع المكالمات والرسائل مع العملاء">
+        <CreateCommunication />
+      </MainCardPage>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
         <ShearCard title="إجمالي المكالمات" number={31} variant="success" Icon={Phone}/>
         <ShearCard title="إجمالي رسائل البريد" number={15} variant="primary" Icon={FileText}/>
@@ -17,7 +23,11 @@ const CommunicationsPage = () => {
       </div>
       <TableToolbar placeholder="البحث عن منتج التواصلات..." />
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-        <CommunicationsTable />
+        <CommunicationsTable>
+          <ViewCommunication />
+          <UpdateCommunication />
+          <DeleteCommunication />
+        </CommunicationsTable>
         <Pagination />
       </div>
     </div>
