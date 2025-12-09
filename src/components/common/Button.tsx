@@ -3,7 +3,7 @@ import { cn } from "../../lib/utils";
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
-    onClick?: () => void;
+    onClick?: () => void
     variant?: "default" | "secondary" | "danger" | "dark" | "success" | "outline";
     type?: "submit" | "button" | "reset";
     isLoading?: boolean

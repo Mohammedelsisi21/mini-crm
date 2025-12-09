@@ -2,22 +2,20 @@ import { useState } from "react"
 import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
 
-const ViewProduct = () => {
+const DeleteProduct = () => {
     const [isOpen, setIsOpen] = useState(false)
 
 return (
     <>
-    <CrudActions variant="view" onClick={() => setIsOpen(true)}/>
+    <CrudActions variant="delete" onClick={() => setIsOpen(true)}/>
 
     <CustomeModal
-        variant="view"
-        desc="تفاصيل المنتج بالتفصيل"
+        variant="delete"
         isOpen={isOpen}
         setIsOpen={setIsOpen}
     >
-        <p className="text-gray-700">البيانات الخاصة بالمنتج تظهر هنا...</p>
     </CustomeModal>
     </>
 )}
 
-export default ViewProduct
+export default DeleteProduct

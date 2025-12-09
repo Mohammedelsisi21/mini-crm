@@ -1,8 +1,7 @@
 import { ArrowDown, ArrowUp, Package } from "lucide-react"
 import MainTable from "./MainTable"
 import FeatureIcon from "../common/FeatureIcon"
-import CrudActions from "../common/CrudActions"
-import ViewProduct from "../crud/ProductCrud/ViewProduct"
+import type { ReactNode } from "react"
 
 const data = [
         { name: 'خدمة الخياطة', type: 'خدمة', price: 500, sales: 89, revenue: 44500, trend: 'up', change: 15, status: 'نشط' },
@@ -11,7 +10,10 @@ const data = [
         { name: 'منتج B', type: 'منتج', price: 150, sales: 123, revenue: 18450, trend: 'up', change: 22, status: 'نشط' },
         { name: 'خدمة C', type: 'خدمة', price: 350, sales: 12, revenue: 4200, trend: 'down', change: -5, status: 'غير نشط' }
     ]
-const ProductTable = () => {
+interface IProps {
+    children: ReactNode
+}
+const ProductTable = ({children} : IProps) => {
     const textHead = ["المنتج/الخدمة", "النوع" ,"السعر" ,"المبيعات" ,"الإيرادات" ,"الأداء" ,"الحالة" ,"الإجراءات"]
 return (
     <MainTable
@@ -65,9 +67,7 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        <ViewProduct />
-                        <CrudActions variant="edit"/>
-                        <CrudActions variant="delete"/>
+                        {children}
                     </div>
                 </td>
             </tr>

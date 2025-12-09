@@ -1,8 +1,8 @@
 import { Edit2, Eye, Trash2 } from "lucide-react"
 
 interface IProps {
-    variant: "view" | "edit" | "delete"
-    setIsOpen?: () => void
+    variant: "view" | "update" | "delete"
+    onClick?: () => void
 }
 
 const variants = {
@@ -11,10 +11,10 @@ const variants = {
         Icon: Eye,
         title: "view"
     },
-    edit: {
+    update: {
         color: "text-success-600 hover:bg-success-100",
         Icon: Edit2,
-        title: "edit"
+        title: "update"
     },
     delete: {
         color: "text-error-600 hover:bg-error-100",
@@ -23,10 +23,10 @@ const variants = {
     }
 }
 
-const CrudActions = ({variant, setIsOpen} : IProps) => {
+const CrudActions = ({variant, onClick} : IProps) => {
     const { color, Icon, title} = variants[variant]
     return (
-    <button className={`p-2.5 cursor-pointer ${color} rounded-lg transition-all`} title={title} onClick={setIsOpen}>
+    <button className={`p-2.5 cursor-pointer ${color} rounded-lg transition-all`} title={title} onClick={onClick}>
         <Icon size={18} />
     </button>
   )

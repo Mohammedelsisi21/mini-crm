@@ -30,7 +30,7 @@ return (
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
                         <CrudActions variant="view"/>
-                        <CrudActions variant="edit"/>
+                        <CrudActions variant="update"/>
                         <CrudActions variant="delete"/>
                     </div>
                 </td>
