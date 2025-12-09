@@ -2,6 +2,7 @@ import { Edit2, Eye, Trash2 } from "lucide-react"
 
 interface IProps {
     variant: "view" | "edit" | "delete"
+    setIsOpen?: () => void
 }
 
 const variants = {
@@ -22,10 +23,10 @@ const variants = {
     }
 }
 
-const CrudActions = ({variant} : IProps) => {
+const CrudActions = ({variant, setIsOpen} : IProps) => {
     const { color, Icon, title} = variants[variant]
     return (
-    <button className={`p-2.5 cursor-pointer ${color} rounded-lg transition-all`} title={title}>
+    <button className={`p-2.5 cursor-pointer ${color} rounded-lg transition-all`} title={title} onClick={setIsOpen}>
         <Icon size={18} />
     </button>
   )

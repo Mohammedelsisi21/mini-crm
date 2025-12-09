@@ -10,7 +10,7 @@ const data = [
     ]
 const CommunicationsTable = () => {
     const textHead = [ "العميل", "وسيلة التواصل", "الموظف", "الحالة", "الوصف", "منذ", "الإجراءات"]
-return (
+return (<>
     <MainTable
     dataText={textHead}
     children={data.map((communication, i) => (
@@ -57,6 +57,6 @@ return (
             </tr>
     ))}
     />
-)}
+</>)}
 
 export default CommunicationsTable

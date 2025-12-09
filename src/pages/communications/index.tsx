@@ -2,7 +2,7 @@ import { FileText, Phone, Users } from "lucide-react"
 import MainCardPage from "../../components/cards/MainCardPage"
 import ShearCard from "../../components/cards/ShearCard"
 import TableToolbar from "../../components/tables/TableToolbar"
-import CommunicationsTable from "../../components/tables/communicationsTable"
+import CommunicationsTable from "../../components/tables/CommunicationsTable"
 import Pagination from "../../components/common/Pagination"
 
 const CommunicationsPage = () => {

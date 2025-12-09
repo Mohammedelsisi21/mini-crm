@@ -2,6 +2,7 @@ import { ArrowDown, ArrowUp, Package } from "lucide-react"
 import MainTable from "./MainTable"
 import FeatureIcon from "../common/FeatureIcon"
 import CrudActions from "../common/CrudActions"
+import ViewProduct from "../crud/ProductCrud/ViewProduct"
 
 const data = [
         { name: 'خدمة الخياطة', type: 'خدمة', price: 500, sales: 89, revenue: 44500, trend: 'up', change: 15, status: 'نشط' },
@@ -64,7 +65,7 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        <CrudActions variant="view"/>
+                        <ViewProduct />
                         <CrudActions variant="edit"/>
                         <CrudActions variant="delete"/>
                     </div>
