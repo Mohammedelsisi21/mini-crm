@@ -1,13 +1,17 @@
 import { Package } from "lucide-react"
 import MainTable from "./MainTable"
-import CrudActions from "../common/CrudActions"
+import type { ReactNode } from "react"
 
 const data = [
         { category: 'عادي' ,number: 4 },
         { category: 'VIP' ,number: 4 },
         { category: 'جديد' ,number: 4 },
     ]
-const CategoryTable = () => {
+    
+interface IProps {
+    children: ReactNode
+}
+const CategoryTable = ({children} : IProps) => {
     const textHead = ["التصنيف","العدد","الإجراءات"]
 return (
     <MainTable
@@ -29,9 +33,7 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        <CrudActions variant="view"/>
-                        <CrudActions variant="update"/>
-                        <CrudActions variant="delete"/>
+                        {children}
                     </div>
                 </td>
             </tr>

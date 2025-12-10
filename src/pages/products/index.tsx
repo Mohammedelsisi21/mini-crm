@@ -4,10 +4,10 @@ import MainCardPage from "../../components/cards/MainCardPage"
 import Pagination from "../../components/common/Pagination"
 import ProductTable from "../../components/tables/ProductTable"
 import TableToolbar from "../../components/tables/TableToolbar"
-import ViewProduct from "../../components/crud/ProductCrud/ViewProduct"
-import UpdateProduct from "../../components/crud/ProductCrud/UpdateProduct"
-import DeleteProduct from "../../components/crud/ProductCrud/DeleteProduct"
-import CreateProduct from "../../components/crud/ProductCrud/CreateProduct"
+import ViewProduct from "../../components/crud/productCrud/ViewProduct"
+import UpdateProduct from "../../components/crud/productCrud/UpdateProduct"
+import DeleteProduct from "../../components/crud/productCrud/DeleteProduct"
+import CreateProduct from "../../components/crud/productCrud/CreateProduct"
 
 const ProductsPage = () => {
   return (

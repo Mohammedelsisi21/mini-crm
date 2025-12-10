@@ -4,10 +4,10 @@ import CustomersTable from "../../components/tables/CustomersTable"
 import Pagination from "../../components/common/Pagination"
 import ShearCard from "../../components/cards/ShearCard"
 import TableToolbar from "../../components/tables/TableToolbar"
-import CreateCustomer from "../../components/crud/CustomerCrud/CreateCustomer"
-import ViewCustomer from "../../components/crud/CustomerCrud/ViewCustomer"
-import UpdateCustomer from "../../components/crud/CustomerCrud/UpdateCustomer"
-import DeleteCustomer from "../../components/crud/CustomerCrud/DeleteCustomer"
+import CreateCustomer from "../../components/crud/customerCrud/CreateCustomer"
+import ViewCustomer from "../../components/crud/customerCrud/ViewCustomer"
+import UpdateCustomer from "../../components/crud/customerCrud/UpdateCustomer"
+import DeleteCustomer from "../../components/crud/customerCrud/DeleteCustomer"
 
 const CustomersPage = () => {
   return (

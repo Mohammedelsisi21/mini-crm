@@ -4,11 +4,17 @@ import MainCardPage from "../../components/cards/MainCardPage"
 import TableToolbar from "../../components/tables/TableToolbar"
 import Pagination from "../../components/common/Pagination"
 import CategoryTable from "../../components/tables/CategoryTable"
+import ViewCategory from "../../components/crud/categoryCrud/ViewCategory"
+import UpdateCategory from "../../components/crud/categoryCrud/UpdateCategory"
+import DeleteCategory from "../../components/crud/categoryCrud/DeleteCategory"
+import CreateCategory from "../../components/crud/categoryCrud/CreateCategory"
 
 const CategoriesPage = () => {
   return (
     <div className="space-y-5">
-      <MainCardPage title="تصنيفات العملاء" des="تنظيم العملاء في مجموعات لسهولة الاستهداف" textBtn="إضافة تصنيف"/>
+      <MainCardPage title="تصنيفات العملاء" des="تنظيم العملاء في مجموعات لسهولة الاستهداف">
+        <CreateCategory />
+      </MainCardPage>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         <CompCateCard variant="primary" Icon={User} title="عملاء عادين" number={50}/>
         <CompCateCard variant="secondary" Icon={Star} title="عملاء VIP" number={20}/>
@@ -16,7 +22,11 @@ const CategoriesPage = () => {
       </div>
       <TableToolbar placeholder="البحث عن عميل بالاسم..." />
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-        <CategoryTable />
+        <CategoryTable>
+          <ViewCategory />
+          <UpdateCategory />
+          <DeleteCategory />
+        </CategoryTable>
         <Pagination />
       </div>
 

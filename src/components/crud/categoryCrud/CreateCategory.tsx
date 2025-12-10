@@ -3,14 +3,14 @@ import CustomeModal from "../../../shared/CustomeModal"
 import { Plus } from "lucide-react"
 import Button from "../../common/Button"
 
-const CreateCustomer = () => {
+const CreateCategory = () => {
     const [isOpen, setIsOpen] = useState(false)
 
 return (
     <>
-    <Button ariaLabel="add-cummunication" w="w-fit" onClick={() => setIsOpen(true)}>
+    <Button ariaLabel="add-category" w="w-fit" onClick={() => setIsOpen(true)}>
         <Plus size={20} />
-        <span>إضافة عميل</span>
+        <span>إضافة تصنيف</span>
     </Button>
     <CustomeModal
         variant="create"
@@ -24,4 +24,4 @@ return (
     </>
 )}
 
-export default CreateCustomer
+export default CreateCategory

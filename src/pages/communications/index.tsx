@@ -4,10 +4,10 @@ import ShearCard from "../../components/cards/ShearCard"
 import TableToolbar from "../../components/tables/TableToolbar"
 import CommunicationsTable from "../../components/tables/CommunicationsTable"
 import Pagination from "../../components/common/Pagination"
-import CreateCommunication from "../../components/crud/CommunicationCrud/CreateCommunication"
-import UpdateCommunication from "../../components/crud/CommunicationCrud/UpdateCommunication"
-import DeleteCommunication from "../../components/crud/CommunicationCrud/DeleteCommunication"
-import ViewCommunication from "../../components/crud/CommunicationCrud/ViewCommunication"
+import CreateCommunication from "../../components/crud/communicationCrud/CreateCommunication"
+import UpdateCommunication from "../../components/crud/communicationCrud/UpdateCommunication"
+import DeleteCommunication from "../../components/crud/communicationCrud/DeleteCommunication"
+import ViewCommunication from "../../components/crud/communicationCrud/ViewCommunication"
 
 const CommunicationsPage = () => {
   return (

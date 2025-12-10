@@ -1,13 +1,16 @@
 import MainTable from "./MainTable"
 import FeatureIcon from "../common/FeatureIcon"
-import CrudActions from "../common/CrudActions"
+import type { ReactNode } from "react"
 
 const data = [
     { name: "أحمد محمد", issueType: "تأخر في التوصيل", description: "العميل يشتكي من تأخر كبير في توصيل الطلب.", priority: "عاجل", status: "جديدة", since: 4, assignedTo: "سارة أحمد",},
     { name: "فاطمة علي", issueType: "جودة المنتج", description: "العميلة غير راضية عن جودة التفصيل.", priority: "متوسط", status: "قيد المعالجة", since: 6, assignedTo: "محمد حسن",},
     { name: "عمر خالد", issueType: "خدمة العملاء", description: "سوء متابعة بعد الاستلام.", priority: "عادي", status: "قيد المعالجة", since: 2, assignedTo: "نور الدين",},
 ]
-const ComplaintsTable = () => {
+interface IProps {
+    children: ReactNode
+}
+const ComplaintsTable = ({children} : IProps) => {
     const textHead = [ "العميل", "نوع المشكلة", "الوصف", "الأولوية", "الحالة", "منذ", "تم التكليف", "الإجراءات"]
 return (
     <MainTable
@@ -58,9 +61,7 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        <CrudActions variant="view"/>
-                        <CrudActions variant="update"/>
-                        <CrudActions variant="delete"/>
+                        {children}
                     </div>
                 </td>
             </tr>
