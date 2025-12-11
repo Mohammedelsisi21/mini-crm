@@ -91,7 +91,7 @@ export const ResetPasswordSchema = yup.object().shape({
     .oneOf([yup.ref("password")], "كلمتا المرور غير متطابقتين"),
 });
 
-//** Create Customer */
+//** Customer */
 
 export const CustomerSchema = yup.object().shape({
     username: yup
@@ -123,8 +123,9 @@ export const CustomerSchema = yup.object().shape({
 
 });
 
+//** Communication */
 
-export const CummunicationSchema = yup.object().shape({
+export const CommunicationSchema = yup.object().shape({
     username: yup
     .string()
     .required("الاسم مطلوب")
@@ -148,5 +149,14 @@ export const CummunicationSchema = yup.object().shape({
     status: yup
     .string()
     .required("حالة التواصل مطلوبة"),
+
+});
+
+//** Category */
+
+export const CategorySchema = yup.object().shape({
+    classification: yup
+    .string()
+    .required("تصنيف العميل مطلوب"),
 
 });

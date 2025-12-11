@@ -44,3 +44,8 @@ export interface ICummunication {
     description: string
     status: string
 }
+
+//** Create Categiry */
+export interface ICategory {
+    classification: string
+}

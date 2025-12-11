@@ -8,14 +8,14 @@ import ErrorMessage from "../../common/ErrorMessage"
 import { useForm } from "react-hook-form"
 import type { ICummunication } from "../../../interfaces"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { CummunicationSchema } from "../../../validation"
+import { CommunicationSchema } from "../../../validation"
 import Select from "../../form/Select"
 import Textarea from "../../common/Textarea"
 
 const CreateCommunication = () => {
     const [isOpen, setIsOpen] = useState(false)
     const {register,handleSubmit,formState: { errors },} = useForm<ICummunication>({
-            resolver: yupResolver(CummunicationSchema),
+            resolver: yupResolver(CommunicationSchema),
         })
 
     const onSubmit = handleSubmit((data) => {
