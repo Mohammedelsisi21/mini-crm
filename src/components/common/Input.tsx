@@ -3,7 +3,7 @@ import { useState, type ReactNode } from "react"
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
     icon?: ReactNode
-    type: "email" | "checkbox" | "text" | "password" | "tel"
+    type: "email" | "checkbox" | "text" | "password" | "tel" | "number"
     name: string
     placeholder: string
     cheldreen?: ReactNode

@@ -14,8 +14,16 @@ import Textarea from "../../common/Textarea"
 import CrudActions from "../../common/CrudActions"
 
 const UpdateCommunication = () => {
+    const defaultValues = {
+        username: "احمد محمد",
+        employee: "احمد ابراهيم",
+        description: "العميل مهتم بالخدمة ويريد معرفة الأسعار والمواعيد.",
+        contactType: "call",
+        status: "urgent",
+    }
     const [isOpen, setIsOpen] = useState(false)
     const {register,handleSubmit,formState: { errors },} = useForm<ICummunication>({
+            defaultValues,
             resolver: yupResolver(CommunicationSchema),
         })
 
@@ -31,23 +39,23 @@ return (
     <form className="space-y-5 font-main" onSubmit={onSubmit}>
         <div>
             <Label htmlFor="username" text="اسم العميل"/>
-            <Input {...register("username")} type="text" value={"احمد محمد"} name="username" id="username" pl="pl-4" error={!!errors.username} placeholder="أدخل اسم العميل" autoFocus icon={<User size={24}/>}/>
+            <Input {...register("username")} type="text" name="username" id="username" pl="pl-4" error={!!errors.username} placeholder="أدخل اسم العميل" autoFocus icon={<User size={24}/>}/>
             <ErrorMessage error={errors.username?.message}/>
         </div>
         <div>
             <Label htmlFor="employee" text="اسم الموظف"/>
-            <Input {...register("employee")} type="text" value={"احمد ابراهيم"} name="employee" id="employee" pl="pl-4" error={!!errors.employee} placeholder="أدخل اسم الموظف" autoFocus icon={<User size={24}/>}/>
+            <Input {...register("employee")} type="text" name="employee" id="employee" pl="pl-4" error={!!errors.employee} placeholder="أدخل اسم الموظف" icon={<User size={24}/>}/>
             <ErrorMessage error={errors.employee?.message}/>
         </div>
         <div>
             <Label htmlFor="description" text="وصف التواصل"/>
-            <Textarea {...register("description")} value={"العميل مهتم بالخدمة ويريد معرفة الأسعار والمواعيد."} name="description" id="description" error={!!errors.description} placeholder="أدخل وصف للتواصل"/>
+            <Textarea {...register("description")} name="description" id="description" error={!!errors.description} placeholder="أدخل وصف للتواصل"/>
             <ErrorMessage error={errors.description?.message}/>
         </div>
         <div className="grid grid-cols-2 gap-2">
             <div>
                 <Label text="نوع التواصل" />
-                <Select {...register("contactType")} value={"call"} error={!!errors.contactType}>
+                <Select {...register("contactType")} error={!!errors.contactType}>
                     <option value="">اختر نوع التواصل</option>
                     <option value="call">مكالمة هاتفية</option>
                     <option value="email">بريد إلكتروني</option>
@@ -59,7 +67,7 @@ return (
             </div>
             <div>
                 <Label text="حالة التواصل" />
-                <Select {...register("status")} value={"urgent"} error={!!errors.status}>
+                <Select {...register("status")} error={!!errors.status}>
                     <option value="">اختر الحالة</option>
                     <option value="urgent">عاجلة</option>
                     <option value="medium">متوسطة</option>

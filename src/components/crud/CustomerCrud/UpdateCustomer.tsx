@@ -13,8 +13,17 @@ import Select from "../../form/Select"
 import CrudActions from "../../common/CrudActions"
 
 const UpdateCustomer = () => {
+    const defaultValues = {
+        username: "احمد محمد",
+        email: "Ahmed@gmail.com",
+        phone: "01011707304",
+        classification: "VIP",
+        status: "active",
+    }
+
     const [isOpen, setIsOpen] = useState(false)
     const {register,handleSubmit,formState: { errors },} = useForm<ICustomer>({
+            defaultValues,
             resolver: yupResolver(CustomerSchema),
         })
 
@@ -30,23 +39,23 @@ return (
     <form className="space-y-5 font-main" onSubmit={onSubmit}>
         <div>
             <Label htmlFor="username" text="اسم العميل"/>
-            <Input {...register("username")} type="text" value={"احمد محمد"} name="username" id="username" pl="pl-4" error={!!errors.username} placeholder="أدخل اسم العميل" autoFocus icon={<User size={24}/>}/>
+            <Input {...register("username")} type="text" name="username" id="username" pl="pl-4" error={!!errors.username} placeholder="أدخل اسم العميل" autoFocus icon={<User size={24}/>}/>
             <ErrorMessage error={errors.username?.message}/>
         </div>
         <div>
             <Label htmlFor="email" text="البريد الإلكتروني"/>
-            <Input {...register("email")} type="email" value={"Ahmed@gmail.com"} name="email" id="email" pl="pl-4" error={!!errors.email} placeholder="أدخل البريد الإلكتروني" icon={<Mail size={24}/>}/>
+            <Input {...register("email")} type="email" name="email" id="email" pl="pl-4" error={!!errors.email} placeholder="أدخل البريد الإلكتروني" icon={<Mail size={24}/>}/>
             <ErrorMessage error={errors.email?.message}/>
         </div>
         <div>
             <Label htmlFor="phone" text="اسم العميل"/>
-            <Input {...register("phone")} type="tel" value={"01011707304"} name="phone" id="phone" pl="pl-4" error={!!errors.phone} placeholder="010 | 011 | 012 | 015" icon={<Phone size={24}/>}/>
+            <Input {...register("phone")} type="tel" name="phone" id="phone" pl="pl-4" error={!!errors.phone} placeholder="010 | 011 | 012 | 015" icon={<Phone size={24}/>}/>
             <ErrorMessage error={errors.phone?.message}/>
         </div>
         <div className="grid grid-cols-2 gap-2">
             <div>
                 <Label text="تصنيف العميل" />
-                <Select value={"VIP"} {...register("classification")} error={!!errors.classification}>
+                <Select {...register("classification")} error={!!errors.classification}>
                     <option value="">اختر التصنيف</option>
                     <option value="VIP">VIP</option>
                     <option value="new">جديد</option>
@@ -56,7 +65,7 @@ return (
             </div>
             <div>
                 <Label text="حالة العميل" />
-                <Select value={"active"} {...register("status")} error={!!errors.status}>
+                <Select {...register("status")} error={!!errors.status}>
                     <option value="">اختر الحالة</option>
                     <option value="active">نشط</option>
                     <option value="inactive">غير نشط</option>

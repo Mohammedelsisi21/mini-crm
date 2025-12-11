@@ -12,8 +12,12 @@ import { CategorySchema } from "../../../validation"
 import CrudActions from "../../common/CrudActions"
 
 const UpdateCategory = () => {
+    const defaultValues = {
+        classification: "VIP"
+    }
     const [isOpen, setIsOpen] = useState(false)
     const {register,handleSubmit,formState: { errors },} = useForm<ICategory>({
+            defaultValues,
             resolver: yupResolver(CategorySchema),
         })
 
@@ -29,7 +33,7 @@ return (
     <form className="space-y-5 font-main" onSubmit={onSubmit}>
         <div>
             <Label htmlFor="classification" text="اسم العميل"/>
-            <Input {...register("classification")} value="VIP" type="text" name="classification" id="classification" pl="pl-4" error={!!errors.classification} placeholder="أدخل اسم العميل" autoFocus icon={<Tag size={24}/>}/>
+            <Input {...register("classification")} type="text" name="classification" id="classification" pl="pl-4" error={!!errors.classification} placeholder="أدخل اسم العميل" autoFocus icon={<Tag size={24}/>}/>
             <ErrorMessage error={errors.classification?.message}/>
         </div>
         <div className="flex gap-3 pt-4 justify-end">

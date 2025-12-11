@@ -27,7 +27,7 @@ export interface IDataResetPassword {
 }
 
 
-//** Create Customer */
+//** Customer */
 export interface ICustomer {
     username: string
     email: string
@@ -36,7 +36,7 @@ export interface ICustomer {
     classification: string
 }
 
-//** Create cummunication */
+//** cummunication */
 export interface ICummunication {
     username: string
     contactType: string
@@ -45,7 +45,16 @@ export interface ICummunication {
     status: string
 }
 
-//** Create Categiry */
+//** Categiry */
 export interface ICategory {
     classification: string
+}
+//** Product */
+export interface IProduct {
+    name: string
+    price: number
+    quantity: number
+    trend: string
+    change: number
+    status: string
 }

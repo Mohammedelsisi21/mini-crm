@@ -97,7 +97,7 @@ export const CustomerSchema = yup.object().shape({
     username: yup
     .string()
     .required("الاسم مطلوب")
-    .matches(/^[a-zA-Z\u0600-\u06FF\s]{3,}$/, "يجيب ان يكون الاسم اكثر من 3 حروف عل الاقل"),
+    .min(3, "يجيب ان يكون الاسم اكثر من 3 حروف علي الاقل"),
 
     email: yup
     .string()
@@ -129,12 +129,12 @@ export const CommunicationSchema = yup.object().shape({
     username: yup
     .string()
     .required("الاسم مطلوب")
-    .matches(/^[a-zA-Z\u0600-\u06FF\s]{3,}$/, "يجيب ان يكون الاسم اكثر من 3 حروف عل الاقل"),
+    .min(3, "يجيب ان يكون الاسم اكثر من 3 حروف علي الاقل"),
 
     employee: yup
     .string()
     .required("الاسم الموظف")
-    .matches(/^[a-zA-Z\u0600-\u06FF\s]{3,}$/, "يجيب ان يكون الاسم اكثر من 3 حروف عل الاقل"),
+    .min(3, "يجيب ان يكون الاسم اكثر من 3 حروف علي الاقل"),
 
 
     description: yup
@@ -157,6 +157,38 @@ export const CommunicationSchema = yup.object().shape({
 export const CategorySchema = yup.object().shape({
     classification: yup
     .string()
-    .required("تصنيف العميل مطلوب"),
+    .required("تصنيف مطلوب"),
 
+});
+
+//** Product */
+
+export const ProductSchema = yup.object().shape({
+    name: yup
+    .string()
+    .required("الاسم مطلوب")
+    .min(3, "يجيب ان يكون الاسم اكثر من 3 حروف علي الاقل"),
+
+    price: yup
+    .number()
+    .typeError("السعر يجب أن تكون رقمًا")
+    .required("السعر مطلوب"),
+
+    quantity: yup
+    .number()
+    .typeError("الكمية يجب أن تكون رقمًا")
+    .required("الكمية مطلوب"),
+
+    trend: yup
+    .string()
+    .required("الانتشار مطلوب"),
+
+    change: yup
+    .number()
+    .typeError("التغيير يجب أن يكون رقمًا")
+    .required("الكمية مطلوب"),
+
+    status: yup
+    .string()
+    .required("حالة المنتج مطلوبة"),
 });
