@@ -25,3 +25,13 @@ export interface IDataResetPassword {
     password: string
     confirmPassword: string
 }
+
+
+//** Create Customer */
+export interface ICustomer {
+    username: string
+    email: string
+    phone: string
+    status: string
+    classification: string
+}

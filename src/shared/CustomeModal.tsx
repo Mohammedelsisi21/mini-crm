@@ -17,21 +17,7 @@ const CustomeModal = ({ children, desc, isOpen, setIsOpen, variant}: IProps) => 
         view: "عرض التفاصيل",
         create: "إضافة عنصر جديد",
         update: "تعديل البيانات",
-        delete: "حذف العنصر",
-    }
-
-    const defaultButtons: Record<ModalVariant, string> = {
-        view: "إغلاق",
-        create: "حفظ",
-        update: "تحديث",
-        delete: "حذف",
-    }
-
-    const btnColors: Record<ModalVariant, string> = {
-        view: "bg-primary-600 hover:bg-primary-700",
-        create: "bg-success-600 hover:bg-success-700",
-        update: "bg-warning-500 hover:bg-warning-600",
-        delete: "bg-error-600 hover:bg-error-700",
+        delete: "حذف ",
     }
 
 return (
@@ -58,26 +44,6 @@ return (
                 )}
 
                 <div>{children}</div>
-
-                {variant === "delete" && (
-                    <p className="text-red-600 text-sm font-medium">
-                        ⚠ هل أنت متأكد أنك تريد حذف هذا العنصر؟ لا يمكن التراجع عن العملية.
-                    </p>
-                )}
-
-                <div className="flex gap-3 pt-4">
-                    <button
-                        onClick={() => setIsOpen(false)}
-                        className="px-4 py-2 rounded-lg text-sm border cursor-pointer border-gray-300 text-gray-700 hover:bg-gray-100 transition">
-                        إلغاء
-                    </button>
-
-                    <button
-                        onClick={() => setIsOpen(false)}
-                        className={`px-4 py-2 rounded-lg text-sm cursor-pointer text-white transition ${btnColors[variant]}`}>
-                            {defaultButtons[variant]}
-                    </button>
-                </div>
             </DialogPanel>
         </div>
     </Dialog>

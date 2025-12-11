@@ -9,13 +9,6 @@ const ReportsPage = () => {
   return (
     <div className="space-y-5">
       <MainCardPage title="التقارير والتصدير" des="تصدير البيانات وإنشاء تقارير مفصلة"/>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-        <ReportCard color="primary" title="تقرير العملاء" des="تصدير قائمة كاملة بجميع بيانات العملاء" count={120} countType="عميل"/>
-        <ReportCard color="success" title="تقرير التواصلات" des="سجل تفصيلي لجميع التواصلات والمكالمات" count={50} countType="تواصل"/>
-        <ReportCard color="secondary" title="تقرير المنتجات" des="تحليل شامل لأداء المنتجات والخدمات" count={50} countType="منتج"/>
-        <ReportCard color="blue" title="تقرير المبيعات" des="تصدير قائمة كاملة بجميع بيانات تفاصيل المبيعات والإيرادات الشهرية" count={10} countType="ج.م"/>
-        <ReportCard color="warning" title="تقرير الشكاوى" des="تحليل الشكاوى والحلول المقترحة" count={30} countType="شكوى"/>
-      </div>
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-md">
@@ -63,6 +56,13 @@ const ReportsPage = () => {
             <span>تصدير التقرير المخصص</span>
           </Button>
         </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        <ReportCard color="primary" title="تقرير العملاء" des="تصدير قائمة كاملة بجميع بيانات العملاء" count={120} countType="عميل"/>
+        <ReportCard color="success" title="تقرير التواصلات" des="سجل تفصيلي لجميع التواصلات والمكالمات" count={50} countType="تواصل"/>
+        <ReportCard color="secondary" title="تقرير المنتجات" des="تحليل شامل لأداء المنتجات والخدمات" count={50} countType="منتج"/>
+        <ReportCard color="blue" title="تقرير المبيعات" des="تصدير قائمة كاملة بجميع بيانات تفاصيل المبيعات والإيرادات الشهرية" count={10} countType="ج.م"/>
+        <ReportCard color="warning" title="تقرير الشكاوى" des="تحليل الشكاوى والحلول المقترحة" count={30} countType="شكوى"/>
       </div>
     </div>
   )

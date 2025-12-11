@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     onClick?: () => void
-    variant?: "default" | "secondary" | "danger" | "dark" | "success" | "outline";
+    variant?: "default" | "secondary" | "danger" | "dark" | "success" | "outline" | "warning"| "blue";
     type?: "submit" | "button" | "reset";
     isLoading?: boolean
     ariaLabel: string
@@ -14,12 +14,14 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = ({ children, onClick, variant = "default", type, isLoading ,ariaLabel, w = "w-full", ...rest}: IProps) => {
     const baseStyles = "px-3 py-2 rounded-md font-medium duration-300";
     const variantStyles = {
-        default: `bg-gradient-primary ${w} cursor-pointer text-white py-3 rounded-xl hover:shadow-xl transition-all font-bold text-md flex items-center justify-center gap-2 group`,
-        secondary: `bg-gradient-secondary ${w} cursor-pointer text-white py-3 rounded-xl hover:shadow-xl transition-all font-bold text-md flex items-center justify-center gap-2 group`,
-        danger: `bg-gradient-denger ${w} cursor-pointer text-white py-3 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group`,
-        dark: `bg-gradient-dark ${w} cursor-pointer text-white py-3 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group`,
-        success: `bg-gradient-success ${w} cursor-pointer text-white py-3 rounded-xl hover:shadow-xl transition-all font-bold text-lg flex items-center justify-center gap-2 group`,
-        outline: `flex items-center ${w} cursor-pointer justify-center gap-2 px-4 py-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-all font-medium`
+        default: `bg-gradient-primary flex items-center justify-center ${w} gap-2 px-4 py-2 rounded-lg text-sm border cursor-pointer border-white text-white transition`,
+        secondary: `bg-gradient-secondary flex items-center justify-center ${w} gap-2 px-4 py-2 rounded-lg text-sm border cursor-pointer border-white text-white transition`,
+        danger: `bg-gradient-error flex items-center justify-center ${w} gap-2 px-4 py-2 rounded-lg text-sm border cursor-pointer border-white text-white transition`,
+        dark: `bg-gradient-dark flex items-center justify-center ${w} gap-2 px-4 py-2 rounded-lg text-sm border cursor-pointer border-white text-white transition`,
+        success: `bg-gradient-success flex items-center justify-center ${w} gap-2 px-4 py-2 rounded-lg text-sm border cursor-pointer border-white text-white transition`,
+        warning: `bg-gradient-warning flex items-center justify-center ${w} gap-2 px-4 py-2 rounded-lg text-sm border cursor-pointer border-white text-white transition`,
+        blue: `bg-gradient-blue flex items-center justify-center ${w} gap-2 px-4 py-2 rounded-lg text-sm border cursor-pointer border-white text-white hover:bg-primary-700 transition`,
+        outline: `flex items-center justify-center ${w} gap-2 px-4 py-2 rounded-lg text-sm border cursor-pointer border-gray-300 text-gray-700 hover:bg-gray-100 transition`
     };
 
 return (

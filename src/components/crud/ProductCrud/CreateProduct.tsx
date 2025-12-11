@@ -12,13 +12,8 @@ return (
         <Plus size={20} />
         <span>إضافة منتج/خدمة</span>
     </Button>
-    <CustomeModal
-        variant="create"
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-    >
-    <form>
-        
+    <CustomeModal variant="create" isOpen={isOpen} setIsOpen={setIsOpen}>
+    <form className="space-y-5 font-main">
     </form>
     </CustomeModal>
     </>

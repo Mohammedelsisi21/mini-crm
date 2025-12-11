@@ -5,7 +5,7 @@ interface IProps {
     des: string
     textBtn?: string
     onClick?: () => void
-    children: ReactNode
+    children?: ReactNode
 }
 const MainCardPage = ({title, des, children} : IProps) => {
 return (

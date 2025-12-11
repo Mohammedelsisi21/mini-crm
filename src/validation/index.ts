@@ -90,3 +90,35 @@ export const ResetPasswordSchema = yup.object().shape({
     .required("تأكيد كلمة المرور مطلوبة")
     .oneOf([yup.ref("password")], "كلمتا المرور غير متطابقتين"),
 });
+
+//** Create Customer */
+
+export const CustomerSchema = yup.object().shape({
+    username: yup
+    .string()
+    .required("الاسم مطلوب")
+    .matches(/^[a-zA-Z\u0600-\u06FF\s]{3,}$/, "يجيب ان يكون الاسم اكثر من 3 حروف عل الاقل"),
+
+    email: yup
+    .string()
+    .email("البريد الإلكتروني غير صالح")
+    .required("البريد الإلكتروني مطلوب")
+    .matches(
+        /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
+        "البريد الإلكتروني غير صالح"
+    ),
+
+    phone: yup
+    .string()
+    .required("رقم الهاتف مطلوب")
+    .matches(/^01[0|1|2|5][0-9]{8}$/, "رقم الهاتف غير صالح"),
+
+    classification: yup
+    .string()
+    .required("تصنيف العميل مطلوب"),
+
+    status: yup
+    .string()
+    .required("حالة العميل مطلوبة"),
+
+});

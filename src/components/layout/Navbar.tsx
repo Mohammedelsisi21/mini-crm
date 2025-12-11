@@ -19,7 +19,7 @@ return (
     <nav aria-label="Primary-Nav" className="flex-1 p-4 space-y-2">
         {navItems.map(item => {
             const Icon = item.icon
-            return<NavLink key={item.id} to={item.id}
+            return<NavLink key={item.id} to={item.id} aria-label={item.id}
                 className={`w-full flex items-center justify-center gap-3 px-4 py-3.5 rounded-xl transition-all font-medium hover:bg-gray-800`}>{
                 sidebarOpen ? <>
                     <Icon size={20}/>
