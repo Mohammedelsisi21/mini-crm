@@ -24,7 +24,7 @@ const CreateCustomer = () => {
 
 return (
     <>
-    <Button ariaLabel="add-cummunication" w="w-fit" onClick={() => setIsOpen(true)}>
+    <Button ariaLabel="create-customer" w="w-fit" onClick={() => setIsOpen(true)}>
         <Plus size={20} />
         <span>إضافة عميل</span>
     </Button>
@@ -41,7 +41,7 @@ return (
             <ErrorMessage error={errors.email?.message}/>
         </div>
         <div>
-            <Label htmlFor="phone" text="اسم العميل"/>
+            <Label htmlFor="phone" text="رقم العميل"/>
             <Input {...register("phone")} type="tel" name="phone" id="phone" pl="pl-4" error={!!errors.phone} placeholder="010 | 011 | 012 | 015" icon={<Phone size={24}/>}/>
             <ErrorMessage error={errors.phone?.message}/>
         </div>

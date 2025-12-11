@@ -26,7 +26,7 @@ const UpdateCustomer = () => {
 return (
     <>
     <CrudActions variant="update" onClick={() => setIsOpen(true)} />
-    <CustomeModal desc="تحديث بيانات عميل جديد." variant="update" isOpen={isOpen} setIsOpen={setIsOpen}>
+    <CustomeModal desc="تحديث بيانات عميل." variant="update" isOpen={isOpen} setIsOpen={setIsOpen}>
     <form className="space-y-5 font-main" onSubmit={onSubmit}>
         <div>
             <Label htmlFor="username" text="اسم العميل"/>

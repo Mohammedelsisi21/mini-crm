@@ -38,7 +38,7 @@ return (
                 </DialogTitle>
 
                 {desc && (
-                    <Description className="text-gray-600 text-sm">
+                    <Description className="text-gray-600 text-sm" >
                         {desc}
                     </Description>
                 )}

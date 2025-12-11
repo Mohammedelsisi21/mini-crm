@@ -122,3 +122,31 @@ export const CustomerSchema = yup.object().shape({
     .required("حالة العميل مطلوبة"),
 
 });
+
+
+export const CummunicationSchema = yup.object().shape({
+    username: yup
+    .string()
+    .required("الاسم مطلوب")
+    .matches(/^[a-zA-Z\u0600-\u06FF\s]{3,}$/, "يجيب ان يكون الاسم اكثر من 3 حروف عل الاقل"),
+
+    employee: yup
+    .string()
+    .required("الاسم الموظف")
+    .matches(/^[a-zA-Z\u0600-\u06FF\s]{3,}$/, "يجيب ان يكون الاسم اكثر من 3 حروف عل الاقل"),
+
+
+    description: yup
+    .string()
+    .required("وصف التواصل مطلوب")
+    .min(4, "يجب ان يكون الوصف اكثر من 3 حروف"),
+
+    contactType: yup
+    .string()
+    .required("نوع التواصل مطلوب"),
+
+    status: yup
+    .string()
+    .required("حالة التواصل مطلوبة"),
+
+});

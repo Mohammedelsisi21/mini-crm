@@ -1,7 +1,6 @@
 import { useState } from "react"
 import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
-import { Mail, Phone, User } from "lucide-react"
 import Button from "../../common/Button"
 
 const ViewCustomer = () => {
@@ -27,21 +26,18 @@ return (
 
             <div className="space-y-4 font-main text-gray-700">
                 <div className="flex items-center gap-3">
-                    <User size={22} className="text-primary-600" />
                     <p className="text-sm">
                         <span className="font-semibold">اسم العميل:</span> {customer.username}
                     </p>
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <Mail size={22} className="text-primary-600" />
                     <p className="text-sm">
                         <span className="font-semibold">البريد الإلكتروني:</span> {customer.email}
                     </p>
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <Phone size={22} className="text-primary-600" />
                     <p className="text-sm">
                         <span className="font-semibold">رقم الهاتف:</span> {customer.phone}
                     </p>

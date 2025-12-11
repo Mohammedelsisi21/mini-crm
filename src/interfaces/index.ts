@@ -35,3 +35,12 @@ export interface ICustomer {
     status: string
     classification: string
 }
+
+//** Create cummunication */
+export interface ICummunication {
+    username: string
+    contactType: string
+    employee: string
+    description: string
+    status: string
+}
