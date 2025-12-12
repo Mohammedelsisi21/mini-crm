@@ -1,0 +1,19 @@
+
+User-agent: *
+Allow: /
+
+Disallow: /auth/login
+Disallow: /auth/register
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /customers/
+Disallow: /complaints/
+Disallow: /communications/
+
+Allow: /$
+
+# Sitemap
+Sitemap: https://yourwebsite.com/sitemap.xml
+
+Crawl-delay: 10

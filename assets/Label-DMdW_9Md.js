@@ -1,0 +1,1 @@
+import{j as t}from"./index-cOkxID9w.js";const l=({text:e,center:s,htmlFor:o})=>t.jsx(t.Fragment,{children:t.jsx("label",{className:`block text-sm font-bold text-text-body mb-2 ${s}`,htmlFor:o,children:e})});export{l as L};
