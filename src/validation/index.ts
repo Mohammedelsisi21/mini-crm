@@ -192,3 +192,36 @@ export const ProductSchema = yup.object().shape({
     .string()
     .required("حالة المنتج مطلوبة"),
 });
+
+
+//** Complaint */
+
+export const ComplaintSchema = yup.object().shape({
+    username: yup
+    .string()
+    .required("الاسم مطلوب")
+    .min(3, "يجيب ان يكون الاسم اكثر من 3 حروف علي الاقل"),
+
+    issueType: yup
+    .string()
+    .required("نوع المشكلة مطلوبة")
+    .min(3, "يجيب ان يكون الاسم اكثر من 3 حروف علي الاقل"),
+
+    description: yup
+    .string()
+    .required("وصف الشكلة مطلوب")
+    .min(4, "يجب ان يكون الوصف اكثر من 3 حروف"),
+
+    priority: yup
+    .string()
+    .required("الاولاويه مطلوبة"),
+
+    status: yup
+    .string()
+    .required("حالة المكشكلة مطلوبة"),
+
+    assignedTo: yup
+    .string()
+    .required("مطلوب"),
+
+});

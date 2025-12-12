@@ -62,3 +62,13 @@ export interface IProduct {
     change: number
     status: string
 }
+//** Complaint */
+export interface IComplaint {
+    username: string
+    issueType: string
+    description: string
+    priority: string
+    status: string
+    assignedTo: string
+    since?: number
+}

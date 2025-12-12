@@ -23,7 +23,7 @@ const ComplaintsPage = () => {
         <ComplaintsTable />
         <Pagination />
       </div>
-    </div>
+    </div> 
   )
 }
 
