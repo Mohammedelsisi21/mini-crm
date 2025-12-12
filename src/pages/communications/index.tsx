@@ -5,9 +5,6 @@ import TableToolbar from "../../components/tables/TableToolbar"
 import CommunicationsTable from "../../components/tables/CommunicationsTable"
 import Pagination from "../../components/common/Pagination"
 import CreateCommunication from "../../components/crud/communicationCrud/CreateCommunication"
-import UpdateCommunication from "../../components/crud/communicationCrud/UpdateCommunication"
-import DeleteCommunication from "../../components/crud/communicationCrud/DeleteCommunication"
-import ViewCommunication from "../../components/crud/communicationCrud/ViewCommunication"
 
 const CommunicationsPage = () => {
   return (
@@ -23,11 +20,7 @@ const CommunicationsPage = () => {
       </div>
       <TableToolbar placeholder="البحث عن منتج التواصلات..." />
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-        <CommunicationsTable>
-          <ViewCommunication />
-          <UpdateCommunication />
-          <DeleteCommunication />
-        </CommunicationsTable>
+      <CommunicationsTable />
         <Pagination />
       </div>
     </div>

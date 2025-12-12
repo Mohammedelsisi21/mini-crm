@@ -4,9 +4,6 @@ import MainCardPage from "../../components/cards/MainCardPage"
 import TableToolbar from "../../components/tables/TableToolbar"
 import Pagination from "../../components/common/Pagination"
 import CategoryTable from "../../components/tables/CategoryTable"
-import ViewCategory from "../../components/crud/categoryCrud/ViewCategory"
-import UpdateCategory from "../../components/crud/categoryCrud/UpdateCategory"
-import DeleteCategory from "../../components/crud/categoryCrud/DeleteCategory"
 import CreateCategory from "../../components/crud/categoryCrud/CreateCategory"
 
 const CategoriesPage = () => {
@@ -22,11 +19,7 @@ const CategoriesPage = () => {
       </div>
       <TableToolbar placeholder="البحث عن عميل بالاسم..." />
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-        <CategoryTable>
-          <ViewCategory />
-          <UpdateCategory />
-          <DeleteCategory />
-        </CategoryTable>
+        <CategoryTable />
         <Pagination />
       </div>
 

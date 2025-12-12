@@ -1,19 +1,18 @@
 import { ArrowDown, ArrowUp, Package } from "lucide-react"
 import MainTable from "./MainTable"
 import FeatureIcon from "../common/FeatureIcon"
-import type { ReactNode } from "react"
+import ViewProduct from "../crud/productCrud/ViewProduct"
+import UpdateProduct from "../crud/productCrud/UpdateProduct"
+import DeleteProduct from "../crud/productCrud/DeleteProduct"
 
 const data = [
-        { name: 'خدمة الخياطة', price: 500, sales: 89, trend: 'عالي', change: 15, status: 'نشط' },
-        { name: 'منتج A', price: 250, sales: 67, trend: 'عالي', change: 8, status: 'نشط' },
-        { name: 'خدمة التفصيل', price: 800, sales: 54, trend: 'منخفض', change: -3, status: 'نشط' },
-        { name: 'منتج B', price: 150, sales: 123, trend: 'عالي', change: 22, status: 'نشط' },
-        { name: 'خدمة C', price: 350, sales: 12, trend: 'منخفض', change: -5, status: 'غير نشط' }
+        { name: 'خدمة الخياطة', price: 500, sales: 89, trend: 'عالي', change: 15, status: 'نشط',quantity: 10},
+        { name: 'منتج A', price: 250, sales: 67, trend: 'عالي', change: 8, status: 'نشط' ,quantity: 40},
+        { name: 'خدمة التفصيل', price: 800, sales: 54, trend: 'منخفض', change: -3, status: 'نشط',quantity: 8 },
+        { name: 'منتج B', price: 150, sales: 123, trend: 'عالي', change: 22, status: 'نشط',quantity: 11 },
+        { name: 'خدمة C', price: 350, sales: 12, trend: 'منخفض', change: -5, status: 'غير نشط',quantity: 19 }
     ]
-interface IProps {
-    children: ReactNode
-}
-const ProductTable = ({children} : IProps) => {
+const ProductTable = () => {
     const textHead = ["المنتج/الخدمة" ,"السعر" ,"الكمية" ,"الأداء" ,"الحالة" ,"الإجراءات"]
 return (
     <MainTable
@@ -54,7 +53,9 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        {children}
+                        <ViewProduct product={product}/>
+                        <UpdateProduct product={product}/>
+                        <DeleteProduct id={i}/>
                     </div>
                 </td>
             </tr>

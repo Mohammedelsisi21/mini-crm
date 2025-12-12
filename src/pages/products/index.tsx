@@ -4,9 +4,6 @@ import MainCardPage from "../../components/cards/MainCardPage"
 import Pagination from "../../components/common/Pagination"
 import ProductTable from "../../components/tables/ProductTable"
 import TableToolbar from "../../components/tables/TableToolbar"
-import ViewProduct from "../../components/crud/productCrud/ViewProduct"
-import UpdateProduct from "../../components/crud/productCrud/UpdateProduct"
-import DeleteProduct from "../../components/crud/productCrud/DeleteProduct"
 import CreateProduct from "../../components/crud/productCrud/CreateProduct"
 
 const ProductsPage = () => {
@@ -23,11 +20,7 @@ const ProductsPage = () => {
       </div>
       <TableToolbar placeholder="البحث عن منتج بالاسم..." />
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-        <ProductTable>
-          <ViewProduct />
-          <UpdateProduct />
-          <DeleteProduct />
-        </ProductTable>
+        <ProductTable />
         <Pagination />
       </div>
     </div>

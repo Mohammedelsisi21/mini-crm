@@ -11,9 +11,13 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { CategorySchema } from "../../../validation"
 import CrudActions from "../../common/CrudActions"
 
-const UpdateCategory = () => {
+interface IProps {
+    category: ICategory
+}
+
+const UpdateCategory = ({category} : IProps) => {
     const defaultValues = {
-        classification: "VIP"
+        category: category.category
     }
     const [isOpen, setIsOpen] = useState(false)
     const {register,handleSubmit,formState: { errors },} = useForm<ICategory>({
@@ -29,12 +33,12 @@ const UpdateCategory = () => {
 return (
     <>
     <CrudActions variant="update" onClick={() => setIsOpen(true)}/>
-    <CustomeModal desc="إدخال بيانات التصنيف جديد." variant="create" isOpen={isOpen} setIsOpen={setIsOpen}>
+    <CustomeModal desc="إدخال بيانات التصنيف." variant="create" isOpen={isOpen} setIsOpen={setIsOpen}>
     <form className="space-y-5 font-main" onSubmit={onSubmit}>
         <div>
-            <Label htmlFor="classification" text="اسم العميل"/>
-            <Input {...register("classification")} type="text" name="classification" id="classification" pl="pl-4" error={!!errors.classification} placeholder="أدخل اسم العميل" autoFocus icon={<Tag size={24}/>}/>
-            <ErrorMessage error={errors.classification?.message}/>
+            <Label htmlFor="category" text="اسم التصنيف"/>
+            <Input {...register("category")} type="text" name="category" id="category" pl="pl-4" error={!!errors.category} placeholder="أدخل اسم العميل" autoFocus icon={<Tag size={24}/>}/>
+            <ErrorMessage error={errors.category?.message}/>
         </div>
         <div className="flex gap-3 pt-4 justify-end">
             <Button ariaLabel="cancel-update" variant="outline" w="w-fit" onClick={() => setIsOpen(false)}>

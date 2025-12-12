@@ -2,18 +2,13 @@ import { useState } from "react"
 import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
 import Button from "../../common/Button"
+import type { ICummunication } from "../../../interfaces"
 
-const ViewCommunication = () => {
+interface IProps {
+    communication: ICummunication
+}
+const ViewCommunication = ({communication} :IProps) => {
     const [isOpen, setIsOpen] = useState(false)
-
-    const communication = {
-        username: "محمد أحمد",
-        contactType: "مكالمة هاتفية",
-        employee: "محمد ابراهيم",
-        description: "العميل مهتم بالخدمة ويريد معرفة الأسعار والمواعيد.",
-        status: "عاجلة",
-    }
-
 return (
     <>
         <CrudActions variant="view" onClick={() => setIsOpen(true)} />

@@ -1,17 +1,15 @@
 import { Package } from "lucide-react"
 import MainTable from "./MainTable"
-import type { ReactNode } from "react"
+import ViewCategory from "../crud/categoryCrud/ViewCategory"
+import UpdateCategory from "../crud/categoryCrud/UpdateCategory"
+import DeleteCategory from "../crud/categoryCrud/DeleteCategory"
 
 const data = [
-        { category: 'عادي' ,number: 4 },
-        { category: 'VIP' ,number: 4 },
-        { category: 'جديد' ,number: 4 },
+        { category: 'عادي' ,item: 5 },
+        { category: 'VIP' ,item: 3 },
+        { category: 'جديد' ,item: 1 },
     ]
-    
-interface IProps {
-    children: ReactNode
-}
-const CategoryTable = ({children} : IProps) => {
+const CategoryTable = () => {
     const textHead = ["التصنيف","العدد","الإجراءات"]
 return (
     <MainTable
@@ -29,11 +27,13 @@ return (
                     </div>
                 </td>
                 <td className="px-6 py-4">
-                    <span className="text-gray-700 font-medium">{category.number}</span>
+                    <span className="text-gray-700 font-medium">{category.item}</span>
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        {children}
+                        <ViewCategory category={category}/>
+                        <UpdateCategory category={category}/>
+                        <DeleteCategory id={i}/>
                     </div>
                 </td>
             </tr>

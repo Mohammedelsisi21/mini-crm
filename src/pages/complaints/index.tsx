@@ -4,10 +4,7 @@ import MainCardPage from "../../components/cards/MainCardPage"
 import TableToolbar from "../../components/tables/TableToolbar"
 import Pagination from "../../components/common/Pagination"
 import ComplaintsTable from "../../components/tables/ComplaintsTable"
-import CreateComplaint from "../../components/crud/complaintCrud/Createcomplaint"
-import ViewComplaint from "../../components/crud/complaintCrud/ViewComplaint"
-import UpdateComplaint from "../../components/crud/complaintCrud/UpdateComplaint"
-import DeleteComplaint from "../../components/crud/complaintCrud/DeleteComplaint"
+import CreateComplaint from "../../components/crud/complaintCrud/CreateComplaint"
 
 const ComplaintsPage = () => {
   return (
@@ -23,11 +20,7 @@ const ComplaintsPage = () => {
       </div>
       <TableToolbar placeholder="البحث عن المشكلات..." />
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-        <ComplaintsTable>
-          <ViewComplaint />
-          <UpdateComplaint />
-          <DeleteComplaint />
-        </ComplaintsTable>
+        <ComplaintsTable />
         <Pagination />
       </div>
     </div>

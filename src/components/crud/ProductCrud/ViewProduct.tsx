@@ -2,12 +2,13 @@ import { useState } from "react"
 import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
 import Button from "../../common/Button"
+import type { IProduct } from "../../../interfaces"
 
-const ViewProduct = () => {
+interface IProps {
+    product: IProduct
+}
+const ViewProduct = ({product} : IProps) => {
     const [isOpen, setIsOpen] = useState(false)
-
-    const product ={ name: 'خدمة الخياطة', price: 500, quantity: 89, trend: 'عالي', change: 15, status: 'نشط' }
-
 
 return (
     <>
@@ -45,7 +46,7 @@ return (
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <p className="text-sm">
+                    <p className="text-sm"> 
                         <span className="font-semibold">حالة المنتج:</span> {product.status}
                     </p>
                 </div>

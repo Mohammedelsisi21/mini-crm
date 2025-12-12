@@ -2,17 +2,13 @@ import { useState } from "react"
 import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
 import Button from "../../common/Button"
+import type { ICustomer } from "../../../interfaces"
 
-const ViewCustomer = () => {
+interface IProps {
+    customer: ICustomer
+}
+const ViewCustomer = ({customer} : IProps) => {
     const [isOpen, setIsOpen] = useState(false)
-
-    const customer = {
-        username: "محمد أحمد",
-        email: "mohamed@example.com",
-        phone: "01012345678",
-        classification: "VIP",
-        status: "نشط",
-    }
 
 return (
     <>
@@ -45,7 +41,7 @@ return (
 
                 <div className="flex items-center gap-3">
                     <p className="text-sm">
-                        <span className="font-semibold">تصنيف العميل:</span> {customer.classification}
+                        <span className="font-semibold">تصنيف العميل:</span> {customer.category}
                     </p>
                 </div>
 
@@ -54,7 +50,6 @@ return (
                         <span className="font-semibold">حالة العميل:</span> {customer.status}
                     </p>
                 </div>
-                
             </div>
             <div className="flex gap-3 pt-4 justify-end">
                 <Button ariaLabel="cancel-viwe" variant="blue" w="w-fit" onClick={() => setIsOpen(false)}>

@@ -1,23 +1,22 @@
 import MainTable from "./MainTable"
 import FeatureIcon from "../common/FeatureIcon"
-import type { ReactNode } from "react"
+import ViewCustomer from "../crud/customerCrud/ViewCustomer"
+import UpdateCustomer from "../crud/customerCrud/UpdateCustomer"
+import DeleteCustomer from "../crud/customerCrud/DeleteCustomer"
 
 const data = [
-        { name: 'أحمد محمد علي', phone: '01234567891', email: 'ahmed@example.com', category: 'VIP', status: 'نشط', days: 1 },
-        { name: 'فاطمة حسن', phone: '01234567892', email: 'fatima@example.com', category: 'عادي', status: 'نشط', days: 3 },
-        { name: 'عمر خالد', phone: '01234567893', email: 'omar@example.com', category: 'جديد', status: 'غير نشط', days: 5 },
-        { name: 'منى سعيد', phone: '01234567894', email: 'mona@example.com', category: 'VIP', status: 'نشط', days: 2 },
-        { name: 'علي كمال', phone: '01234445495', email: 'ali@example.com', category: 'VIP', status: 'غير نشط', days: 15 },
-        { name: 'هنا محمد', phone: '01557575595', email: 'hana@example.com', category: 'عادي', status: 'نشط', days: 6 },
-        { name: 'مروج محمد', phone: '01055454545', email: 'morog@example.com', category: 'VIP', status: 'نشط', days: 7 },
-        { name: 'محمد احمد', phone: '01011707632', email: 'mohamed@example.com', category: 'VIP', status: 'غير نشط', days: 11 },
-        { name: 'عبدالرافع محمد', phone: '01510445005', email: 'abdo@example.com', category: 'عادي', status: 'نشط', days: 9 },
-        { name: 'عبدالرحمن محمد', phone: '01350450574', email: 'abdo@example.com', category: 'VIP', status: 'نشط', days: 8 },
+        { username: 'أحمد محمد علي', phone: '01234567891', email: 'ahmed@example.com', category: 'جديد', status: 'نشط', days: 1 },
+        { username: 'فاطمة حسن', phone: '01234567892', email: 'fatima@example.com', category: 'VIP', status: 'نشط', days: 3 },
+        { username: 'عمر خالد', phone: '01234567893', email: 'omar@example.com', category: 'VIP', status: 'غير نشط', days: 5 },
+        { username: 'منى سعيد', phone: '01234567894', email: 'mona@example.com', category: 'VIP', status: 'نشط', days: 2 },
+        { username: 'علي كمال', phone: '01234445495', email: 'ali@example.com', category: 'VIP', status: 'غير نشط', days: 15 },
+        { username: 'هنا محمد', phone: '01557575595', email: 'hana@example.com', category: 'عادي', status: 'نشط', days: 6 },
+        { username: 'مروج محمد', phone: '01055454545', email: 'morog@example.com', category: 'VIP', status: 'نشط', days: 7 },
+        { username: 'محمد احمد', phone: '01011707632', email: 'mohamed@example.com', category: 'جديد', status: 'غير نشط', days: 11 },
+        { username: 'عبدالرافع محمد', phone: '01510445005', email: 'abdo@example.com', category: 'عادي', status: 'نشط', days: 9 },
+        { username: 'عبدالرحمن محمد', phone: '01350450574', email: 'abdo@example.com', category: 'VIP', status: 'نشط', days: 8 },
     ]
-interface IProps {
-    children: ReactNode
-}
-const CustomersTable = ({children} : IProps) => {
+const CustomersTable = () => {
     const textHead = ["العميل", "التواصل", "التصنيف", "الحالة", "آخر تواصل", "الإجراءات"]
 return (
     <MainTable
@@ -27,10 +26,10 @@ return (
                 <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
                         <div style={{background: 'var(--gradient-primary)'}} className="w-11 h-11 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                            <span className="text-white font-bold text-sm">{customer.name[0]}</span>
+                            <span className="text-white font-bold text-sm">{customer.username[0]}</span>
                         </div>
                         <div>
-                            <p className="font-bold text-gray-800">{customer.name}</p>
+                            <p className="font-bold text-gray-800">{customer.username}</p>
                             <p className="text-sm text-gray-500">{customer.email}</p>
                         </div>
                     </div>
@@ -63,7 +62,9 @@ return (
                 </td>
                 <td className="px-6 py-4">
                     <div className="flex gap-2">
-                        {children}
+                        <ViewCustomer customer={customer}/>
+                        <UpdateCustomer customer={customer}/>
+                        <DeleteCustomer id={i}/>
                     </div>
                 </td>
             </tr>

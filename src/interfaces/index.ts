@@ -33,8 +33,10 @@ export interface ICustomer {
     email: string
     phone: string
     status: string
-    classification: string
+    category: string
+    days?: number
 }
+
 
 //** cummunication */
 export interface ICummunication {
@@ -43,11 +45,13 @@ export interface ICummunication {
     employee: string
     description: string
     status: string
+    since?: number
 }
 
 //** Categiry */
 export interface ICategory {
-    classification: string
+    category: string
+    item?: number
 }
 //** Product */
 export interface IProduct {

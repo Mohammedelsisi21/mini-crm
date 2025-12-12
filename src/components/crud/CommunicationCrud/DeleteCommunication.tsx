@@ -2,12 +2,15 @@ import { useState } from "react"
 import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
 import Button from "../../common/Button"
+interface IProps {
+    id: number
+}
 
-const DeleteCommunication = () => {
+const DeleteCommunication = ({id}: IProps) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const handleDelete = () => {
-        console.log("Customer Deleted!")
+        console.log(id)
         setIsOpen(false)
     }
 

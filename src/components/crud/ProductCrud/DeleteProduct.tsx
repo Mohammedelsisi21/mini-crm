@@ -3,11 +3,14 @@ import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
 import Button from "../../common/Button"
 
-const DeleteProduct = () => {
+interface IProps {
+    id: number
+}
+const DeleteProduct = ({id} : IProps) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const handleDelete = () => {
-        console.log("Customer Deleted!")
+        console.log(id)
         setIsOpen(false)
     }
 
@@ -26,7 +29,7 @@ return (
             <p className="mt-1">لن تتمكن من استعادة المعلومات بعد الحذف.</p>
         </div>
 
-        <div className="flex gap-3 pt-4 justify-end">
+        <div className="flex gap-3 pt-4 justify-end"> 
             <Button ariaLabel="cancel-delete" variant="outline" w="w-fit" onClick={() => setIsOpen(false)}>
                 إلغاء
             </Button>

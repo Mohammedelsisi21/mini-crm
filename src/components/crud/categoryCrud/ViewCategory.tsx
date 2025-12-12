@@ -2,14 +2,13 @@ import { useState } from "react"
 import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
 import Button from "../../common/Button"
+import type { ICategory } from "../../../interfaces"
 
-const ViewCategory = () => {
+interface IProps {
+    category: ICategory
+}
+const ViewCategory = ({category} : IProps) => {
     const [isOpen, setIsOpen] = useState(false)
-
-    const category = {
-        classification: "VIP",
-        number: 4
-    }
 
 return (
     <>
@@ -24,13 +23,13 @@ return (
             <div className="space-y-4 font-main text-gray-700">
                 <div className="flex items-center gap-3">
                     <p className="text-sm">
-                        <span className="font-semibold">اسم التصنيف: </span> {category.classification}
+                        <span className="font-semibold">اسم التصنيف: </span> {category.category}
                     </p>
                 </div>
 
                 <div className="flex items-center gap-3">
                     <p className="text-sm">
-                        <span className="font-semibold">عدد العملاء: </span> {category.number}
+                        <span className="font-semibold">عدد العملاء: </span> {category.item}
                     </p>
                 </div>
             </div>

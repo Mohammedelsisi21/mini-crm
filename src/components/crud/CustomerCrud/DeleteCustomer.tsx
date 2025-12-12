@@ -3,11 +3,14 @@ import CrudActions from "../../common/CrudActions"
 import CustomeModal from "../../../shared/CustomeModal"
 import Button from "../../common/Button"
 
-const DeleteCustomer = () => {
+interface Iprops {
+    id: number
+}
+const DeleteCustomer = ({id}: Iprops) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const handleDelete = () => {
-        console.log("Customer Deleted!")
+        console.log(id)
         setIsOpen(false)
     }
 

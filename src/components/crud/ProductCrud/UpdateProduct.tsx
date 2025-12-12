@@ -11,20 +11,15 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { ProductSchema } from "../../../validation"
 import Select from "../../form/Select"
 import CrudActions from "../../common/CrudActions"
+interface IProps {
+    product: IProduct
+}
 
-const UpdateProduct = () => {
-    const defaultValues = {
-        name: "منتج 1",
-        price: 100,
-        quantity: 5,
-        trend: "مرتفع",
-        change: 2,
-        status: "متاح",
-    };
+const UpdateProduct = ({product} : IProps) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const {register,handleSubmit,formState: { errors },} = useForm<IProduct>({
-            defaultValues,
+            defaultValues: product,
             resolver: yupResolver(ProductSchema),
         })
 
@@ -63,7 +58,7 @@ return (
                     <option value="">اختر التصنيف</option>
                     <option value="up">عالي</option>
                     <option value="dwon">منخفض</option>
-                </Select>
+                </Select> 
                 <ErrorMessage error={errors.trend?.message} />
             </div>
             <div>

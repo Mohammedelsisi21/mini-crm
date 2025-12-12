@@ -5,9 +5,6 @@ import Pagination from "../../components/common/Pagination"
 import ShearCard from "../../components/cards/ShearCard"
 import TableToolbar from "../../components/tables/TableToolbar"
 import CreateCustomer from "../../components/crud/customerCrud/CreateCustomer"
-import ViewCustomer from "../../components/crud/customerCrud/ViewCustomer"
-import UpdateCustomer from "../../components/crud/customerCrud/UpdateCustomer"
-import DeleteCustomer from "../../components/crud/customerCrud/DeleteCustomer"
 
 const CustomersPage = () => {
   return (
@@ -23,11 +20,7 @@ const CustomersPage = () => {
       </div>
       <TableToolbar placeholder="البحث عن عميل بالاسم، الهاتف، أو البريد..." />
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-        <CustomersTable>
-          <ViewCustomer />
-          <UpdateCustomer />
-          <DeleteCustomer />
-        </CustomersTable>
+        <CustomersTable />
         <Pagination />
       </div>
     </div>

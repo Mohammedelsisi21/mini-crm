@@ -113,7 +113,7 @@ export const CustomerSchema = yup.object().shape({
     .required("رقم الهاتف مطلوب")
     .matches(/^01[0|1|2|5][0-9]{8}$/, "رقم الهاتف غير صالح"),
 
-    classification: yup
+    category: yup
     .string()
     .required("تصنيف العميل مطلوب"),
 
@@ -155,7 +155,7 @@ export const CommunicationSchema = yup.object().shape({
 //** Category */
 
 export const CategorySchema = yup.object().shape({
-    classification: yup
+    category: yup
     .string()
     .required("تصنيف مطلوب"),
 

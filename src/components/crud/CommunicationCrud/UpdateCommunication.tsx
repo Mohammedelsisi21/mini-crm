@@ -13,17 +13,13 @@ import Select from "../../form/Select"
 import Textarea from "../../common/Textarea"
 import CrudActions from "../../common/CrudActions"
 
-const UpdateCommunication = () => {
-    const defaultValues = {
-        username: "احمد محمد",
-        employee: "احمد ابراهيم",
-        description: "العميل مهتم بالخدمة ويريد معرفة الأسعار والمواعيد.",
-        contactType: "call",
-        status: "urgent",
-    }
+interface IProps {
+    communication: ICummunication
+}
+const UpdateCommunication = ({communication} : IProps) => {
     const [isOpen, setIsOpen] = useState(false)
     const {register,handleSubmit,formState: { errors },} = useForm<ICummunication>({
-            defaultValues,
+            defaultValues: communication,
             resolver: yupResolver(CommunicationSchema),
         })
 

@@ -47,14 +47,14 @@ return (
         </div>
         <div className="grid grid-cols-2 gap-2">
             <div>
-                <Label htmlFor="classification" text="تصنيف العميل" />
-                <Select id="classification" {...register("classification")} error={!!errors.classification}>
+                <Label htmlFor="category" text="تصنيف العميل" />
+                <Select id="category" {...register("category")} error={!!errors.category}>
                     <option value="">اختر التصنيف</option>
                     <option value="VIP">VIP</option>
                     <option value="new">جديد</option>
                     <option value="normal">عادي</option>
                 </Select>
-                <ErrorMessage error={errors.classification?.message} />
+                <ErrorMessage error={errors.category?.message} />
             </div>
             <div>
                 <Label htmlFor="status" text="حالة العميل" />
