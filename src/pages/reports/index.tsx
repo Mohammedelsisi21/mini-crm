@@ -21,8 +21,8 @@ const ReportsPage = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           <div>
-            <Label text="نوع التقرير" />
-            <Select>
+            <Label htmlFor="reportType" text="نوع التقرير" />
+            <Select id="reportType">
               <option>العملاء</option>
               <option>التواصلات</option>
               <option>المنتجات</option>
@@ -31,8 +31,8 @@ const ReportsPage = () => {
             </Select>
           </div>
           <div>
-            <Label text="الفترة الزمنية" />
-            <Select>
+            <Label htmlFor="day" text="الفترة الزمنية" />
+            <Select id="day">
               <option>آخر 7 أيام</option>
               <option>آخر 30 يوم</option>
               <option>آخر 3 أشهر</option>
@@ -42,8 +42,8 @@ const ReportsPage = () => {
             </Select>
           </div>
           <div>
-            <Label text="التنسيق"/>
-            <Select>
+            <Label htmlFor="file" text="التنسيق"/>
+            <Select id="file">
               <option>Excel (.xlsx)</option>
               <option>CSV (.csv)</option>
               <option>PDF (.pdf)</option>

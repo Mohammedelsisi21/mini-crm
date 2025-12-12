@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://mohammedelsisi21.github.io/mini-crm",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
