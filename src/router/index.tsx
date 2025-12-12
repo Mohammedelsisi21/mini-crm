@@ -1,5 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { lazy } from "react";
+import ProtectedRoute from "../auth/ProtectedRoute";
 
 const MainLayout = lazy(() => import('../layout/DashboardLayout'))
 const HomePage = lazy(() => import('../pages/dashboard'))
@@ -25,7 +26,7 @@ const VerifyCode = lazy(() => import('../pages/auth/VerifyCode'))
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path="/" element={<MainLayout />} errorElement={<ErrorBoundary />}>
+            <Route path="/" element={<ProtectedRoute isAllowed={true} redirectPath="/login" children={<MainLayout />}/>} errorElement={<ErrorBoundary />}>
                 <Route index element={<HomePage />} />
                 <Route path="customers" element={<CustomersPage />} />
                 <Route path="communications" element={<CommunicationsPage />} />
