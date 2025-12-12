@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import { createHashRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { lazy } from "react";
 import ProtectedRoute from "../auth/ProtectedRoute";
 
@@ -23,7 +23,7 @@ const ResetPassword = lazy(() => import('../pages/auth/ResetPassword'))
 const VerifyCode = lazy(() => import('../pages/auth/VerifyCode'))
 
 
-const router = createBrowserRouter(
+const router = createHashRouter(
     createRoutesFromElements(
         <>
             <Route path="/" element={<ProtectedRoute isAllowed={true} redirectPath="/login" children={<MainLayout />}/>} errorElement={<ErrorBoundary />}>
