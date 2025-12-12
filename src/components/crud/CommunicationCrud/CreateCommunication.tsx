@@ -48,8 +48,8 @@ return (
         </div>
         <div className="grid grid-cols-2 gap-2">
             <div>
-                <Label text="نوع التواصل" />
-                <Select {...register("contactType")} error={!!errors.contactType}>
+                <Label htmlFor="contactType" text="نوع التواصل" />
+                <Select id="contactType" {...register("contactType")} error={!!errors.contactType}>
                     <option value="">اختر نوع التواصل</option>
                     <option value="call">مكالمة هاتفية</option>
                     <option value="email">بريد إلكتروني</option>
@@ -60,8 +60,8 @@ return (
                 <ErrorMessage error={errors.contactType?.message} />
             </div>
             <div>
-                <Label text="حالة التواصل" />
-                <Select {...register("status")} error={!!errors.status}>
+                <Label htmlFor="status" text="حالة التواصل" />
+                <Select id="status" {...register("status")} error={!!errors.status}>
                     <option value="">اختر الحالة</option>
                     <option value="urgent">عاجلة</option>
                     <option value="medium">متوسطة</option>

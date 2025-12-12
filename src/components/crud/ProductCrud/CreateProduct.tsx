@@ -50,8 +50,8 @@ return (
 
         <div className="grid grid-cols-2 gap-2">
             <div>
-                <Label text="تصنيف المنتج" />
-                <Select {...register("trend")} error={!!errors.trend}>
+                <Label htmlFor="trend" text="تصنيف المنتج" />
+                <Select id="trend" {...register("trend")} error={!!errors.trend}>
                     <option value="">اختر التصنيف</option>
                     <option value="up">عالي</option>
                     <option value="dwon">منخفض</option>
@@ -59,8 +59,8 @@ return (
                 <ErrorMessage error={errors.trend?.message} />
             </div>
             <div>
-                <Label text="حالة المنتج" />
-                <Select {...register("status")} error={!!errors.status}>
+                <Label htmlFor="status" text="حالة المنتج" />
+                <Select id="status" {...register("status")} error={!!errors.status}>
                     <option value="">اختر الحالة</option>
                     <option value="active">نشط</option>
                     <option value="inactive">غير نشط</option>

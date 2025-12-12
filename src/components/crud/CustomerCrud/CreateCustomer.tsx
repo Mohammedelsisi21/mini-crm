@@ -47,8 +47,8 @@ return (
         </div>
         <div className="grid grid-cols-2 gap-2">
             <div>
-                <Label text="تصنيف العميل" />
-                <Select {...register("classification")} error={!!errors.classification}>
+                <Label htmlFor="classification" text="تصنيف العميل" />
+                <Select id="classification" {...register("classification")} error={!!errors.classification}>
                     <option value="">اختر التصنيف</option>
                     <option value="VIP">VIP</option>
                     <option value="new">جديد</option>
@@ -57,8 +57,8 @@ return (
                 <ErrorMessage error={errors.classification?.message} />
             </div>
             <div>
-                <Label text="حالة العميل" />
-                <Select {...register("status")} error={!!errors.status}>
+                <Label htmlFor="status" text="حالة العميل" />
+                <Select id="status" {...register("status")} error={!!errors.status}>
                     <option value="">اختر الحالة</option>
                     <option value="active">نشط</option>
                     <option value="inactive">غير نشط</option>
