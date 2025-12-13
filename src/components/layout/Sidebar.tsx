@@ -27,7 +27,7 @@ const Sidebar = ({sidebarOpen, onClickMenu} : IProps) => {
       <Navbar sidebarOpen={sidebarOpen}/>
       <div className="p-4 border-t border-gray-700 relative">
           <button onClick={() => setShowUserMenu(prev => !prev)} className="w-full flex items-center gap-3 px-2 py-1 hover:bg-gray-800 rounded-xl transition-all">
-              <div style={{background: "var(--gradient-primary)"}} className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="bg-gradient-primary w-10 h-10 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="font-bold">م</span>
               </div>
               {sidebarOpen && (

@@ -4,25 +4,25 @@ import FeatureIcon from "../common/FeatureIcon"
 
 const colorVariants = {
     primary: {
-        bg: "var(--gradient-blue)",
+        bg: "bg-gradient-blue",
         borderColor: "border-r-primary-600",
         mainIcon: User,
         featureIcon: "up"
     },
     secondary: {
-        bg: "var(--gradient-purple)",
+        bg: "bg-gradient-purple",
         borderColor: "border-r-secondary-600",
         mainIcon: TrendingUp,
         featureIcon: "up"
     },
     warning: {
-        bg: "var(--gradient-warning)",
+        bg: "bg-gradient-warning",
         borderColor: "border-r-warning-600",
         mainIcon: DollarSign,
         featureIcon: "alet"
     },
     success: {
-        bg: "var(--gradient-success)",
+        bg: "bg-gradient-success",
         borderColor: "border-r-success-600",
         mainIcon: AlertCircle,
         featureIcon: "up"
@@ -44,7 +44,7 @@ const HomeCard = ({ variant, title, des, num, up} : IProps) => {
 return (
     <div className={`bg-white rounded-2xl p-6 shadow-lg border border-gray-100 border-r-4 ${styles.borderColor} hover:shadow-xl transition-all group`}>
         <div className="flex justify-between items-start mb-4">
-            <div style={{background: `${styles.bg}`}} className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <div className={`${styles.bg} w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform`}>
                 <Icon className="text-white" size={28} />
             </div>
             {styles.featureIcon === "up" ?

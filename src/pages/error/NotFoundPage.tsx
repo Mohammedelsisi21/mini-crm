@@ -27,7 +27,7 @@ const NotFoundPage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link to={"/"} style={{background: "var(--gradient-primary)"}} className="text-white px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center justify-center gap-3 font-bold text-lg group">
+            <Link to={"/"} className="bg-gradient-primary text-white px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center justify-center gap-3 font-bold text-lg group">
               <Home size={24} />
               <span>العودة للرئيسية</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

@@ -63,7 +63,7 @@ const VerifyCode = () => {
 return (<>
     <AuthLayout w="md:min-w-sm">
         <FormTitle
-        background = "gradient-primary"
+        background = "bg-gradient-primary"
         icon={<Mail size={36} className="text-white"/>}
         title="تحقق من بريدك الإلكتروني"
         des="أدخل الكود المكون من 6 أرقام الذي أرسلناه إلى:"/>

@@ -45,7 +45,7 @@ const ResetPassword = () => {
 return (<>
     <AuthLayout w="md:min-w-sm">
         <FormTitle
-        background = "gradient-primary"
+        background = "bg-gradient-primary"
         icon={<Lock size={36} className="text-white"/>}
         title="إنشاء كلمة مرور جديدة"
         des="اختر كلمة مرور قوية لحماية حسابك"/>

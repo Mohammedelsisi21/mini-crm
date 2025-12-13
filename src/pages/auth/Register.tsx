@@ -42,7 +42,7 @@ const Register = () => {
 return (<>
     <AuthLayout w="lg:min-w-5xl">
         <FormTitle
-        background = "gradient-secondary"
+        background = "bg-gradient-secondary"
         icon={<Award size={40} className="text-white"/>}
         title="إنشاء حساب جديد"
         des="ابدأ رحلتك مع أفضل نظام CRM"/>

@@ -33,15 +33,16 @@ return (
     </div>
     <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
         <div
-            className={"h-2 rounded-full transition-all duration-500"}
-            style={{ width: `${sales}%`, background: `${
-                sales >= 90 ? "var(--gradient-primary)" :
-                sales >= 80 ? "var(--gradient-secondary)" :
-                sales >= 70 ? "var(--gradient-success)" :
-                sales >= 60 ? "var(--gradient-info)" :
-                sales >= 50 ? "var(--gradient-warning)" :
-                "var(--gradient-error)"
-            }`}}
+            className={`h-2 rounded-full transition-all duration-500
+            ${
+                sales >= 90 ? "bg-gradient-primary" :
+                sales >= 80 ? "bg-gradient-secondary" :
+                sales >= 70 ? "bg-gradient-success" :
+                sales >= 60 ? "bg-gradient-info" :
+                sales >= 50 ? "bg-gradient-warning" :
+                "bg-gradient-error)"
+            }`}
+            style={{ width: `${sales}%`}}
         />
         </div>
     </>

@@ -25,7 +25,7 @@ return (
             <tr key={i} className="hover:bg-primary-50 transition-all group">
                 <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                        <div style={{background: 'var(--gradient-primary)'}} className="w-11 h-11 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                        <div className="bg-gradient-primary w-11 h-11 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                             <span className="text-white font-bold text-sm">{customer.username[0]}</span>
                         </div>
                         <div>

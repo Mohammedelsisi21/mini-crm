@@ -21,7 +21,7 @@ return (
             <tr key={i} className="hover:bg-primary-50 transition-all groعالي">
                 <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                        <div style={{background: 'var(--gradient-secondary)'}} className="w-11 h-11 rounded-xl flex items-center justify-center shadow-md groعالي-hover:scale-110 transition-transform">
+                        <div className="bg-gradient-secondary w-11 h-11 rounded-xl flex items-center justify-center shadow-md groعالي-hover:scale-110 transition-transform">
                             <Package size={24} className="text-white"/>
                         </div>
                         <div>

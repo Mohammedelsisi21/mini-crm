@@ -27,7 +27,7 @@ const ForgotPassword = () => {
 return (<>
     <AuthLayout w="md:min-w-sm">
         <FormTitle
-        background = "gradient-primary"
+        background = "bg-gradient-primary"
         icon={<Lock size={36} className="text-white"/>}
         title="نسيت كلمة المرور؟"
         des="لا تقلق. سنرسل لك رابط لإعادة تعيين كلمة المرور"/>

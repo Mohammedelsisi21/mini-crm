@@ -30,7 +30,7 @@ const Login = () => {
 return (<>
     <AuthLayout w="lg:min-w-5xl">
         <FormTitle
-        background = "gradient-primary"
+        background = "bg-gradient-primary"
         icon={<Shield size={40} className="text-white"/>}
         title="مرحباً بعودتك"
         des="سجل دخولك للوصول إلى لوحة التحكم"/>

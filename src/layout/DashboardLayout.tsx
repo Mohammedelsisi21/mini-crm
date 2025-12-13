@@ -10,7 +10,7 @@ const MainLayout = () => {
   return (
     <div className="flex h-screen w-screen overflow-hidden">
         <div className="w-screen flex ">
-          <div className={`${sidebarOpen ? "w-96" : "w-20"} text-white transition-all duration-300 flex flex-col shadow-2xl`} style={{background: "var(--gradient-dark)"}}>
+          <div className={`bg-gradient-dark ${sidebarOpen ? "w-96" : "w-20"} text-white transition-all duration-300 flex flex-col shadow-2xl`}>
             <Sidebar sidebarOpen={sidebarOpen} onClickMenu={() => setSidebarOpen(prev => !prev)}/>
           </div>
           <div className="w-full bg-gray-50 flex flex-col overflow-hidden">
