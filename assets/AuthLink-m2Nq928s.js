@@ -1,1 +1,0 @@
-import{j as t,L as m}from"./index-GiB1n68U.js";const l=({text:e,icon:s,color:r,hover:n,algin:o,textSize:i="text-sm",url:a=""})=>t.jsx(t.Fragment,{children:t.jsxs(m,{to:a,type:"button",className:`cursor-pointer ${o} ${i} font-semibold ${r} ${n} transition-all flex justify-center items-center group`,children:[s,e]})});export{l as A};
