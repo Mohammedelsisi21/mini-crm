@@ -44,9 +44,8 @@ const ReportsPage = () => {
           <div>
             <Label htmlFor="file" text="التنسيق"/>
             <Select id="file">
-              <option>Excel (.xlsx)</option>
-              <option>CSV (.csv)</option>
-              <option>PDF (.pdf)</option>
+              <option value={"excel"}>Excel (.xlsx)</option>
+              <option value={"pdf"}>PDF (.pdf)</option>
             </Select>
           </div>
         </div>
