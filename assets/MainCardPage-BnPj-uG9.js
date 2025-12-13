@@ -1,0 +1,1 @@
+import{j as e}from"./index-Bat4-_5r.js";const x=({title:s,des:t,children:r})=>e.jsxs("div",{className:"flex justify-between items-center",children:[e.jsxs("div",{children:[e.jsx("h1",{className:"text-3xl font-bold text-gray-800",children:s}),e.jsx("p",{className:"text-gray-500 mt-1",children:t})]}),r]});export{x as M};
